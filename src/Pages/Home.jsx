@@ -1,5 +1,5 @@
 import React from 'react'
-import Headermain from './../Components/Header/Header'
+import Headermain from './../Components/Header/Headerhero'
 import Hero from '../Components/Home/Hero'
 import Network from '../Components/Home/Network'
 import TrendingProducts from '../Components/Home/Trending'
