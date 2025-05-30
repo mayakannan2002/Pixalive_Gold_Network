@@ -128,32 +128,32 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#140113] min-h-screen">
+    <div className=" min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-black">
           Let’s Start a Conversation With Us
         </h2>
-        <p className="text-lg text-center text-[#b98a30] mb-10">
+        <p className="text-lg text-center  mb-10">
           Please note: all fields are required
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <form ref={form} onSubmit={sendEmail} className="bg-[#140013] p-8 shadow-lg rounded-xl space-y-6">
+          <form ref={form} onSubmit={sendEmail} className=" p-8  space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
                 type="text"
                 name="first_name"
                 placeholder="First Name"
                 required
-                className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full"
+                className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3  w-full"
               />
               <input
                 type="text"
                 name="last_name"
                 placeholder="Last Name"
                 required
-                className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full"
+                className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3  w-full"
               />
             </div>
             <input
@@ -161,20 +161,20 @@ const Contact = () => {
               name="mobile"
               placeholder="Mobile Number"
               required
-              className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full"
+              className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3  w-full"
             />
             <input
               type="email"
               name="email"
               placeholder="Mail Id"
               required
-              className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full"
+              className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3  w-full"
             />
             <textarea
               name="message"
               placeholder="Feedback"
               required
-              className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full h-32 resize-none"
+              className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3  w-full h-32 resize-none"
             />
             <div className="flex justify-center">
               <button
@@ -187,12 +187,12 @@ const Contact = () => {
           </form>
 
           {/* Contact Details */}
-          <div className="flex flex-col justify-center bg-[#140013] p-8 shadow-lg rounded-xl space-y-8">
-            <div>
-              <h3 className="text-3xl font-bold text-white mb-3">Contact Us</h3>
-              <p className="text-gray-300 mb-1">📞 +91 87785 84566</p>
-              <p className="text-gray-300 mb-1">✉️ info@pixalive.network</p>
-              <p className="text-gray-300 mt-4 leading-relaxed">
+          <div className="flex flex-col justify-center  p-8 rounded-xl space-y-8">
+            <div className="text-black">
+              <h3 className="text-3xl font-bold text-black mb-3">Contact Us</h3>
+              <p className=" mb-1">📞 +91 87785 84566</p>
+              <p className=" mb-1">✉️ info@pixalive.network</p>
+              <p className=" mt-4 leading-relaxed">
                 📍 Third Floor, No 35/2, Konappana Agrahara, <br />
                 Hosur Road, Electronics City, <br />
                 Bengaluru, Karnataka 560100, India
