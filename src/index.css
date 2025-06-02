@@ -39,3 +39,4 @@ body::-webkit-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none; /* IE and Edge */
 }
+body{background: #f6f6f6;}
