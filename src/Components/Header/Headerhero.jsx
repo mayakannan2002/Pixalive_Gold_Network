@@ -71,7 +71,7 @@ export default function Header() {
       <div className="absolute inset-0 border-b-8 border-l-8 border-r-8 border-[#140113] rounded-2xl pointer-events-none z-[-1]" />
 
       <header
-        className="relative w-[94%] mx-auto p-2 rounded-2xl mb-4 text-white shadow-lg overflow-hidden"
+        className="relative w-[94%] mx-auto p-2 rounded-2xl mb-4 text-white  overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url(${backgroundImage})`,
           backgroundSize: 'cover',
