@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../../assets/Techlogo.png'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,22 +17,19 @@ const Header = () => {
     { path: "/about", label: "About us" },
   ];
 
-  const activeClass = "underline underline-offset-4 text-[#CC25BE]";
+  const activeClass = "underline underline-offset-4 ";
 
   return (
-    <header className="bg-[#140113] text-white px-6 md:px-16 py-6 flex items-center justify-between shadow-md relative">
+    <header className=" text-black px-6 md:px-16 py-6 flex items-center justify-between shadow-md relative">
       {/* Logo */}
-      <div className="flex items-center gap-3">
-        <img src="/logo.png" alt="Pixalive Logo" className="w-10 h-10" />
-        <div className="leading-tight">
-          <h1 className="text-sm font-bold">PIXALIVE</h1>
-          <p className="text-xs text-gray-300">GOLD NETWORK</p>
-          <p className="text-[10px] text-gray-400">INFINITE OPPORTUNITIES TO EARN</p>
-        </div>
+      <div className="flex items-center gap-3 -mb-7">
+        <img src={logo} alt="Pixalive Logo" className="w-12 h-12 mb-5 md:mb-0" />
+
+      
       </div>
 
       {/* Desktop Nav */}
-      <nav className="hidden md:flex gap-6 items-center font-medium">
+      <nav className="hidden md:flex gap-6 items-center font-medium mt-0">
         {navLinks.map((link) => (
           <NavLink
             key={link.path}
@@ -47,10 +45,13 @@ const Header = () => {
 
       {/* Desktop Button */}
       <button
-        className="hidden md:block bg-[#CC25BE] px-5 py-2 text-sm font-medium rounded-full"
+        className="hidden md:block  px-5 py-2  font-semibold cursor-pointer hover:translate-x-1.5"
         onClick={() => navigate("/signup")}
       >
-        Login/Sign up
+        Sign up
+        <span className="ml-1 inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-1 hover:translate-x-1.5">
+              ↗
+            </span>
       </button>
 
       {/* Mobile Toggle Button */}
@@ -64,7 +65,7 @@ const Header = () => {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#140113] text-white p-6 flex flex-col gap-4 font-medium md:hidden z-10 shadow-md">
+        <div className="absolute top-full left-0 w-full bg-white text-black p-6 flex flex-col gap-4 font-medium md:hidden z-10 shadow-md">
           {navLinks.map((link) => (
             <NavLink
               key={link.path}
@@ -82,9 +83,12 @@ const Header = () => {
               setIsOpen(false);
               navigate("/signup");
             }}
-            className="bg-[#CC25BE] px-5 py-2 text-sm font-medium rounded-full mt-4"
+            className=" mt-4 cursor-pointer font-semibold hover:translate-x-1.5" 
           >
-            Login/Sign up
+            Sign up
+             <span className="ml-1 inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-1 hover:translate-x-1.5">
+              ↗
+            </span>
           </button>
         </div>
       )}
