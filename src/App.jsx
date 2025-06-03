@@ -26,28 +26,26 @@ const AppContent = () => {
 
   return (
     <>
-      {!hideFooter && <Header />}
+  {/* <Header /> */}
+  <Suspense fallback={<div className="text-center p-10">Loading Please Wait...</div>}>
+    <Routes>
+      <Route  path="/" element={<Home />} />
+      <Route path="/divisions" element={<Divisionsection />} />
+      <Route path="/faq" element={<Quick />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blogpage" element={<BlogPostPage />} />
+      <Route path="/services" element={<Servicesection />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/about" element={<Aboutsection />} />
+      <Route path="/franchise" element={<Franchisesection />} />
+      <Route path="/goldlease" element={<Goldlease />} />
+      <Route path="/divisionpage" element={<DivisionPage />} />
+    </Routes>
+  </Suspense>
+  {!hideFooter && <Footer />}
+</>
 
-      <Suspense fallback={<div className="text-center p-10">Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/divisions" element={<Divisionsection />} />
-          <Route path="/faq" element={<Quick />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blogpage" element={<BlogPostPage />} />
-          <Route path="/services" element={<Servicesection />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<Aboutsection />} />
-          <Route path="/franchise" element={<Franchisesection />} />
-          <Route path="/goldlease" element={<Goldlease />} />
-          <Route path="/divisionpage" element={<DivisionPage />} />
-
-        </Routes>
-      </Suspense>
-
-      {!hideFooter && <Footer />}
-    </>
   );
 };
 

@@ -59,7 +59,7 @@ export default function SecurityAndStats() {
               alt={company.name}
               className="h-7 w-8 sm:h-8 sm:w-8 object-contain"
             />
-            <p className="text-xs sm:text-xs md:text-sm lg:text-md text-[#999999]">{company.name}</p>
+            <p className="text-xs sm:text-xs md:text-xs lg:text-md text-[#999999]">{company.name}</p>
           </a>
         ))}
       </div>
