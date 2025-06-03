@@ -90,7 +90,7 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`flex flex-col gap-4 px-6 py-12 text-center md:text-left ${
+              className={`flex flex-col gap-4 px-6 py-2 text-center md:text-left ${
                 index !== -1 ? "border-l border-gray-300" : ""
               }`}
             >
