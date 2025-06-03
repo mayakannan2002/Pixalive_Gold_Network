@@ -85,21 +85,21 @@ export default function BlogPage() {
     <div className="bg-[#f6f6f6] min-h-screen">
       {/* Hero Section */}
       <div className="max-w-[1280px] mx-auto px-4 py-12 bg-[#f6f6f6]">
-  <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
-    {/* Left: Vertical Label */}
-    <div className="w-full md:w-auto">
-      <p className="text-sm text-gray-400 whitespace-nowrap">Pixalive Blog</p>
-    </div>
+        {/* Adjusted gap and flex alignment for desktop */}
+        <div className="w-full flex flex-col md:flex-row items-start md:gap-24"> {/* Increased md:gap-24 for wider separation */}
+          {/* Left: Vertical Label - Specific width for alignment */}
+          <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0"> {/* Added md:w-[150px] and removed previous gap adjustments */}
+            <p className="text-sm text-gray-400 whitespace-nowrap">Pixalive Blog</p>
+          </div>
 
-    {/* Right: Main Heading */}
-    <div className="w-full">
-      <h1 className="text-2xl sm:text-3xl justify-between-right md:text-4xl font-medium text-black leading-snug max-w-4xl">
-        Insights, updates, and stories from the pioneers of a next-gen gold network platform — where innovation meets real-world value.
-      </h1>
-    </div>
-  </div>
-</div>
-
+          {/* Right: Main Heading - Takes remaining space */}
+          <div className="w-full">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black leading-snug max-w-4xl">
+              Insights, updates, and stories from the pioneers of a next-gen gold network platform — where innovation meets real-world value.
+            </h1>
+          </div>
+        </div>
+      </div>
 
       {/* Search bar */}
       <div className="max-w-[1280px] mx-auto px-4">
@@ -108,7 +108,7 @@ export default function BlogPage() {
           <input
             type="text"
             placeholder="Search"
-            className="pl-10 pr-3 py-2 text-sm mt-3 w-full border border-gray-300 rounded"
+            className="pl-10 pr-3 py-2 text-sm mt-3 w-full "
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -121,7 +121,7 @@ export default function BlogPage() {
         {/* Sidebar */}
         <div className="md:w-1/4 space-y-6">
           {/* Filter */}
-          <div className="bg-white p-4 rounded shadow-sm">
+          <div className="bg-white p-4">
             <div className="flex justify-between items-center mb-2">
               <h2 className="font-semibold text-gray-700">Filter</h2>
               <button
@@ -138,7 +138,7 @@ export default function BlogPage() {
                 <button
                   key={topic}
                   onClick={() => setSelectedTopic(topic)}
-                  className={`px-3 py-1 text-sm border rounded ${
+                  className={`px-3 py-1 text-sm border ${
                     selectedTopic === topic
                       ? 'bg-black text-white'
                       : 'bg-white text-black border-gray-300'
@@ -151,7 +151,7 @@ export default function BlogPage() {
           </div>
 
           {/* Sort */}
-          <div className="bg-white p-4 rounded shadow-sm">
+          <div className="bg-white p-4">
             <h3 className="text-sm text-gray-600 mb-2">Sort by</h3>
             <div className="space-y-2 text-sm text-gray-700">
               <label className="flex items-center gap-2">
@@ -177,7 +177,7 @@ export default function BlogPage() {
         </div>
 
         {/* Blog Cards */}
-        <div className="md:w-3/4 w-full grid sm:grid-cols-2 gap-6">
+        <div className="md:w-3/4 w-full grid mb-10 sm:grid-cols-2 gap-6">
           {filteredCards.length === 0 ? (
             <div className="col-span-full text-center text-gray-500 text-lg">
               No blogs available for this topic.
@@ -186,7 +186,7 @@ export default function BlogPage() {
             filteredCards.map((card) => (
               <div
                 key={card.id}
-                className="relative overflow-hidden hover:shadow-md transition bg-white rounded"
+                className="relative overflow-hidden hover:shadow-md transition"
               >
                 <img
                   src={card.image}
