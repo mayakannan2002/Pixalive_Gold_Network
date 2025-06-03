@@ -36,8 +36,8 @@ const Authentication = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full flex justify-center px-4 md:px-0">
-      <div className="border border-gray-300 rounded-2xl shadow-lg bg-white overflow-hidden grid md:grid-cols-2 max-w-5xl w-full">
+    <div className="w-full flex justify-center px-4 md:px-0 bg-[#f6f6f6] py-10">
+      <div className="border-10 border-white shadow-lg  grid md:grid-cols-2 max-w-6xl w-full bg-white overflow-hidden">
         {/* Image Section */}
         <div className="w-full h-full flex items-center justify-center">
           <img

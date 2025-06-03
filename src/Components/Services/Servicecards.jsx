@@ -93,28 +93,27 @@ const ServiceCardSlider = () => {
       </h2>
 
       <div className="max-w-7xl mx-auto">
-      <Swiper
-  slidesPerView={3}
-  spaceBetween={16}
-  loop={true}
-  initialSlide={cardData.length - 1}   // Start at last slide index
-  centeredSlides={false}                // Align slides normally, not centered
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-    reverseDirection: true,             // Scroll slides rightwards
-  }}
-  speed={800}
-  modules={[Autoplay]}
-  className="pb-6"
-  breakpoints={{
-    640: { slidesPerView: 1.5 },
-    768: { slidesPerView: 2.2 },
-    1024: { slidesPerView: 3 },
-    1280: { slidesPerView: 3.5 },
-  }}
->
-
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={16}
+          loop={true}
+          initialSlide={cardData.length - 1}
+          centeredSlides={false}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }}
+          speed={800}
+          modules={[Autoplay]}
+          className="pb-6"
+          breakpoints={{
+            640: { slidesPerView: 1.5 },
+            768: { slidesPerView: 2.2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 3.5 },
+          }}
+        >
           {cardData.map((card, index) => (
             <SwiperSlide key={index} className="!h-auto">
               <div className="h-full">
