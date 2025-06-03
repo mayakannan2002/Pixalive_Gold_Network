@@ -8,7 +8,7 @@ const Blog = () => {
     <div>
     
       <BlogSearch/>
-      <Divisions/>
+      {/* <Divisions/> */}
 
     </div>
   )
