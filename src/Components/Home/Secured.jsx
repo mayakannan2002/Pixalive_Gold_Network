@@ -41,7 +41,7 @@ const StatBox = ({ end, suffix, label }) => {
 export default function SecurityAndStats() {
   return (
     <section className="w-full max-w-[1380px] mx-auto px-4 py-12 md:py-20 bg-white font-[Lufga]">
-      <h2 className="text-center text-black text-lg sm:text-xl font-lufga mb-8 sm:mb-10">
+      <h2 className="text-center text-black text-lg sm:text-2xl font-lufga mb-8 sm:mb-10">
         Secured By
       </h2>
 
@@ -59,7 +59,7 @@ export default function SecurityAndStats() {
               alt={company.name}
               className="h-7 w-8 sm:h-8 sm:w-8 object-contain"
             />
-            <p className="text-xs sm:text-xs md:text-xs lg:text-md text-[#999999]">{company.name}</p>
+            <p className="text-xs sm:text-xs md:text-xs lg:text-lg text-[#999999]">{company.name}</p>
           </a>
         ))}
       </div>

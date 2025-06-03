@@ -15,7 +15,7 @@ const Home = () => {
       <MainHome  />
        {/* <Headermain /> */}
        <SecuredBy/>
-       <Hero/>
+       
        <Network/>
        <Divisions/>
        <TrendingProducts/>
