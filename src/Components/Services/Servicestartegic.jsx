@@ -1,56 +1,90 @@
-import React from "react";
-import mmtcLogo from "./../../assets/Headermain/mmtc.png"
-const MmtcBanner = () => {
+import React, { useState } from 'react';
+import office from "./../../assets/Service/office.png";
+
+const StrategicCollaboration = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const accordionData = [
+    {
+      title: 'Authenticity and Quality',
+      content:
+        'All digital gold investments on the Pixalive platform are backed by MMTC-PAMP’s 24K, 999.9 pure gold, ensuring the highest standards of quality and authenticity.',
+    },
+    {
+      title: 'Secure Storage',
+      content: '',
+    },
+    {
+      title: 'Seamless Transactions',
+      content: '',
+    },
+    {
+      title: 'Accessibility',
+      content: '',
+    },
+  ];
+
   return (
-    <div className="bg-[#140113] text-white p-6 md:p-12 font-sans">
-      <div className="text-center">
-        <h2 className="text-xl md:text-2xl font-semibold mb-2">
-          <span className="text-[#b98a30] ">Pixalive Gold Network's</span> Strategic Collaboration with
-        </h2>
-        <div className="flex justify-center items-center gap-2 mt-2 mb-6">
-          
-          <span className="text-[#b98a30] text-xl md:text-2xl font-bold">MMTC-PAMP</span>
+    <section className="bg-[#f5f5f5] py-16 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+        {/* Left Text Block */}
+        <div className="lg:w-1/3">
+          <h2 className="text-gray-500 font-medium text-[15px] leading-relaxed">
+            Pixalive Gold Network’s <br />
+            Strategic Collaboration <br />
+            With MMTC-PAMP
+          </h2>
+        </div>
+
+        {/* Right Block */}
+        <div className="lg:w-2/3 space-y-10">
+          {/* Heading */}
+          <h3 className="text-3xl md:text-4xl font-semibold leading-snug text-black">
+            Pixalive Gold Network’s partnership with MMTC-PAMP ensures trusted, secure, and
+            innovative gold investment through unmatched purity and expertise.
+          </h3>
+
+          {/* White Box with Image + Accordion */}
+          <div className="bg-white rounded-xl shadow-md overflow-hidden grid md:grid-cols-2">
+            {/* Left Image */}
+            <div className="w-full h-[420px]">
+              <img
+                src={office}
+                alt="Handshake"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Accordion Content */}
+            <div className="p-8 space-y-5">
+              {accordionData.map((item, index) => (
+                <div
+                  key={index}
+                  className="border-b pb-4 cursor-pointer"
+                  onClick={() => setActiveIndex(index === activeIndex ? null : index)}
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-2xl font-bold text-black">{`0${index + 1}`}</p>
+                      <h4 className="font-semibold text-black mt-1">{item.title}</h4>
+                    </div>
+                    <span className="text-2xl text-gray-600">
+                      {activeIndex === index ? '−' : '+'}
+                    </span>
+                  </div>
+                  {activeIndex === index && item.content && (
+                    <p className="mt-2 text-gray-600 text-sm leading-relaxed pr-4">
+                      {item.content}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
-        <div>
-          <h3 className="text-lg font-bold">1. Authenticity and Quality:</h3>
-          <p className="text-sm mt-2">
-            All digital gold investments on the Pixalive platform are backed by MMTC-PAMP’s 24K, 999.9 pure gold, ensuring the highest standards of quality and authenticity.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold">2. Secure Storage:</h3>
-          <p className="text-sm mt-2">
-            MMTC-PAMP provides bank-grade vault storage for all digital gold, guaranteeing safety and peace of mind for users.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold">3. Seamless Transactions:</h3>
-          <p className="text-sm mt-2">
-            Users can buy, sell, and redeem their digital gold with ease, supported by MMTC-PAMP’s infrastructure for physical gold delivery.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold">4. Accessibility:</h3>
-          <p className="text-sm mt-2">
-            The collaboration makes gold investment simple and accessible, integrating secure gold transactions into Pixalive’s diverse services.
-          </p>
-        </div>
-      </div>
-
-      <div className="text-center text-xs mt-10 text-gray-400 max-w-3xl mx-auto">
-  <img
-    src={mmtcLogo}
-    alt="MMTC-PAMP Logo"
-    className="mx-auto h-8 md:h-10 mb-2"
-  />
-  The Pixalive Gold Network has partnered with MMTC-PAMP, a globally trusted and accredited gold refiner, to deliver unparalleled purity, security, and trust to its users. This strategic partnership brings together Pixalive’s innovation and MMTC-PAMP’s expertise, creating a trusted and innovative ecosystem for gold investment and usage.
-</div>
-
-    </div>
+    </section>
   );
 };
 
-export default MmtcBanner;
+export default StrategicCollaboration;
