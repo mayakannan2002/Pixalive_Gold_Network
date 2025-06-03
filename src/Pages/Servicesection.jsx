@@ -8,11 +8,11 @@ import Hero from '../Components/Services/Hero'
 const Servicesection = () => {
   return (
     <div>
-       <Hero/>
-      <Servicehero/>
-      <Servicecards/>
-      <Benefits/>
-      <Servicestartegic/>
+      <Hero />
+      <Servicehero />
+      <Servicecards />
+      <Benefits />
+      <Servicestartegic />
 
     </div>
   )
