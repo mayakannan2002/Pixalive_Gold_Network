@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import Blog1 from './../../assets/Blogs/blog1.png';
 import Blog2 from './../../assets/Blogs/blog2.png';
+import { Link } from 'react-router-dom'; // Import Link
 
 const cardData = [
   {
@@ -86,9 +87,9 @@ export default function BlogPage() {
       {/* Hero Section */}
       <div className=" bg-[#f6f6f6] text-black px-4 py-8 ">
         {/* Adjusted gap and flex alignment for desktop */}
-        <div className="w-full flex flex-col md:flex-row items-start md:gap-24"> {/* Increased md:gap-24 for wider separation */}
+        <div className="w-full flex flex-col md:flex-row items-start md:gap-24">
           {/* Left: Vertical Label - Specific width for alignment */}
-          <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0"> {/* Added md:w-[150px] and removed previous gap adjustments */}
+          <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0">
             <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Pixalive Blog</p>
           </div>
 
@@ -184,9 +185,10 @@ export default function BlogPage() {
             </div>
           ) : (
             filteredCards.map((card) => (
-              <div
+              <Link
                 key={card.id}
-                className="relative overflow-hidden hover:shadow-md transition"
+                to="/blogpage" // Link to the blogpage route
+                className="relative overflow-hidden hover:shadow-md transition block" // Added 'block' to make Link behave like a block element
               >
                 <img
                   src={card.image}
@@ -203,7 +205,7 @@ export default function BlogPage() {
                     {card.author} · {card.date}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))
           )}
         </div>
