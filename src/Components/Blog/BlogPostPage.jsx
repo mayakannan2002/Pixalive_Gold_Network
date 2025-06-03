@@ -127,7 +127,7 @@ Whether you’re a seasoned investor or just starting your wealth-building journ
         {/* Right Column: Sidebar */}
         <div className="space-y-6">
           {/* Promo Card */}
-          <div className="bg-white text-black rounded-lg p-4 shadow-md">
+          <div className="bg-[#E7E7E7] text-black  p-4 ">
             <h4 className="font-semibold mb-1">Save in Digital Gold with</h4>
             <p className="text-sm text-gray-700 mb-2">Pixalive Gold Wallet. Invest securely, anytime, anywhere.</p>
             <img src={promoImage} alt="Promo" className="w-full h-auto rounded-md" />
