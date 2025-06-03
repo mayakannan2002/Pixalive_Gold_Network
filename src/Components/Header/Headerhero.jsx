@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from './../../assets/Headermain/homehero.png';
+import backgroundImage from './../../assets/Headermain/herobg.jpg';
 import immtcLogo from './../../assets/Headermain/mmtc1.png';
 import lbmaLogo from './../../assets/Headermain/lbma2.png';
 import immtcLogoMobile from './../../assets/Headermain/mmtc1.png'; // Import mobile logo
@@ -66,10 +66,11 @@ export default function Header() {
   ];
 
   return (
-    <div className="relative w-full px-4 pb-4 pt-0 bg-[#140113]">
+    
+    <div className="relative w-full pb-4 pt-0">
       {/* Purple border on bottom, left, and right */}
-      <div className="absolute inset-0 border-b-8 border-l-8 border-r-8 border-[#140113] rounded-2xl pointer-events-none z-[-1]" />
-
+      <div className="absolute inset-0   pointer-events-none z-[-1]" />
+    
       <header
         className="relative w-[94%] mx-auto p-2 rounded-2xl mb-4 text-white  overflow-hidden"
         style={{

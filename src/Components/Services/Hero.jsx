@@ -1,39 +1,114 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import backgroundImage from './../../assets/Service/services/servicehero.png';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import bgImage from "../../assets/Service/servicebg.png";
+ import logo from "../../assets/Headermain/logo copy.png";
 
-export default function Header() {
-  const navigate = useNavigate();
+const Hero = () => {
+    const navigate = useNavigate();
+    const [navOpen, setNavOpen] = React.useState(false);
+    const navItems = [
+        { name: "Home", path: "/" },
+        { name: "Services", path: "/services" },
+        { name: "Gold dots", path: "/golddots" },
+        { name: "Buy Coins", path: "/buycoins" },
+        { name: "Franchise", path: "/franchise" },
+        { name: "Gold Lease", path: "/goldlease" },
+        { name: "About us", path: "/about" },
+    ];
 
-  return (
-    <div className="relative w-full px-4 pt-0 bg-[#140113]">
-      {/* Fullscreen Hero Section with Background */}
-      <header
-        className="relative w-[94%] bg-[#140113] mx-auto rounded-2xl text-white shadow-lg overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          minHeight: '80vh', // match the first header
-        }}
-      >
-        <div className="relative z-0 flex flex-col justify-center h-full p-6 sm:p-20 pb-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-3xl">
-            Your Gold, Your Way — Invest, Trade, and Grow with Pixalive Gold
-          </h1>
-          <p className="mt-4 text-lg sm:text-xl max-w-2xl">
-            India's first social gold platform — offering 100% gold-backed investments,
-            instant trading, secure gold loans, chit plans, and more. All powered by MMTC-PAMP purity.
-          </p>
-          <button
-            onClick={() => navigate("/")}
-            className="mt-6 w-fit px-6 py-3 bg-[#b98a30] hover:bg-[#a27626] transition text-white font-semibold rounded-full shadow-md"
-          >
-            Explore Pixalive Network →
-          </button>
+    return (
+        <div
+            className="min-h-screen bg-cover bg-center relative "
+            style={{ backgroundImage: `url(${bgImage})` }}
+        >
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/40 bg-opacity-50 z-0"></div>
+
+            {/* Main content */}
+            <div className="relative z-10 pt-[15px] ">
+                {/* Header */}
+                <header className="flex items-center max-w-[1260px] mx-auto justify-between p-4 bg-opacity-70">
+                    <Link to="/">
+                        <img src={logo} className="w-[42px] h-[42px] cursor-pointer" alt="Pixalive Logo" />
+                    </Link>
+
+                    <nav className="hidden md:flex gap-6">
+                        {navItems.map((item) => (
+                            <button
+                                key={item.name}
+                                onClick={() => navigate(item.path)}
+                                className="text-white text-[16px]  border-b-[1px] cursor-pointer    border-transparent hover:border-white transition-all duration-200"
+                            >
+                                {item.name}
+                            </button>
+                        ))}
+                    </nav>
+
+
+                    <div className="hidden md:block">
+                        <button className="group bg-white text-black px-4 py-2 cursor-pointer">
+                            Sign up &nbsp;
+                            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                                ↗
+                            </span>
+                        </button>
+                    </div>
+
+
+                    {/* Mobile menu button */}
+                    <div className="md:hidden">
+                        <button onClick={() => setNavOpen(!navOpen)}>
+                            <FaBars className="text-xl text-white" />
+                        </button>
+                    </div>
+                </header>
+
+                {/* Mobile nav */}
+                {navOpen && (
+                    <div className="md:hidden bg-white bg-opacity-90 border-b shadow-md relative z-10">
+                        {navItems.map((item) => (
+                            <button
+                                key={item.name}
+                                onClick={() => {
+                                    navigate(item.path);
+                                    setNavOpen(false);
+                                }}
+                                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-yellow-100"
+                            >
+                                {item.name}
+                            </button>
+                        ))}
+                        <div className="p-4">
+                            <button className="bg-black text-white px-4 py-2 w-full rounded">Sign up</button>
+                        </div>
+                    </div>
+                )}
+
+                <div className="py-20 max-w-[1260px] px-4 mx-auto  flex flex-col md:flex-row items-center justify-between">
+                    {/* Left Text div */}
+<div className="max-w-3xl space-y-6 text-center md:text-left">
+                        <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+                            Your Gold, Your Way — Invest,    <br />
+                            <span className="text-white">Trade, and Grows with Pixalive Gold</span>
+                        </h1>
+                        <p className="text-[16px] text-white" style={{ wordSpacing: '0.2em' }}>
+                            "India’s first social gold platform — offering 100% gold-backed investments, instant trading, secure gold loans, chit plans, and more. All powered by MMTC-PAMP purity."
+                        </p>
+
+                        <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                            <button className="group bg-white text-black px-5 py-2 cursor-pointer">
+                                Explore Pixalive Network &nbsp;
+                                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                                    ↗
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </header>
-    </div>
-  );
-}
+    );
+};
+
+export default Hero;
