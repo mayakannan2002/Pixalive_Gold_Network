@@ -1,12 +1,15 @@
 import React from 'react';
+import b1 from "./../../assets/Service/b3.png";
+import b2 from "./../../assets/Service/b2.png";
+import b3 from "./../../assets/Service/b1.png";
 
 const BenefitsSection = () => {
   return (
     <section className="bg-[#f5f5f5] py-16 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
         {/* Left Side Title */}
-        <div className="lg:w-1/3">
-          <h2 className="text-gray-500 font-medium text-lg leading-snug">
+        <div className="lg:w-1/3 pt-2">
+          <h2 className="text-gray-500 font-medium text-lg leading-snug ml-15">
             Benefits Of The Pixalive <br />
             Gold Network
           </h2>
@@ -14,35 +17,42 @@ const BenefitsSection = () => {
 
         {/* Right Side Content */}
         <div className="lg:w-2/3">
-          <h3 className="text-3xl md:text-4xl font-semibold leading-tight text-black">
+          <h3 className="text-black text-2xl md:text-4xl font-medium leading-snug">
             Pixalive Gold Network offers premium exposure, priority support, and exclusive tools to boost your digital presence and growth
           </h3>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1 */}
-            <div>
-              <div className="text-4xl mb-4">🙌</div>
-              <h4 className="font-semibold text-black mb-2">100% Gold-Backed Security</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Provides end-to-end gold services including digital investment, physical redemption, loans, and jewelry purchases.
+            <div className=''>
+              <img src={b1} alt="Gold-backed Security" className="mb-4 w-[42px] h-[42px] ml-6 " />
+              <h4 className="font-semibold text-black mb-2 text-base ml-6">
+                100% Gold-Backed Security
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed ml-8 mt-4">
+                Provides end-to-end gold <br/>services including digital<br/> investment, physical <br/>redemption, loans, and jewelry<br/> purchases.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div>
-              <div className="text-4xl mb-4">🌼</div>
-              <h4 className="font-semibold text-black mb-2">One Network, Multiple Services</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Integrates gold into everyday life, allowing users to redeem their gold for groceries, pharmacy products, dining, salon services, and more.
+            <div className='ml-1'>
+              <img src={b2} alt="Multiple Services" className="mb-4 w-[42px] h-[42px]" />
+              <h4 className="font-semibold text-black mb-2 text-base">
+                One Network, Multiple Services
+                <br/>
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed  mt-4">
+                Integrates gold into everyday life<br/>, allowing users to redeem their gold <br/>for groceries, pharmacy products,<br/> dining, salon services, and more.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div>
-              <div className="text-4xl mb-4">🛡️</div>
-              <h4 className="font-semibold text-black mb-2">Smart, Flexible & Transparent Growth</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Ensures top-tier security with trusted partners like MMTC-PAMP, Brink’s, and blockchain-backed operations for transparency.
+            <div >
+              <img src={b3} alt="Smart Growth" className="mb-4 w-[42px] h-[42px]" />
+              <h4 className="font-semibold text-black mb-2 text-base">
+                Smart, Flexible & Transparent Growth
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed mb-9">
+                Ensures top-tier security with<br/> trusted partners like MMTC-PAMP<br/>, Brink’s, and blockchain-backed<br/> operations for transparency.
               </p>
             </div>
           </div>
