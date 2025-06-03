@@ -9,11 +9,12 @@ import Authentication from '../Components/Services/Authentication'
 const Servicesection = () => {
   return (
     <div>
-      <Hero />
-      <Servicehero />
-      <Servicecards />
-      <Benefits />
-      <Servicestartegic />
+       <Hero/>
+      <Servicehero/>
+      <Servicecards/>
+      <Benefits/>
+      <Servicestartegic/>
+      <Authentication/>
 
     </div>
   )
