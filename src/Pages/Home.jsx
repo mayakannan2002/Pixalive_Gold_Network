@@ -7,11 +7,13 @@ import SecuredBy from '../Components/Home/Secured'
 import Divisions from '../Components/Home/Division'
 import CustomerReview from '../Components/Home/Review'
 import Contact from '../Components/Home/Contact'
+import MainHome from '../Components/MainHome'
 
 const Home = () => {
   return (
     <div>
-       <Headermain />
+      <MainHome  />
+       {/* <Headermain /> */}
        <Hero/>
        <Network/>
        <Divisions/>
