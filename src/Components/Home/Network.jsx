@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
                 alt={feature.title}
                 className="w-10 h-10 object-contain md:w-12 md:h-12"
               />
-              <h4 className="text-[16px] md:text-[17px] lg:text-[22px] font-lufga text-black">
+              <h4 className="text-[16px] md:text-[17px] lg:text-[22px] font-bold text-black">
                 {feature.title}
               </h4>
               <p className="text-[14px] md:text-[15px] lg:text-[18px] text-[#666666] leading-[22px] md:leading-[24px] lg:leading-[30px]">

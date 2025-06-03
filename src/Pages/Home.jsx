@@ -8,6 +8,8 @@ import Divisions from '../Components/Home/Division'
 import CustomerReview from '../Components/Home/Review'
 import Contact from '../Components/Home/Contact'
 import MainHome from '../Components/MainHome'
+import GoldDotsSection from '../Components/Home/GoldDotsSection'
+import GoldNetwork from '../Components/Home/GoldNetwork'
 
 const Home = () => {
   return (
@@ -17,12 +19,11 @@ const Home = () => {
        <SecuredBy/>
        
        <Network/>
-       <Divisions/>
-       <TrendingProducts/>
-       
-       
-       <CustomerReview/>
-       <Contact/>
+       <GoldDotsSection/>
+       <GoldNetwork/>
+     
+      
+      
     </div>
   )
 }
