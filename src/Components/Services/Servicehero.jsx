@@ -19,7 +19,7 @@ const Service = () => {
             <br />
             <span>by MMTC-PAMP—smart, secure, and</span>
             <br />
-            <span>built for your family’s long-term financial</span>
+            <span>built for your family’s long-term id financial</span>
             <br />
             <span>growth.</span>
           </p>
