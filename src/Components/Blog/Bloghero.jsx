@@ -82,14 +82,14 @@ export default function BlogPage() {
     });
 
   return (
-    <div className="bg-[#f6f6f6] min-h-screen">
+    <div className="min-h-screen bg-[#f6f6f6] text-black px-4 py-8 lg:px-20">
       {/* Hero Section */}
-      <div className="max-w-[1280px] mx-auto px-4 py-12 bg-[#f6f6f6]">
+      <div className=" bg-[#f6f6f6] text-black px-4 py-8 ">
         {/* Adjusted gap and flex alignment for desktop */}
         <div className="w-full flex flex-col md:flex-row items-start md:gap-24"> {/* Increased md:gap-24 for wider separation */}
           {/* Left: Vertical Label - Specific width for alignment */}
           <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0"> {/* Added md:w-[150px] and removed previous gap adjustments */}
-            <p className="text-sm text-gray-400 whitespace-nowrap">Pixalive Blog</p>
+            <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Pixalive Blog</p>
           </div>
 
           {/* Right: Main Heading - Takes remaining space */}
@@ -193,7 +193,7 @@ export default function BlogPage() {
                   alt={card.title}
                   className="w-full h-48 object-cover"
                 />
-                <span className="absolute top-2 right-2 text-xs font-semibold text-white bg-gray-800 px-2 py-0.5">
+                <span className="absolute top-2 right-2 text-xs font-semibold text-black bg-white px-2 py-0.5">
                   {card.tag}
                 </span>
                 <div className="p-4 space-y-1">
