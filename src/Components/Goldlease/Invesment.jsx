@@ -29,8 +29,8 @@ const terms = [
 
 const InvestmentTerms = () => {
   return (
-    <section className="bg-white py-20 px-4 md:px-10 lg:px-24">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8">
+    <section className="bg py-20  md:px-10 lg:px-24">
+      <div className="max-w-[1280px] mx-auto grid md:grid-cols-4 gap-8">
         {/* Left label */}
         <div className="col-span-1">
           <p className="text-sm text-gray-500 mb-2">Investment Terms</p>

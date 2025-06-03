@@ -80,8 +80,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="bg-[#F9F9F9] py-20 px-2 md:px-10 lg:px-24">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg py-20 px-2 md:px-10 lg:px-24">
+      <div className="max-w-[1280px] mx-auto">
         {/* Section title */}
         <p className="text-sm text-gray-500 font-medium mb-12">How It Work’s</p>
 

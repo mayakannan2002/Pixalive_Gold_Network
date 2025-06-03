@@ -71,7 +71,7 @@ const PricingTabs = () => {
   const [activeTab, setActiveTab] = useState("under1000");
 
   return (
-    <section className="bg-[#f9f9f9] py-16 px-4 md:px-10 lg:px-24">
+    <section className="bg py-16 px-4 md:px-10 lg:px-24">
       {/* Header */}
       <div className="mb-8">
         <p className="text-sm text-gray-500 mb-2">Price and Plans</p>
