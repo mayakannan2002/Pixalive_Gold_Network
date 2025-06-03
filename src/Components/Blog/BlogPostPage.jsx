@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import featuredImageBase from './../../assets/Blogs/blog-1.png'; // Initial featured image
+import featuredImageBase from './../../assets/Blogs/blogpage.png';
 import promoImage from './../../assets/Blogs/blog-promo.png';
-import blogThumb1 from './../../assets/Blogs/blog-2.png';
-import blogThumb2 from './../../assets/Blogs/blog-3.png';
+import blogThumb1 from './../../assets/Blogs/blog1.png';
+import blogThumb2 from './../../assets/Blogs/blog2.png';
+import authorImage from './../../assets/Blogs/author.png';
+import { FaRegShareSquare } from 'react-icons/fa';
+import { BiCopy } from 'react-icons/bi';
 
 const BlogPostPage = () => {
   const [featuredBlog, setFeaturedBlog] = useState({
@@ -16,132 +19,254 @@ const BlogPostPage = () => {
       thumb: blogThumb1,
     },
     {
-      title: 'How to protect your wealth in a digital world',
+      title: 'Guide to Invest in Gold Through SIP: Know This Before You Invest',
       thumb: blogThumb2,
     },
   ]);
 
+  const [activeTocItem, setActiveTocItem] = useState(null);
+
   const handleRecentBlogClick = (index) => {
     const clickedBlog = recentBlogs[index];
     const currentFeatured = { ...featuredBlog };
-
-    // Update featured with clicked one
-    setFeaturedBlog(clickedBlog);
-
-    // Replace clicked with the previous featured one
     const newRecentBlogs = [...recentBlogs];
     newRecentBlogs[index] = currentFeatured;
-
+    setFeaturedBlog(clickedBlog);
     setRecentBlogs(newRecentBlogs);
   };
 
+  const handleTocClick = (id) => {
+    setActiveTocItem(id);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#140014] text-white px-4 py-8 lg:px-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10">
+    <div className="min-h-screen bg-[#f6f6f6] text-black px-4 py-8 lg:px-20">
+      <style>{`
+        html {
+          scroll-behavior: smooth;
+        }
+        /* New CSS for Table of Contents hover effect */
+        .toc-item-link {
+          display: inline-block; /* Essential for transform to work */
+          transition: transform 0.2s ease-in-out; /* Smooth transition for scale */
+        }
+        .toc-item-link:hover {
+          transform: scale(1.02); /* Slightly increase size on hover */
+        }
+      `}</style>
+      <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-8 gap-10">
+
         {/* Left Column: Blog Content */}
-        <div className="lg:col-span-3">
-          <h2 className="text-2xl font-bold mb-2">{featuredBlog.title}</h2>
-          <p className="text-sm text-gray-400 mb-4">by Pixalive Team | Published on Apr 20, 2025</p>
+        <div className="lg:col-span-5">
+          <h2 className="text-3xl font-bold mb-2">{featuredBlog.title}</h2>
+          <p className="text-sm text-gray-500 mb-4">by Pixalive Team | Published on Apr 20, 2025</p>
+          <div className="flex items-center justify-between mb-4 text-gray-500">
+            {/* Left: Author Info */}
+            <div className="flex items-center gap-3">
+              <img
+                src={authorImage}
+                alt="Author"
+                className="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p className="font-semibold text-black">Somnaath</p>
+                <p className="text-sm">21 Apr 2025 • 3 min read</p>
+              </div>
+            </div>
+
+            {/* Right: Icons */}
+            <div className="flex items-center gap-4 text-xl">
+              <FaRegShareSquare className="cursor-pointer hover:text-black" />
+              <BiCopy className="cursor-pointer hover:text-black" />
+            </div>
+          </div>
 
           {/* Featured Image */}
           <img
             src={featuredBlog.thumb}
-            alt="Blog"
-            className="w-full md:w-2/3 lg:w-1/2 rounded-lg mb-3 mx-auto"
+            alt="Featured blog - Digital Gold"
+            className="w-auto mb-3 "
           />
 
           {/* Table of Contents */}
           <div className="mb-6">
-            <h3 className="font-semibold mb-2">Table of contents</h3>
-            <ul className="list-disc list-inside space-y-1 text-sm text-gray-300">
-              <li>Why Choose Pixalive Gold Wallet?</li>
-              <li>1. Accessibility for Everyone</li>
-              <li>2. Security and Purity Guaranteed</li>
-              <li>3. Liquidity and Flexibility</li>
-              <li>4. More Than an Investment</li>
-              <li>Revolutionizing the Gold Ecosystem</li>
-              <li>Gold Wallet: Securely store and manage your digital gold</li>
-              <li>A Partnership Built on Trust</li>
-              <li>The Future is Digital, the Future is Gold</li>
+            <h3 className="font-semibold text-xl mb-2">Table of contents</h3>
+            <ul className="list-disc list-inside text-gray-500 space-y-1">
+              <li>
+                <a
+                  href="#why-choose-pixalive"
+                  className={`toc-item-link ${activeTocItem === 'why-choose-pixalive' ? 'text-black font-semibold' : 'hover:text-black'}`}
+                  onClick={() => handleTocClick('why-choose-pixalive')}
+                >
+                  Why Choose Pixalive Gold Network?
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#accessibility"
+                  className={`toc-item-link ${activeTocItem === 'accessibility' ? 'text-black font-semibold' : 'hover:text-black'}`}
+                  onClick={() => handleTocClick('accessibility')}
+                >
+                  1. Accessibility for Everyone
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#security-purity"
+                  className={`toc-item-link ${activeTocItem === 'security-purity' ? 'text-black font-semibold' : 'hover:text-black'}`}
+                  onClick={() => handleTocClick('security-purity')}
+                >
+                  2. Security and Purity Guaranteed
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#liquidity-flexibility"
+                  className={`toc-item-link ${activeTocItem === 'liquidity-flexibility' ? 'text-black font-semibold' : 'hover:text-black'}`}
+                  onClick={() => handleTocClick('liquidity-flexibility')}
+                >
+                  3. Liquidity and Flexibility
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#more-than-investment"
+                  className={`toc-item-link ${activeTocItem === 'more-than-investment' ? 'text-black font-semibold' : 'hover:text-black'}`}
+                  onClick={() => handleTocClick('more-than-investment')}
+                >
+                  4. More Than an Investment
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#revolutionizing-ecosystem"
+                  className={`toc-item-link ${activeTocItem === 'revolutionizing-ecosystem' ? 'text-black font-semibold' : 'hover:text-black'}`}
+                  onClick={() => handleTocClick('revolutionizing-ecosystem')}
+                >
+                  Revolutionizing the Gold Ecosystem
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#gold-wallet"
+                  className={`toc-item-link ${activeTocItem === 'gold-wallet' ? 'text-black font-semibold' : 'hover:text-black'}`}
+                  onClick={() => handleTocClick('gold-wallet')}
+                >
+                  Gold Wallet: Securely store and manage your digital gold
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#partnership-trust"
+                  className={`toc-item-link ${activeTocItem === 'partnership-trust' ? 'text-black font-semibold' : 'hover:text-black'}`}
+                  onClick={() => handleTocClick('partnership-trust')}
+                >
+                  A Partnership Built on Trust
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#future-digital-gold"
+                  className={`toc-item-link ${activeTocItem === 'future-digital-gold' ? 'text-black font-semibold' : 'hover:text-black'}`}
+                  onClick={() => handleTocClick('future-digital-gold')}
+                >
+                  The Future is Digital, the Future is Gold
+                </a>
+              </li>
             </ul>
+            <hr className="mt-2 border-gray-300" />
+            <p className="text-gray-500 mt-1">Modified on: June 02, 2025</p>
           </div>
 
-          {/* Blog Body */}
-          <div className="space-y-6 text-sm text-gray-200 leading-relaxed">
+          {/* Blog Body (rest of your content) */}
+          <div className="space-y-6 leading-relaxed">
             <p>
-              In a world where digital transformation shapes our lives, Pixalive brings a secure,
-              accessible, and innovative platform to invest in digital gold. Whether you're a
-              seasoned investor or just starting your journey, Pixalive makes it simple and rewarding.
+              For centuries, gold has been the foundation of wealth, a safe haven during economic uncertainties, and a symbol of prosperity. However, traditional ways of owning and investing in gold come with challenges such as high initial investment costs, storage concerns, and limited liquidity. Enter the digital era, where Pixalive Gold Network is reshaping how people invest in and interact with gold.
             </p>
 
-            <h4 className="font-semibold text-white text-base">1. Accessibility for Everyone</h4>
+            <h4 id="why-choose-pixalive" className="font-semibold text-3xl">Why Choose Pixalive Gold Network?</h4>
             <p>
-              Digital gold is no longer reserved for the elite. With Pixalive, anyone can start
-              investing in gold with as little as ₹10, removing barriers and democratizing access.
+              Pixalive Gold Network bridges the gap between tradition and technology, allowing users to buy, store, and manage 24K, 999.9 pure digital gold. Backed by MMTC-PAMP, one of the world’s leading gold refiners and custodians, Pixalive ensures every gram of your investment is secure, authentic, and readily accessible.
             </p>
 
-            <h4 className="font-semibold text-white text-base">2. Security and Purity Guaranteed</h4>
+            <h4 id="accessibility" className="font-semibold text-2xl">1. Accessibility for Everyone</h4>
             <p>
-              Pixalive partners with reputed vaults and gold refineries to offer 24k pure digital
-              gold, fully secured and insured. Every transaction is recorded and tracked for your peace of mind.
+              Gold investment is no longer reserved for the wealthy. With Pixalive, you can start investing with as little as ₹1. This micro-investment approach empowers individuals from all walks of life to own gold, making wealth-building an inclusive opportunity.
             </p>
 
-            <h4 className="font-semibold text-white text-base">3. Liquidity and Flexibility</h4>
+            <h4 id="security-purity" className="font-semibold text-2xl">2. Security and Purity Guaranteed</h4>
             <p>
-              Enjoy instant buy/sell options with competitive rates. Need to cash out or convert gold
-              to jewelry? Pixalive lets you do it all with ease, making your gold as liquid as your wallet.
+              Partnering with MMTC-PAMP guarantees the highest level of purity and safety for your digital gold. Stored in world-class, fully insured vaults, your gold is always secure, with real-time transparency ensuring trust at every step.
             </p>
 
-            <h4 className="font-semibold text-white text-base">4. More Than an Investment</h4>
+            <h4 id="liquidity-flexibility" className="font-semibold text-2xl">3. Liquidity and Flexibility</h4>
             <p>
-              Think beyond gold as a material asset. Use it to pay for services, gift to someone, or
-              save for long-term goals — digital gold empowers more than just financial growth.
+              Digital gold with Pixalive offers unparalleled liquidity. You can buy, sell, or redeem your gold anytime at live market rates. Whether you want to convert your gold into cash, physical gold, or products from Pixalive’s extensive partner network, the choice is yours.
             </p>
 
-            <h4 className="font-semibold text-white text-base">Revolutionizing the Gold Ecosystem</h4>
+            <h4 id="more-than-investment" className="font-semibold text-2xl">4. More Than an Investment</h4>
             <p>
-              Pixalive is pioneering a shift in how gold is stored and accessed. No hidden charges,
-              no middlemen — just direct, digital ownership.
+              Pixalive transforms gold into an everyday asset. Use it for payments, redeem it for groceries or jewelry, or leverage it as collateral for instant loans—all from the Pixalive platform.
             </p>
 
-            <h4 className="font-semibold text-white text-base">
-              Gold Wallet: Securely store and manage your digital gold.
-            </h4>
+            <h4 id="revolutionizing-ecosystem" className="font-semibold text-2xl">Revolutionizing the Gold Ecosystem</h4>
             <p>
-              Backed by top-tier security and digital proof through receipts, use our easy-to-access
-              dashboard to monitor, manage, and grow your portfolio.
+              Pixalive Gold Network isn’t just about digital gold; it’s about creating a holistic gold ecosystem. Through strategic divisions and services, Pixalive integrates gold into daily life in innovative ways.
             </p>
 
-            <h4 className="font-semibold text-white text-base">A Partnership Built on Trust</h4>
+            <h4 id="gold-wallet" className="font-semibold text-2xl">Gold Wallet: Securely store and manage your digital gold</h4>
             <p>
-              Pixalive collaborates with market leaders that have years of gold and fintech
-              experience. We’re committed to delivering transparency, trust, and the best value.
+              Redemption Options: Convert your digital gold into physical gold, cash, or everyday products.
+              <br />
+              Franchise and Merchant Integration: Expand the Pixalive ecosystem by onboarding businesses and enabling digital gold payments.
+              <br />
+              Educational Resources: Empower users with tools and knowledge for better financial decision-making.
             </p>
 
-            <h4 className="font-semibold text-white text-base">
-              The Future is Digital, the Future is Gold
-            </h4>
+            <h4 id="partnership-trust" className="font-semibold text-2xl">A Partnership Built on Trust</h4>
             <p>
-              As the world moves toward decentralization, the way we invest and build wealth will
-              transform. Pixalive’s digital gold wallet is not just an app — it’s your entry into the
-              future of finance. Embrace the new standard. Own your digital gold today and watch your
-              wealth grow tomorrow.
+              Pixalive’s collaboration with MMTC-PAMP ensures that every gram of digital gold you own is of the highest quality, stored with maximum security, and fully insured. This partnership reflects Pixalive’s commitment to creating a transparent and reliable platform for gold investors.
+            </p>
+
+            <h4 id="future-digital-gold" className="font-semibold text-2xl">The Future is Digital, the Future is Gold</h4>
+            <p>
+              As the world moves towards digitalization, the way we invest and interact with wealth is evolving. Pixalive Gold Network embraces this change by making gold accessible, flexible, and integrated into modern life. With a focus on security, innovation, and user empowerment, Pixalive is more than a gold investment platform—it’s the future of wealth management.
+              <br />
+              Whether you’re a seasoned investor or just starting your wealth-building journey, Pixalive Gold Network is your gateway to financial growth and security. Embrace the power of digital gold today and secure your golden future.
             </p>
           </div>
         </div>
 
         {/* Right Column: Sidebar */}
-        <div className="space-y-6">
+        <div className="space-y-6 lg:col-span-3">
           {/* Promo Card */}
-          <div className="bg-white text-black rounded-lg p-4 shadow-md">
-            <h4 className="font-semibold mb-1">Save in Digital Gold with</h4>
-            <p className="text-sm text-gray-700 mb-2">Pixalive Gold Wallet. Invest securely, anytime, anywhere.</p>
-            <img src={promoImage} alt="Promo" className="w-full h-auto rounded-md" />
+          <div className="bg-[#E7E7E7] text-black p-4 ">
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              {/* Text Content */}
+              <div className="md:w-1/2">
+                <h4 className="font-semibold text-xl mb-1">Save in Digital Gold with Pixalive</h4>
+                <p className="text-sm text-gray-700 mb-4">
+                  Join the network trusted for digital gold, loans, jewelry & more — all in one seamless, secure platform.
+                </p>
+                <button className="bg-black text-white text-sm px-4 py-2 mt-2 ">
+                  Explore Pixalive Gold
+                </button>
+              </div>
+
+              {/* Image */}
+              <div className="md:w-1/2">
+                <img src={promoImage} alt="Pixalive Promo" className="w-full max-w-[240px] h-auto" />
+              </div>
+            </div>
           </div>
 
           {/* Recent Blogs */}
           <div>
-            <h4 className="text-white font-semibold mb-2">Recent Blogs</h4>
+            <h4 className="font-semibold mb-2">Recent Blogs</h4>
             <div className="space-y-3">
               {recentBlogs.map((blog, index) => (
                 <div
@@ -149,8 +274,12 @@ const BlogPostPage = () => {
                   className="flex items-center space-x-3 cursor-pointer hover:opacity-80"
                   onClick={() => handleRecentBlogClick(index)}
                 >
-                  <img src={blog.thumb} alt={blog.title} className="w-12 h-12 rounded-md object-cover" />
-                  <p className="text-sm text-gray-300">{blog.title}</p>
+                  <img
+                    src={blog.thumb}
+                    alt={`Recent blog: ${blog.title}`}
+                    className="w-20 "
+                  />
+                  <p className="text-sm">{blog.title}</p>
                 </div>
               ))}
             </div>

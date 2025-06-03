@@ -1,135 +1,105 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import logo from "./../../assets/logowhite.png";
-import mmtc from "./../../assets/Headermain/mmtcpamp.png";
-import lbma from "./../../assets/Headermain/lbma3.png";
+import { Link } from "react-router-dom";
+import pixaliveFooterImage from "./../../assets/Pixalive.png";
 
 const Footer = () => {
-  const scrollToTop = () => window.scrollTo(0, 0);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <footer className="bg-black text-white">
-      {/* Top CTA Section */}
-      <div className="bg-[#000] border-b border-gray-800 py-8 px-4 md:px-16 flex flex-col md:flex-row justify-between items-center">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-0 text-left">
-          Start investing in Digital Gold today
-        </h2>
-        <button
-          className="bg-white text-black hover:bg-[#B98A30] hover:text-black font-semibold px-5 py-2 transition"
-          onClick={() => {
-            window.location.href = "/signup";
-          }}
-        >
-          Login/Sign up
-        </button>
-      </div>
+    <footer className="bg-black text-white relative overflow-hidden">
+      {/* Top Grid - Contains Logo/Description, Nav Links, Social Links */}
+      <div className="grid grid-cols-1 px-4 sm:px-6 py-10 md:px-12 lg:px-20 md:grid-cols-12 gap-10 z-10 relative">
+        {/* Left Column (Logo & Description) */}
+        <div className="md:col-span-4 space-y-4">
+          <img src={logo} alt="Pixalive Logo" className="w-10 h-10" />
+          <p className="text-base sm:text-lg leading-relaxed">
+            Pixalive Gold Network is India’s first social gold platform offering
+            secure, 100% gold-backed investment and trading solutions in partnership
+            with MMTC-PAMP
+          </p>
+          <a
+            href="mailto:info@pixalive.network"
+            className="inline-flex items-center space-x-1 border-b border-white w-fit hover:opacity-100"
+          >
+            <span>info@pixalive.network</span>
+            <FaArrowUpRightFromSquare className="text-md" />
+          </a>
+          <p className="text-sm mt-4 text-[#FFFFFF]">+91 87785 84566</p>
+          {/* Copyright text remains here, but Privacy/Terms will move to a new row */}
+          
+        </div>
 
-      {/* Main Footer */}
-      <div className="py-12 px-4 md:px-16 grid grid-cols-1 md:grid-cols-12 gap-10 text-sm">
-        {/* Logo + Description */}
-        <div className="text-left flex flex-col gap-4 md:col-span-5">
-          <div className="flex items-start gap-4">
-            <img src={logo} alt="Pixalive Logo" className="h-13" />
-            <div className="text-white">
-              <h3 className="text-md font-bold">PIXALIVE</h3>
-              <p className="text-xs font-semibold">GOLD NETWORK</p>
-              <p className="text-xs">INFINITE OPPORTUNITIES TO EARN</p>
+        {/* Right Aligned Container (Nav Links & Social Links) */}
+        <div className="md:col-span-8 flex flex-col sm:flex-row sm:flex-wrap gap-6 sm:gap-10 md:gap-16 lg:gap-20 md:justify-end">
+
+          {/* Center Nav Links */}
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:gap-10 gap-6 text-base w-full sm:w-auto">
+            <div className="flex flex-col gap-5 md:mr-10 sm:mr-0 mr-0 text-left">
+              <Link to="/" onClick={scrollToTop} className="hover:underline cursor-pointer">Home</Link>
+              <Link to="/services" onClick={scrollToTop} className="hover:underline cursor-pointer">Services</Link>
+              <Link to="/gold-dots" onClick={scrollToTop} className="hover:underline cursor-pointer">Gold dots</Link>
+              <Link to="/buy-coins" onClick={scrollToTop} className="hover:underline cursor-pointer">Buy Coins</Link>
+            </div>
+            <div className="flex flex-col gap-5 text-left">
+              <Link to="/franchise" onClick={scrollToTop} className="hover:underline cursor-pointer">Franchise</Link>
+              <Link to="/goldlease" onClick={scrollToTop} className="hover:underline cursor-pointer">Gold Lease</Link>
+              <Link to="/about" onClick={scrollToTop} className="hover:underline cursor-pointer">About us</Link>
             </div>
           </div>
-          <p className="text-white leading-relaxed mt-2">
-            Pixalive Gold Network is India’s first social gold platform, offering 100% gold-backed
-            investment options, seamless trading, gold loans, gold chits, jewelry purchases, and more.
-            In partnership with MMTC-PAMP, we ensure the highest quality, purity, and security for your gold investments.
-          </p>
-          <div className="flex gap-4 mt-4">
-            <img src={mmtc} alt="MMTC-PAMP" className="h-10" />
-            <img src={lbma} alt="LBMA" className="h-10" />
-          </div>
-        </div>
 
-        {/* Quick Links */}
-        <div className="text-left md:col-span-2">
-          <h4 className="text-white font-semibold text-xl mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-white ">
-            <li><Link to="/about" onClick={scrollToTop} className=" hover:underline cursor-pointer">About us</Link></li>
-            <li><Link to="/faq" onClick={scrollToTop} className=" hover:underline cursor-pointer">FAQ</Link></li>
-            <li><Link to="/" onClick={scrollToTop} className=" hover:underline cursor-pointer">Privacy Policy</Link></li>
-            <li><Link to="/" onClick={scrollToTop} className=" hover:underline cursor-pointer">Refund & Cancellation Policy</Link></li>
-            <li><Link to="/" onClick={scrollToTop} className=" hover:underline cursor-pointer">Customer Support</Link></li>
-            <li><Link to="/" onClick={scrollToTop} className=" hover:underline cursor-pointer">Careers</Link></li>
-            <li><Link to="/blog" onClick={scrollToTop} className=" hover:underline cursor-pointer">Blogs</Link></li>
-          </ul>
-        </div>
-
-        {/* Contact Info */}
-        <div className="text-left md:col-span-3">
-          <Link to="/contact" onClick={scrollToTop}>
-  <h4 className="text-white text-xl font-semibold mb-4 hover:underline cursor-pointer">
-    Contact us
-  </h4>
-</Link>
-
-          <ul className="space-y-3 text-white">
-            <li className="flex items-center gap-3 ">
-              <FaPhone size={16} /> +91 87785 84566
-            </li>
-            <li className="flex items-center gap-3">
-              <FaEnvelope size={16} /> info@pixalive.network
-            </li>
-            <li className="flex items-start gap-3">
-              <FaMapMarkerAlt size={16} />
-              <span>
-                3rd Floor, Reliance Smart Bazaar Building, Bus Stop, Hosur Rd, opp. E City, Phase II, Bengaluru, Karnataka 560100
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Social Media */}
-        <div className="text-left md:col-span-2">
-          <h4 className="text-white text-xl font-semibold mb-4">Contact With us</h4>
-          <div className="flex space-x-4 text-xl text-white">
-            <a
-              href="https://www.instagram.com/pixalivetech/?hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" transition  hover:text-[#B98A30]"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" hover:text-[#B98A30] transition"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/pixalivegoldnetwork/posts/?feedView=all"
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" hover:text-[#B98A30] transition"
-            >
+          {/* Social Links */}
+          <div className="flex flex-col gap-5 text-base">
+            <a href="https://www.facebook.com/profile.php?id=61572736722664" className="inline-flex items-center space-x-1 hover:underline cursor-pointer">
               <FaLinkedin />
+              <span>LinkedIn</span>
+              <FaArrowUpRightFromSquare className="text-md" />
             </a>
-            <a
-              href="https://www.twitter.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" hover:text-[#B98A30] transition"
-            >
-              <FaTwitter />
+            <a href="https://www.instagram.com/pixalivetech/?next=%2F" className="inline-flex items-center space-x-1 hover:underline cursor-pointer">
+              <FaInstagram />
+              <span>Instagram</span>
+              <FaArrowUpRightFromSquare className="text-md" />
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61572736722664" className="inline-flex items-center space-x-1 hover:underline cursor-pointer">
+              <FaFacebook />
+              <span>Facebook</span>
+              <FaArrowUpRightFromSquare className="text-md" />
             </a>
           </div>
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="border-t border-gray-800 text-center text-gray-500 py-4 text-xs px-4">
-        Copyright © 2025 Tripalive.Me Technology Private Limited (Pixalive Gold Network). All rights reserved
+      {/* New row for Terms & Privacy - Spans full width and aligns right */}
+      <div className="px-4 sm:px-6 md:px-12 lg:px-20 pb-4 sm:pb-6 text-sm text-[#FFFFFF] flex justify-between items-center flex-col sm:flex-row gap-4 sm:gap-10">
+        {/* The copyright text is already in the left column, so we just need the links here */}
+        {/* We'll make this section span the full width and use flex to push links to the right */}
+        <p className="hidden sm:block">
+          {/* This copyright text will appear here only on larger screens */}
+          {/* On smaller screens, the one in the md:col-span-4 remains */}
+          © 2025 Pixalive Gold Network. All rights reserved.
+        </p>
+        <div className="flex gap-4 sm:gap-10 sm:ml-auto">
+          <Link to="/" onClick={scrollToTop} className="hover:underline cursor-pointer">
+            Terms of Use
+          </Link>
+          <Link to="/" onClick={scrollToTop} className="hover:underline cursor-pointer">
+            Privacy Policy
+          </Link>
+        </div>
+      </div>
+
+
+      {/* Pixalive Text Below */}
+      <div className="w-full mt-10 flex justify-center">
+        <img
+          src={pixaliveFooterImage}
+          alt="Pixalive Footer Logo"
+          className="max-w-[1280px] w-full h-auto object-contain"
+        />
       </div>
     </footer>
   );

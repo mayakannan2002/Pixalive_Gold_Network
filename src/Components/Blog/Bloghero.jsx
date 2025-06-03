@@ -1,67 +1,215 @@
 import React, { useState } from 'react';
+import { FiSearch } from 'react-icons/fi';
+import Blog1 from './../../assets/Blogs/blog1.png';
+import Blog2 from './../../assets/Blogs/blog2.png';
+import { Link } from 'react-router-dom'; // Import Link
 
-const categories = [
+const cardData = [
+  {
+    id: 1,
+    title: 'Empowering Communities Through Gold: Pixalive Franchises',
+    tag: 'Gold Investing',
+    author: 'Somanathan',
+    date: '21 Apr 2025',
+    image: Blog1,
+    description: 'At Pixalive Gold Network, we believe in creating a gold-centric ecosystem that...',
+  },
+  {
+    id: 2,
+    title: 'A Partnership Built on Trust: Pixalive and MMTC-PAMP',
+    tag: 'Marketing',
+    author: 'Mayakannan',
+    date: '12 May 2025',
+    image: Blog2,
+    description: 'The Pixalive Gold Network is proud to partner with MMTC-PAMP, one of the most...',
+  },
+  {
+    id: 3,
+    title: 'Empowering Communities Through Gold: Pixalive Franchises',
+    tag: 'Gold Investing',
+    author: 'Kathirvel',
+    date: '18 Apr 2025',
+    image: Blog1,
+    description: 'At Pixalive Gold Network, we believe in creating a gold-centric ecosystem that...',
+  },
+  {
+    id: 4,
+    title: 'A Partnership Built on Trust: Pixalive and MMTC-PAMP',
+    tag: 'Marketing',
+    author: 'Kesavan',
+    date: '25 May 2025',
+    image: Blog2,
+    description: 'The Pixalive Gold Network is proud to partner with MMTC-PAMP, one of the most...',
+  },
+];
+
+const topics = [
+  'All',
   'Festive Reads',
   'Credit Cards',
-  'Financial Education',
+  'Sell Gold',
+  'Gold Dots',
   'Taxes',
   'Savings',
   'Investment',
+  'Finance',
   'Digital Gold',
+  'Financial Education',
+  'Marketing',
+  'Gold bar',
 ];
 
-const BlogSection = () => {
+export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTopic, setSelectedTopic] = useState('All');
+  const [sortBy, setSortBy] = useState('newest');
 
-  const highlightMatch = (text) => {
-    if (!searchTerm) return text;
-
-    const regex = new RegExp(`(${searchTerm})`, 'gi');
-    const parts = text.split(regex);
-
-    return parts.map((part, index) =>
-      regex.test(part) ? (
-        <span key={index} className="bg-[#b98a30] text-black font-semibold px-1 rounded">
-          {part}
-        </span>
-      ) : (
-        part
-      )
-    );
+  const clearFilters = () => {
+    setSearchTerm('');
+    setSelectedTopic('All');
+    setSortBy('newest');
   };
 
+  const filteredCards = cardData
+    .filter((card) => {
+      const matchesTopic =
+        selectedTopic === 'All' || card.tag.toLowerCase() === selectedTopic.toLowerCase();
+      const matchesSearch = card.title.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesTopic && matchesSearch;
+    })
+    .sort((a, b) => {
+      if (sortBy === 'newest') return b.id - a.id;
+      return 0;
+    });
+
   return (
-    <div className="bg-[#150015] text-white p-18 flex flex-col md:flex-row justify-between">
-      {/* Left side: Categories */}
-      <div>
-        <h2 className="text-2xl font-bold mb-1">Pixalive Blog</h2>
-        <div className="h-1 w-20 bg-gradient-to-r from-pink-500 to-purple-500 mb-4" />
-        <h3 className="font-semibold mb-2">Categories</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-gray-400">
-          {categories.map((category, index) => (
-            <span key={index}>{category}</span>
-          ))}
+    <div className="min-h-screen bg-[#f6f6f6] text-black px-4 py-8 lg:px-20">
+      {/* Hero Section */}
+      <div className=" bg-[#f6f6f6] text-black px-4 py-8 ">
+        {/* Adjusted gap and flex alignment for desktop */}
+        <div className="w-full flex flex-col md:flex-row items-start md:gap-24">
+          {/* Left: Vertical Label - Specific width for alignment */}
+          <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0">
+            <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Pixalive Blog</p>
+          </div>
+
+          {/* Right: Main Heading - Takes remaining space */}
+          <div className="w-full">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black leading-snug max-w-4xl">
+              Insights, updates, and stories from the pioneers of a next-gen gold network platform — where innovation meets real-world value.
+            </h1>
+          </div>
         </div>
       </div>
 
-      {/* Right side: Search */}
-      <div className="mt-6 md:mt-0 md:ml-12 w-full md:w-1/3">
-        <h3 className="font-semibold mb-2">Search for an article</h3>
-        <input
-          type="text"
-          placeholder="Search by keyword"
-          className="w-full p-2 rounded bg-white text-black focus:outline-none"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+      {/* Search bar */}
+      <div className="max-w-[1280px] mx-auto px-4">
+        <div className="relative md:w-1/4 p-2 mb-4">
+          <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="pl-10 pr-3 py-2 text-sm mt-3 w-full "
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <hr className="mt-3" />
+        </div>
+      </div>
 
-        {/* Place your content here and apply `highlightMatch()` on it */}
-        {/* Example:
-            <p>{highlightMatch("Your blog content here that includes searchTerm")}</p>
-        */}
+      {/* Main content */}
+      <div className="max-w-[1280px] mx-auto px-4 flex flex-col md:flex-row gap-6">
+        {/* Sidebar */}
+        <div className="md:w-1/4 space-y-6">
+          {/* Filter */}
+          <div className="bg-white p-4">
+            <div className="flex justify-between items-center mb-2">
+              <h2 className="font-semibold text-gray-700">Filter</h2>
+              <button
+                onClick={clearFilters}
+                className="text-sm text-gray-500 hover:underline"
+              >
+                Clear Filter
+              </button>
+            </div>
+            <hr className="border-gray-300 mb-4" />
+            <h3 className="text-sm text-gray-600 mb-2">Topic</h3>
+            <div className="flex flex-wrap gap-2">
+              {topics.map((topic) => (
+                <button
+                  key={topic}
+                  onClick={() => setSelectedTopic(topic)}
+                  className={`px-3 py-1 text-sm border ${
+                    selectedTopic === topic
+                      ? 'bg-black text-white'
+                      : 'bg-white text-black border-gray-300'
+                  }`}
+                >
+                  {topic}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Sort */}
+          <div className="bg-white p-4">
+            <h3 className="text-sm text-gray-600 mb-2">Sort by</h3>
+            <div className="space-y-2 text-sm text-gray-700">
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="sort"
+                  value="newest"
+                  checked={sortBy === 'newest'}
+                  onChange={() => setSortBy('newest')}
+                />
+                Newest first
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="sort" disabled />
+                Most popular
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="sort" disabled />
+                Upload date
+              </label>
+            </div>
+          </div>
+        </div>
+
+        {/* Blog Cards */}
+        <div className="md:w-3/4 w-full grid mb-10 sm:grid-cols-2 gap-6">
+          {filteredCards.length === 0 ? (
+            <div className="col-span-full text-center text-gray-500 text-lg">
+              No blogs available for this topic.
+            </div>
+          ) : (
+            filteredCards.map((card) => (
+              <Link
+                key={card.id}
+                to="/blogpage" // Link to the blogpage route
+                className="relative overflow-hidden hover:shadow-md transition block" // Added 'block' to make Link behave like a block element
+              >
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-48 object-cover"
+                />
+                <span className="absolute top-2 right-2 text-xs font-semibold text-black bg-white px-2 py-0.5">
+                  {card.tag}
+                </span>
+                <div className="p-4 space-y-1">
+                  <h3 className="text-lg font-semibold text-gray-800">{card.title}</h3>
+                  <p className="text-sm text-gray-600">{card.description}</p>
+                  <p className="text-xs text-gray-400 mt-2">
+                    {card.author} · {card.date}
+                  </p>
+                </div>
+              </Link>
+            ))
+          )}
+        </div>
       </div>
     </div>
   );
-};
-
-export default BlogSection;
+}

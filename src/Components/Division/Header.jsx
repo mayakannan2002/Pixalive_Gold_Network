@@ -20,7 +20,7 @@ const Header = () => {
   const activeClass = "underline underline-offset-4 ";
 
   return (
-    <header className=" text-black px-6 md:px-16 py-6 flex items-center justify-between shadow-md relative">
+    <header className=" max-w-[1280px] mx-auto text-black  md:px-4   py-6 flex items-center justify-between  relative">
       {/* Logo */}
       <div className="flex items-center gap-3 -mb-7">
         <img src={logo} alt="Pixalive Logo" className="w-12 h-12 mb-5 md:mb-0" />
