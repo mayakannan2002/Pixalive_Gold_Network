@@ -1,53 +1,110 @@
+// import React from "react";
+// import icon1 from "./../../assets/Goldlease/work1.png";
+// import icon2 from "./../../assets/Goldlease/work2.png";
+// import icon3 from "./../../assets/Goldlease/work3.png";
+
+// const HowItWorks = () => {
+//   const steps = [
+//     {
+//       icon: icon1,<br/>
+//       title: "Deposit Your Gold",
+//       text: "Deposit your gold with Pixalive Gold Lease, and they’ll safely store it with a bank guarantee.",
+//     },
+//     {
+//       icon: icon2,<br/>
+//       title: "Earn Consistent Returns",
+//       text: "Earn regular payments and enjoy extra returns as gold prices rise during the lease period.",
+//     },
+//     {
+//       icon: icon3,<br/>
+//       title: "Redeem or Renew",
+//       text: "At lease end, you can either reclaim your gold or renew the lease based on your strategy.",
+//     },
+//   ];
+
+//   return (
+//     <section className="bg-[#F9F9F9] py-20 px-2 md:px-10 lg:px-24">
+//       <div className="max-w-4x3 mx-auto">
+//         {/* Section title */}
+//         <p className="text-sm text-gray-500 font-medium mb-12">How It Work’s</p>
+
+//         {/* Steps */}
+//         <div className="grid grid-cols-1 md:grid-cols-3">
+//           {steps.map((step, index) => (
+//             <div
+//               key={index}
+//               className={`flex flex-col gap-4 px-6 py-12 text-center md:text-left ${
+//                 index !==-1 ? "border-l border-gray-500" : ""
+//               }`}
+//             >
+//               <img
+//                 src={step.icon}
+//                 alt={step.title}
+//                 className="w-10 h-10 object-contain mx-auto md:mx-0"
+//               />
+//               <h3 className="text-lg font-semibold text-black">
+//                 {step.title}
+//               </h3>
+//               <p className="text-sm text-gray-600">{step.text}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default HowItWorks;
 import React from "react";
-import step1 from "./../../assets/Goldlease/work1.png";
-import step2 from "./../../assets/Goldlease/work2.png";
-import step3 from "./../../assets/Goldlease/work3.png";
+import icon1 from "./../../assets/Goldlease/work1.png";
+import icon2 from "./../../assets/Goldlease/work2.png";
+import icon3 from "./../../assets/Goldlease/work3.png";
 
 const HowItWorks = () => {
   const steps = [
     {
-      image: step1,
+      icon: icon1,
       title: "Deposit Your Gold",
-      description:
-        "Deposit your gold with Pixalive Gold Lease, and they’ll safely store it with a bank guarantee.",
+      text: "Deposit your gold with Pixalive Gold Lease, and they’ll safely store it with a bank guarantee.",
     },
     {
-      image: step2,
+      icon: icon2,
       title: "Earn Consistent Returns",
-      description:
-        "Earn regular payments and enjoy extra returns as gold prices rise during the lease period.",
+      text: "Earn regular payments and enjoy extra returns as gold prices rise during the lease period.",
     },
     {
-      image: step3,
+      icon: icon3,
       title: "Redeem or Renew",
-      description:
-        "At lease end, you can either reclaim your gold or renew the lease based on your strategy.",
+      text: "At lease end, you can either reclaim your gold or renew the lease based on your strategy.",
     },
   ];
 
   return (
-    <section className="bg-[rgb(248,247,248)] py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">HOW IT WORK</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <section className="bg-[#F9F9F9] py-20 px-2 md:px-10 lg:px-24">
+      <div className="max-w-7xl mx-auto">
+        {/* Section title */}
+        <p className="text-sm text-gray-500 font-medium mb-12">How It Work’s</p>
+
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-3">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div
-                className="relative p-6 mb-9"
-                style={{
-                  background: "radial-gradient(circle, rgba(255,236,202,0.6) 0%, rgba(248,247,248,0) 70%)",
-                  borderRadius: "99999px",
-                  boxShadow: "0 0 60px rgba(255, 214, 153, 0.4)",
-                }}
-              >
+            <div
+              key={index}
+              className={`flex flex-col gap-4 px-6 py-12 text-center md:text-left ${
+                index !== -1 ? "border-l border-gray-300" : ""
+              }`}
+            >
+              <div>
                 <img
-                  src={step.image}
+                  src={step.icon}
                   alt={step.title}
-                  className="w-20 h-20 rounded-full mx-auto"
+                  className="w-10 h-10 object-contain mx-auto md:mx-0"
                 />
+                <br />
+                <br />
               </div>
-              <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-              <p className="text-gray-600 max-w-xs">{step.description}</p>
+              <h3 className="text-lg font-semibold text-black">{step.title}</h3>
+              <p className="text-sm text-gray-600">{step.text}</p>
             </div>
           ))}
         </div>
