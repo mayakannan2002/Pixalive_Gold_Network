@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
- // Assuming this component is for the header
+// import HeaderAlone from '../HeaderAlone'; // Removed as per discussion, re-add if needed
 
 // Placeholder for product image (you'll replace this with actual image paths)
-import goldCoinImage from './../../assets/coin-1g.png'; // Make sure you have an image at this path
+import goldCoinImage from './../../assets/coin-1g.png'; // Using coin-1g.png for consistency
 
 const productData = [
   {
@@ -13,7 +13,7 @@ const productData = [
     price: '10,630.4',
     deliveryInfo: '2-5+ Delivers',
     image: goldCoinImage,
-    productType: 'Bullion', // Added for filtering
+    productType: 'Bullion',
     shape: 'Coin',
     weight: '1g',
   },
@@ -24,7 +24,7 @@ const productData = [
     price: '10,630.4',
     deliveryInfo: '2-5+ Delivers',
     image: goldCoinImage,
-    productType: 'Bullion', // Added for filtering
+    productType: 'Bullion',
     shape: 'Coin',
     weight: '1g',
   },
@@ -35,7 +35,7 @@ const productData = [
     price: '10,630.4',
     deliveryInfo: '2-5+ Delivers',
     image: goldCoinImage,
-    productType: 'Bullion', // Added for filtering
+    productType: 'Bullion',
     shape: 'Coin',
     weight: '1g',
   },
@@ -46,11 +46,11 @@ const productData = [
     price: '10,630.4',
     deliveryInfo: '2-5+ Delivers',
     image: goldCoinImage,
-    productType: 'Bullion', // Added for filtering
+    productType: 'Bullion',
     shape: 'Coin',
     weight: '1g',
   },
-  // Add more product data as needed to fill the grid
+  // Removed additional product data to ensure only 4 cards are displayed
 ];
 
 const productTypes = [
@@ -73,10 +73,10 @@ const productTypes = [
 export default function ProductListingPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProductType, setSelectedProductType] = useState('All');
-  const [selectedSortBy, setSelectedSortBy] = useState('Bullion'); // Corresponds to "Sort by" in image
-  const [selectedShape, setSelectedShape] = useState(''); // Added for new filters
-  const [selectedPriceRange, setSelectedPriceRange] = useState(''); // Added for new filters
-  const [selectedWeight, setSelectedWeight] = useState(''); // Added for new filters
+  const [selectedSortBy, setSelectedSortBy] = useState('Bullion');
+  const [selectedShape, setSelectedShape] = useState('');
+  const [selectedPriceRange, setSelectedPriceRange] = useState('');
+  const [selectedWeight, setSelectedWeight] = useState('');
 
   const clearFilters = () => {
     setSearchQuery('');
@@ -93,32 +93,30 @@ export default function ProductListingPage() {
         selectedProductType === 'All' ||
         product.productType.toLowerCase() === selectedProductType.toLowerCase();
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
-      // Add logic for shape, price, weight if needed (currently not implemented in filter)
       return matchesProductType && matchesSearch;
     })
     .sort((a, b) => {
       // Sorting logic based on selectedSortBy can be added here if needed
-      // For now, it will just maintain the original order if no specific sort is applied
       return 0;
     });
 
   return (
     <>
-      
+      {/* <HeaderAlone /> */} {/* Removed as per discussion, re-add if needed */}
       <div className="min-h-screen bg-[#f6f6f6] text-black pb-8">
-        {/* Hero Section (similar to original, but context is product listing) */}
+        {/* Hero Section */}
         <div className="max-w-[1280px] mx-auto px-4 py-8">
           <div className="w-full flex flex-col md:flex-row items-start md:gap-24">
             {/* Left: Vertical Label */}
             <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0">
-              <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Pixalive Blog</p> {/* Kept as per image */}
+              <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Pixalive Blog</p>
             </div>
 
             {/* Right: Main Heading */}
             <div className="w-full">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black leading-snug max-w-4xl">
                 Insights, updates, and stories from the pioneers of a next-gen gold network platform — where innovation meets real-world value.
-              </h1> {/* Kept as per image */}
+              </h1>
             </div>
           </div>
         </div>
@@ -130,16 +128,15 @@ export default function ProductListingPage() {
             <input
               type="text"
               placeholder="Search"
-              className="pl-10 pr-3 py-2 text-sm mt-3 w-full border-b border-gray-300 focus:outline-none focus:border-black bg-transparent" // Adjusted styling
+              className="pl-10 pr-3 py-2 text-sm mt-3 w-full border-b border-gray-300 focus:outline-none focus:border-black bg-transparent"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            {/* <hr className="mt-3" /> Removed as border-b handles it */}
           </div>
         </div>
 
         {/* Main content (Sidebar + Product Cards) */}
-        <div className="max-w-[1280px] mx-auto px-4 flex flex-col md:flex-row gap-6">
+        <div className="max-w-[1280px] mx-auto px-4  flex flex-col md:flex-row gap-6">
           {/* Sidebar */}
           <div className="md:w-1/4 space-y-6">
             {/* Filter */}
@@ -183,7 +180,7 @@ export default function ProductListingPage() {
                     value="Bullion"
                     checked={selectedSortBy === 'Bullion'}
                     onChange={() => setSelectedSortBy('Bullion')}
-                    className="form-radio text-black focus:ring-0" // Tailwind form-radio class
+                    className="form-radio text-black focus:ring-0"
                   />
                   Bullion
                 </label>
@@ -221,7 +218,7 @@ export default function ProductListingPage() {
                   Classic
                 </label>
               </div>
-              <hr className="border-gray-300 my-4" /> {/* Separator */}
+              <hr className="border-gray-300 my-4" />
 
               {/* Shape Filter (Placeholder) */}
               <h3 className="text-sm text-gray-600 mb-2 font-medium">Shape</h3>
@@ -234,9 +231,8 @@ export default function ProductListingPage() {
                   <input type="radio" name="shape" disabled className="form-radio" />
                   Bar
                 </label>
-                {/* Add more shape options */}
               </div>
-              <hr className="border-gray-300 my-4" /> {/* Separator */}
+              <hr className="border-gray-300 my-4" />
 
               {/* Price Filter (Placeholder) */}
               <h3 className="text-sm text-gray-600 mb-2 font-medium">Price</h3>
@@ -249,9 +245,8 @@ export default function ProductListingPage() {
                   <input type="radio" name="price" disabled className="form-radio" />
                   ₹10,001 - ₹50,000
                 </label>
-                {/* Add more price range options or a slider */}
               </div>
-              <hr className="border-gray-300 my-4" /> {/* Separator */}
+              <hr className="border-gray-300 my-4" />
 
               {/* Weight Filter (Placeholder) */}
               <h3 className="text-sm text-gray-600 mb-2 font-medium">Weight</h3>
@@ -264,13 +259,12 @@ export default function ProductListingPage() {
                   <input type="radio" name="weight" disabled className="form-radio" />
                   2g
                 </label>
-                {/* Add more weight options */}
               </div>
             </div>
           </div>
 
-          {/* Product Cards */}
-          <div className="md:w-3/4 w-full grid mb-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+          {/* Product Cards - Decreased width and limited to 4 */}
+          <div className="md:w-3/4 w-full grid mb-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 justify-start"> {/* Adjusted grid-cols to 2 for all breakpoints above sm, and justify-start to allow empty space on the right */}
             {filteredProducts.length === 0 ? (
               <div className="col-span-full text-center text-gray-500 text-lg">
                 No products available.
@@ -279,25 +273,55 @@ export default function ProductListingPage() {
               filteredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-md shadow-sm overflow-hidden flex flex-col items-center justify-between p-4" // Adjusted card styling
+                  className="bg-white rounded-sm overflow-hidden flex flex-col justify-between"
+                  style={{ border: '1px solid #f0f0f0', maxWidth: '280px' }} // Explicitly set a max-width for individual cards to make them smaller
                 >
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-24 h-24 object-contain mb-4" // Smaller image as per reference
-                  />
-                  <div className="text-center w-full">
-                    <p className="text-sm text-gray-600 mb-1">{product.purity}</p>
-                    <h3 className="text-md font-medium text-gray-800 mb-2">
+                  {/* Content area that will have internal padding */}
+                  <div className="flex flex-col items-center px-4 pt-6 pb-4">
+                    {/* Coin Image */}
+                    <div className="w-[120px] h-[120px] flex items-center justify-center mb-4">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+
+                    {/* Horizontal Rule */}
+                    <div className="w-full mb-4">
+                      <hr className="border-t border-gray-200 w-1/3 mx-auto" />
+                    </div>
+
+                    {/* 24K. 99.99% Tag */}
+                    <div className="bg-[#f6f6f6] text-[#EFA61A] text-xs font-medium px-2 py-1 mb-2 rounded-[2px]">
+                      {product.purity}
+                    </div>
+
+                    {/* Product Title */}
+                    <p className="text-base text-gray-800 font-medium mb-2 text-center">
                       {product.name}
-                    </h3>
-                    <p className="text-xl font-semibold text-black mb-4">
+                    </p>
+
+                    {/* Price */}
+                    <p className="text-2xl font-semibold text-black mb-4">
                       ₹{product.price}
                     </p>
-                    <button className="bg-black text-white py-2 px-4 w-full text-sm hover:bg-gray-800 transition-colors">
+
+                    {/* Add to Card Button */}
+                    <button className="bg-black text-white py-2 w-full text-sm font-medium hover:bg-gray-800 transition-colors rounded-sm">
                       Add to Card
                     </button>
-                    <p className="text-xs text-gray-500 mt-2">{product.deliveryInfo}</p>
+                  </div>
+
+                  {/* Delivery Info (Gradient Bar) - This needs to be at the very bottom, full width, no horizontal padding */}
+                  <div
+                    className="w-full text-center py-2 text-xs font-medium"
+                    style={{
+                      background: 'linear-gradient(to right, #FFFFFF, #f8c972, #FFFFFF)',
+                      color: '#7A7A7A', // Gray text color
+                    }}
+                  >
+                    {product.deliveryInfo}
                   </div>
                 </div>
               ))
