@@ -4,6 +4,8 @@ import Footer from './Components/Footer/Footer';
 import Header from './Components/Division/Header';
 import ScrollToTopOnRouteChange from './Components/ScrollToTopOnRouteChange';
 import ScrollToTop from './Components/ScrollToTop';
+import Buycoins from './Pages/Buycoins';
+import GoldDotsSection from './Pages/Golddots';
 
 // Lazy load pages/components for code splitting
 const Home = lazy(() => import('./Pages/Home'));
@@ -46,6 +48,8 @@ const AppContent = () => {
           <Route path="/franchise" element={<Franchisesection />} />
           <Route path="/goldlease" element={<Goldlease />} />
           <Route path="/divisionpage" element={<DivisionPage />} />
+           <Route path="/buycoins" element={<Buycoins />} />
+           <Route path="/golddots" element={<GoldDotsSection />} />
         </Routes>
       
       {!hideFooter && <Footer />}
