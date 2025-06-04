@@ -7,7 +7,7 @@ const GetStartedSection = () => {
         {/* Red dot + subtitle */}
         <div className="flex justify-center items-center gap-2 mb-3">
           <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-          <p className="text-gray-600 text-sm">Pixalive Gold Network</p>
+          <p className="text-gray-600 text-sm">Pixalive Gold Networks</p>
         </div>
         <br/>
         {/* Heading */}
