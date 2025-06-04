@@ -6,7 +6,7 @@ import Blog3 from "./../../assets/Blogs/blogpage.png";
 import { Link } from "react-router-dom";
 import HeaderAlone from '../HeaderAlone';
 
-// ... rest of your component code ...
+
 
 const cardData = [
   {
