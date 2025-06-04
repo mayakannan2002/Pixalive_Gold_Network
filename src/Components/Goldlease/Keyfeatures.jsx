@@ -52,7 +52,7 @@ const KeyFeatures = () => {
         </div>
 
         {/* Accordion list */}
-        <div className=" bg-white rounded-md shadow-sm divide-y divide-gray-200">
+        <div className=" bg-white shadow-sm divide-y divide-gray-200">
           {features.map((feature) => (
             <div key={feature.id}>
               <button
