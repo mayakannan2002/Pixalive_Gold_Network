@@ -282,13 +282,13 @@ const KeyFeatures = () => {
 
         {/* Right side FAQ section */}
         <div className="md:w-3/4 space-y-10">
-          <h2 className="text-2xl md:text-3xl font-semibold text-black leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-semibold text-black leading-relaxed">
             Here are the most common queries about <br />
             becoming a Pixalive Gold Franchise partner—<br />
-            <span className="font-normal text-gray-700">simple, clear, and helpful.</span>
-          </h2>
+            simple, clear, and helpful.
+          </h2><br/>
 
-          <div className="bg-white shadow-sm divide-y divide-gray-200 rounded-md">
+          <div className=" divide-y divide-gray-200 ">
             {features.map((feature) => (
               <div key={feature.id}>
                 <button
@@ -296,9 +296,8 @@ const KeyFeatures = () => {
                   className="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none"
                 >
                   <div>
-                    <div className="text-md font-semibold text-black mt-1">
-                      {String(feature.id).padStart(".",2)}
-                    
+                    <div className="text-md font-semibold text-black flex gap-2 items-start">
+                      <span className="text-black">{`${feature.id}.`}</span>
                       {feature.Question}
                     </div>
                     {active === feature.id && (
@@ -308,7 +307,7 @@ const KeyFeatures = () => {
                     )}
                   </div>
                   {/* Rounded Plus/Minus symbol */}
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full border border-gray-400 text-gray-500 text-lg">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full border border-black text-black text-lg">
                     {active === feature.id ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -329,11 +328,7 @@ const KeyFeatures = () => {
                         stroke="currentColor"
                         strokeWidth={2}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 5v14m-7-7h14"
-                        />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m-7-7h14" />
                       </svg>
                     )}
                   </div>
