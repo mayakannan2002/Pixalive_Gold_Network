@@ -13,6 +13,7 @@ import GoldNetwork from '../Components/Home/GoldNetwork'
 import FAQ from '../Components/Home/FaqSection'
 import BlogPage from '../Components/About/Blog'
 import PixaliveGoldSection from '../Components/Home/PixaliveGoldSection'
+import Testimonials from '../Components/Home/Testimonials'
 
 const Home = () => {
   return (
@@ -27,7 +28,11 @@ const Home = () => {
        <FAQ/>
        
        <PixaliveGoldSection/>
+       
+       <Testimonials/>
        <BlogPage/>
+
+
        
      
       
