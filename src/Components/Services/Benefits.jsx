@@ -14,8 +14,8 @@ const BenefitsSection = () => {
 
         {/* Right Side Content */}
         <div className="lg:w-2/3">
-          <h3 className="text-3xl md:text-4xl font-semibold leading-tight text-black">
-            Pixalive Gold Network offers premium exposure, priority support, and exclusive tools to boost your digital presence and growth
+          <h3 className="text-black text-2xl md:text-4xl font-medium leading-snug">
+            Pixalive Gold Network offerss premium exposure, priority support, and exclusive tools to boost your digital presence and growth
           </h3>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
