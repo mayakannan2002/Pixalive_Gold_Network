@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import featuredImageBase from './../../assets/Blogs/blogpage.png';
 import promoImage from './../../assets/Blogs/blog-promo.png';
-import blogThumb1 from './../../assets/Blogs/blog1.png';
-import blogThumb2 from './../../assets/Blogs/blog2.png';
+import blogThumb1 from './../../assets/Blogs/B1.png';
+import blogThumb2 from './../../assets/Blogs/B2.png';
 import authorImage from './../../assets/Blogs/author.png';
 import { FaRegShareSquare } from 'react-icons/fa';
 import { BiCopy } from 'react-icons/bi';

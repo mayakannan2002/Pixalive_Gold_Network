@@ -5,6 +5,7 @@ import PartnershipSection from '../Components/About/Partner'
 import Secured from '../Components/About/Secured'
 import TestimonialSection from '../Components/About/Testimonial'
 import BlogPage from '../Components/About/Blog'
+import RevolutionSection from '../Components/About/Revolution'
 
 const Aboutsection = () => {
   return (
@@ -16,6 +17,7 @@ const Aboutsection = () => {
       <Secured/>
       <TestimonialSection/>
       <BlogPage/>
+      <RevolutionSection/>
     </div>
   )
 }
