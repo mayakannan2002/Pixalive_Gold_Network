@@ -9,7 +9,7 @@ const GetStartedSection = () => {
           <span className="w-2 h-2 bg-red-400 rounded-full"></span>
           <p className="text-gray-600 text-sm">Pixalive Gold Network</p>
         </div>
-
+        <br/>
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
           Get Started Today
