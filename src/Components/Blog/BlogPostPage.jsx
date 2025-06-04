@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import featuredImageBase from './../../assets/Blogs/blog-1.png'; // Initial featured image
 import promoImage from './../../assets/Blogs/blog-promo.png';
-import blogThumb1 from './../../assets/Blogs/blog-2.png';
-import blogThumb2 from './../../assets/Blogs/blog-3.png';
+import blogThumb1 from './../../assets/Blogs/B1.png';
+import blogThumb2 from './../../assets/Blogs/B2.png';
+import authorImage from './../../assets/Blogs/author.png';
+import { FaRegShareSquare } from 'react-icons/fa';
+import { BiCopy } from 'react-icons/bi';
 
 const BlogPostPage = () => {
   const [featuredBlog, setFeaturedBlog] = useState({

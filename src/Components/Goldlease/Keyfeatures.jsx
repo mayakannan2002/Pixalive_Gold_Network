@@ -8,20 +8,24 @@ const features = [
       "All digital gold investments on the Pixalive platform are backed by MMTC-PAMP’s 24K, 9999 pure gold, ensuring the highest standards of quality and authenticity.",
   },
   {
-    id: 2,
-    title: "Flexible Lease Terms",
-    description: "",
-  },
-  {
-    id: 3,
-    title: "Gold Price Appreciation",
-    description: "",
-  },
-  {
-    id: 4,
-    title: "High-Security Storage",
-    description: "",
-  },
+  id: 2,
+  title: "Flexible Lease Terms",
+  description:
+    "Pixalive Gold Network offers customizable lease durations, allowing users to earn passive income on their gold holdings with terms that suit their financial goals.",
+},
+{
+  id: 3,
+  title: "Gold Price Appreciation",
+  description:
+    "Investing in digital gold allows you to benefit from market-driven price appreciation, helping grow your wealth over time while maintaining the security of physical gold.",
+},
+{
+  id: 4,
+  title: "High-Security Storage",
+  description:
+    "Your digital gold is stored in ultra-secure, insured vaults managed by trusted partners like MMTC-PAMP, ensuring complete safety and transparency for your assets.",
+}
+
 ];
 
 const KeyFeatures = () => {
@@ -52,7 +56,7 @@ const KeyFeatures = () => {
         </div>
 
         {/* Accordion list */}
-        <div className=" bg-white shadow-sm divide-y divide-gray-200">
+        <div className=" bg-white  shadow-sm divide-y divide-gray-200">
           {features.map((feature) => (
             <div key={feature.id}>
               <button

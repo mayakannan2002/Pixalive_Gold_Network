@@ -8,6 +8,9 @@ import Divisions from '../Components/Home/Division'
 import CustomerReview from '../Components/Home/Review'
 import Contact from '../Components/Home/Contact'
 import MainHome from '../Components/MainHome'
+import GoldDotsSection from '../Components/Home/GoldDotsSection'
+import GoldNetwork from '../Components/Home/GoldNetwork'
+import FAQ from '../Components/Home/FaqSection'
 
 const Home = () => {
   return (
@@ -16,12 +19,12 @@ const Home = () => {
        {/* <Headermain /> */}
        <Hero/>
        <Network/>
-       <Divisions/>
-       <TrendingProducts/>
-       
-       <SecuredBy/>
-       <CustomerReview/>
-       <Contact/>
+       <GoldDotsSection/>
+       <GoldNetwork/>
+       <FAQ/>
+     
+      
+      
     </div>
   )
 }

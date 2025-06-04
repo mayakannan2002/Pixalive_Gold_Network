@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import Blog1 from './../../assets/Blogs/blog1.png';
 import Blog2 from './../../assets/Blogs/blog2.png';
+import Blog3 from './../../assets/Blogs/blogpage.png';
+import { Link } from 'react-router-dom'; // Import Link
 
 const cardData = [
   {
     id: 1,
     title: 'Empowering Communities Through Gold: Pixalive Franchises',
-    tag: 'Gold Investing',
+    tag: 'Marketing',
     author: 'Somanathan',
     date: '21 Apr 2025',
     image: Blog1,
@@ -16,7 +18,7 @@ const cardData = [
   {
     id: 2,
     title: 'A Partnership Built on Trust: Pixalive and MMTC-PAMP',
-    tag: 'Marketing',
+    tag: 'Gold Investing',
     author: 'Mayakannan',
     date: '12 May 2025',
     image: Blog2,
@@ -24,22 +26,14 @@ const cardData = [
   },
   {
     id: 3,
-    title: 'Empowering Communities Through Gold: Pixalive Franchises',
-    tag: 'Gold Investing',
+    title: 'The Future of Wealth: Digital Gold with Pixalive',
+    tag: 'Finance',
     author: 'Kathirvel',
     date: '18 Apr 2025',
-    image: Blog1,
-    description: 'At Pixalive Gold Network, we believe in creating a gold-centric ecosystem that...',
+    image: Blog3,
+    description: 'The Pixalive Gold Network revolutionizes gold ownership with services like digital gold investment, gold loans, jewelry purchases, and gold-backed everyday transactions. ',
   },
-  {
-    id: 4,
-    title: 'A Partnership Built on Trust: Pixalive and MMTC-PAMP',
-    tag: 'Marketing',
-    author: 'Kesavan',
-    date: '25 May 2025',
-    image: Blog2,
-    description: 'The Pixalive Gold Network is proud to partner with MMTC-PAMP, one of the most...',
-  },
+  
 ];
 
 const topics = [
