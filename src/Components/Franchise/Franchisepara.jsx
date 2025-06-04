@@ -297,7 +297,7 @@ const KeyFeatures = () => {
                 >
                   <div>
                     <div className="text-md font-semibold text-black mt-1">
-                      {String(feature.id).padStart()}
+                      {String(feature.id).padStart(".",2)}
                     
                       {feature.Question}
                     </div>
