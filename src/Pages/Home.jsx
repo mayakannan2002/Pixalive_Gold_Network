@@ -10,6 +10,7 @@ import Contact from '../Components/Home/Contact'
 import MainHome from '../Components/MainHome'
 import GoldDotsSection from '../Components/Home/GoldDotsSection'
 import GoldNetwork from '../Components/Home/GoldNetwork'
+import FAQ from '../Components/Home/FaqSection'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
        <Network/>
        <GoldDotsSection/>
        <GoldNetwork/>
+       <FAQ/>
      
       
       
