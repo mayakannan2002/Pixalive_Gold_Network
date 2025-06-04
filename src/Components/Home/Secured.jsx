@@ -16,12 +16,10 @@ const companies = [
   { name: "MMTC Pamp", logo: MMTC, link: "https://www.mmtcpamp.com" },
   { name: "LBMA Good Delivery Refiner", logo: LBMA, link: "https://www.lbma.org.uk" },
   { name: "Unified Payments Interface", logo: UPI, link: "https://www.npci.org.in/what-we-do/upi/product-overview" },
-  { name: "Phone Pe", logo: PHONEPE, link: "https://www.phonepe.com" },
-  { name: "National Payments Corporation of India", logo: NPCI, link: "https://www.npci.org.in" },
-  { name: "Phone Pe", logo: PHONEPE, link: "https://www.phonepe.com" },
-  { name: "National Payments Corporation of India", logo: NPCI, link: "https://www.npci.org.in" },
+  { name: "PhonePe", logo: PHONEPE, link: "https://www.phonepe.com" },
+  { name: "NPCI", logo: NPCI, link: "https://www.npci.org.in" },
   { name: "Cashfree Payments", logo: CASHFREE, link: "https://www.cashfree.com" },
-  { name: "Startupindia", logo: STARTUP, link: "https://www.startupindia.gov.in" },
+  { name: "Startup India", logo: STARTUP, link: "https://www.startupindia.gov.in" },
   { name: "Bureau of Indian Standards", logo: BIS, link: "https://www.bis.gov.in" },
 ];
 
@@ -40,11 +38,13 @@ const StatBox = ({ end, suffix, label }) => {
 
 export default function SecurityAndStats() {
   return (
-    <section className="w-full max-w-[1380px] mx-auto px-4 py-12 md:py-20 bg-white font-[Lufga]">
-      <h2 className="text-center text-black text-lg sm:text-2xl font-lufga mb-8 sm:mb-10">
+    <section className="w-full max-w-[1380px] mx-auto px-4 py-12 md:py-20 font-[Lufga]">
+      {/* Section Title */}
+      <h2 className="text-center text-black text-lg sm:text-2xl font-semibold mb-8 sm:mb-10">
         Secured By
       </h2>
 
+      {/* Company Logos Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mb-10 sm:mb-12">
         {companies.map((company, idx) => (
           <a
@@ -52,22 +52,26 @@ export default function SecurityAndStats() {
             href={company.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 sm:gap-3 border border-[#E6E6E6]   p-3 sm:py-4 sm:px-2 hover:shadow-xs transition"
+            className="flex items-center gap-2 sm:gap-3 border border-[#E6E6E6] p-3 sm:py-4 sm:px-2 hover:shadow-md transition "
           >
             <img
               src={company.logo}
               alt={company.name}
               className="h-7 w-8 sm:h-8 sm:w-8 object-contain"
             />
-            <p className="text-xs sm:text-xs md:text-xs lg:text-lg text-[#999999]">{company.name}</p>
+            <p className="text-xs sm:text-sm lg:text-base text-[#999999]">
+              {company.name}
+            </p>
           </a>
         ))}
       </div>
 
+      {/* Description */}
       <p className="text-center text-[#7A7A7A] text-sm sm:text-base mb-14 sm:mb-16">
-        Pixalive Gold Network Is Secured By MMTC-PAMP, Brink's, And Blockchain.
+        Pixalive Gold Network is secured by MMTC-PAMP, Brink's, and blockchain technology.
       </p>
 
+      {/* Stats Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
         <StatBox end={8} suffix="+" label="Trusted Partners" />
         <StatBox end={1} suffix="L+" label="Active Gold Users" />

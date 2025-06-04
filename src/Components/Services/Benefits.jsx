@@ -1,78 +1,50 @@
-import React from "react";
-import gold1 from "./../../assets/Service/b1.png";
-import gold2 from "./../../assets/Service/b2.png";
-import gold3 from "./../../assets/Service/b3.png";
-
-const benefits = [
-  {
-    icon: gold3,
-    title: "100% Gold-Backed Security",
-    description: (
-      <>
-        Provides end-to-end gold <br />services including digital <br />investment,
-        physical <br />redemption, loans, and jewelry<br /> purchases.
-      </>
-    ),
-  },
-  {
-    icon: gold2,
-    title: "One Network, Multiple Services",
-    description: (
-      <>
-        Integrates gold into everyday life,<br />
-        allowing users to redeem their gold <br />for groceries, pharmacy products,<br /> dining, salon services, and more.
-      </>
-    ),
-  },
-  {
-    icon: gold1,
-    title: "Smart, Flexible & Transparent Growth",
-    description: (
-      <>
-        Ensures top-tier security with <br />trusted partners like MMTC-PAMP,<br />
-        Brink’s, and blockchain-backed<br /> operations for transparency.
-      </>
-    ),
-  },
-];
-
+import React from 'react';
 
 const BenefitsSection = () => {
   return (
-    <section className="bg-[#f5f5f5] px-4 md:px-16 py-20">
-      {/* OUTER FLEX to separate left heading and right content */}
-      <div className="flex flex-col md:flex-row md:items-start md:gap-1 mb-12">
-        {/* LEFT HEADING */}
-        <div className="md:w-[250px] ml-9 mt-4">
-          <p className="text-sm text-gray-500 font-medium">
-            Benefits Of The Pixalive Gold Network
-          </p>
-        </div>
-
-        {/* RIGHT HEADING TEXT */}
-        <div className="flex-1 ml-10">
-          <h2 className="text-3xl md:text-5xl font-medium leading-snug text-black">
-            Pixalive Gold Network offers premium <br/> exposure, priority support,
-            and exclusive tools <br/>to boost your digital presence and growth
+    <section className="bg-[#f5f5f5] py-16 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+        {/* Left Side Title */}
+        <div className="lg:w-1/3">
+          <h2 className="text-gray-500 font-medium text-lg leading-snug">
+            Benefits Of The Pixalive <br />
+            Gold Network
           </h2>
         </div>
-      </div>
 
-      {/* BENEFITS GRID */}
-      <div className="max-w-4xl mx-auto grid grid-cols-3 md:grid-cols-3  ">
-        {benefits.map((item, index) => (
-          <div key={index} className="text-center">
-            <img
-              src={item.icon}
-              alt={item.title}
-              className="w-10 h-10 mx-auto mb-4"
-            />
-            <h3 className="font-semibold text-base md:text-lg mb-2">
-              {item.title}
-            </h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              {item.description}
-            </p>
+        {/* Right Side Content */}
+        <div className="lg:w-2/3">
+          <h3 className="text-black text-2xl md:text-4xl font-medium leading-snug">
+            Pixalive Gold Network offers premium exposure, priority support, and exclusive tools to boost your digital presence and growth and trech
+          </h3>
+
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Card 1 */}
+            <div>
+              <div className="text-4xl mb-4">🙌</div>
+              <h4 className="font-semibold text-black mb-2">100% Gold-Backed Security</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Provides end-to-end gold services including digital investment, physical redemption, loans, and jewelry purchases.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div>
+              <div className="text-4xl mb-4">🌼</div>
+              <h4 className="font-semibold text-black mb-2">One Network, Multiple Services</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Integrates gold into everyday life, allowing users to redeem their gold for groceries, pharmacy products, dining, salon services, and more.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div>
+              <div className="text-4xl mb-4">🛡️</div>
+              <h4 className="font-semibold text-black mb-2">Smart, Flexible & Transparent Growth</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Ensures top-tier security with trusted partners like MMTC-PAMP, Brink’s, and blockchain-backed operations for transparency.
+              </p>
+            </div>
           </div>
         ))}
       </div>

@@ -41,7 +41,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="w-full px-4 md:px-8 lg:px-6 py-16 max-w-[1280px] mx-auto font-[Lufga]">
+    <section className="  w-full px-4 md:px-8 lg:px-6 py-16 max-w-[1280px] mx-auto font-[Lufga]">
       {/* Header Row */}
       <div className="flex flex-col md:flex-row justify-between items-start mb-14">
         <h3 className="text-sm md:text-base text-[#4B4B4B] font-medium md:w-1/4">

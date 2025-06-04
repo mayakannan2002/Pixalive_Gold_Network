@@ -2,7 +2,7 @@ import React from "react";
 
 const GoldDotsSection = () => {
   return (
-    <section className="bg-white px-4 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
+    <section className="  w-full px-4 md:px-8 lg:px-6 py-16 max-w-[1280px] mx-auto font-[Lufga]">
       {/* Small heading */}
       <p className="text-center text-gray-500 text-sm sm:text-base md:text-lg font-medium tracking-wide mb-6">
         Gold Dots — Your Digital Wealth Currency
@@ -11,8 +11,8 @@ const GoldDotsSection = () => {
       {/* Main heading */}
       <div className="max-w-7xl mx-auto text-center ">
         <p className="text-[#6D6D6D] text-[22px] sm:text-[26px] md:text-[30px] lg:text-[38px] xl:text-[43px] font-lufga leading-[1.4]">
-          Gold Dots are the core rewards unit in the Pixalive Network — designed
-          to bridge your social actions and commerce journey
+          Gold Dots are the core rewards unit in the Pixalive Network—designed
+          to bridge your social actions and commerce journey.
         </p>
 
         <p className="text-[#6D6D6D] text-[22px] sm:text-[26px] md:text-[30px] lg:text-[36px] xl:text-[45px] font-normal leading-[1.4]">

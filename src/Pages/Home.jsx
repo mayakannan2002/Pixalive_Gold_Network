@@ -10,6 +10,10 @@ import Contact from '../Components/Home/Contact'
 import MainHome from '../Components/MainHome'
 import GoldDotsSection from '../Components/Home/GoldDotsSection'
 import GoldNetwork from '../Components/Home/GoldNetwork'
+import FAQ from '../Components/Home/FaqSection'
+import BlogPage from '../Components/About/Blog'
+import PixaliveGoldSection from '../Components/Home/PixaliveGoldSection'
+import Testimonials from '../Components/Home/Testimonials'
 
 const Home = () => {
   return (
@@ -21,6 +25,15 @@ const Home = () => {
        <Network/>
        <GoldDotsSection/>
        <GoldNetwork/>
+       <FAQ/>
+       
+       <PixaliveGoldSection/>
+       
+       <Testimonials/>
+       <BlogPage/>
+
+
+       
      
       
       
