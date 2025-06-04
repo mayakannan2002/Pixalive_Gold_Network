@@ -46,7 +46,7 @@ export default function BlogSection() {
           {/* Blog Section title on the left */}
           <div className="md:w-1/4">
             <p className="text-sm text-gray-500 mb-2">
-              Pixalive Gold Network Blog
+              Pixalive Gold Network<br/> Blog
             </p>
           </div>
           {/* Main heading and "View all blogs" link on the right */}
