@@ -25,11 +25,19 @@ const StrategicCollaboration = () => {
   ];
 
   return (
+<<<<<<< HEAD
     <section className="bg-[#f5f5f5] py-16 px-4">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
         {/* Left Text Block */}
         <div className="lg:w-1/3">
           <h2 className="text-gray-500 font-medium text-[15px] leading-relaxed">
+=======
+    <section className="bg-[#f5f5f5] py-16 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10">
+        {/* Left Text Block */}
+        <div className="lg:col-span-3 ml-19">
+          <h2 className="text-gray-500 font-medium text-sm leading-relaxed">
+>>>>>>> Mayakannan
             Pixalive Gold Network’s <br />
             Strategic Collaboration <br />
             With MMTC-PAMP
