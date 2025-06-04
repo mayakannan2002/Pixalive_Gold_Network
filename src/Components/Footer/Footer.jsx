@@ -98,7 +98,7 @@ const Footer = () => {
         <img
           src={pixaliveFooterImage}
           alt="Pixalive Footer Logo"
-          className="max-w-[1280px] w-full h-auto object-contain"
+          className="max-w-[1440px] w-full h-auto object-contain"
         />
       </div>
     </footer>
