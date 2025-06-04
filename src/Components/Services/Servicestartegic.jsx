@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import Authentication from './../Services/Authentication'
+// src/components/StrategicCollaboration.jsx
+import React from 'react';
+import Authentication from './Authentication';
 
 const StrategicCollaboration = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -32,39 +33,27 @@ const StrategicCollaboration = () => {
   };
 
   return (
-    <section className="bg-[#f5f5f5] py-16 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+    <section className="bg-[#f5f5f5] py-16 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10">
         {/* Left Text Block */}
-        <div className="lg:w-1/3">
-          <h2 className="text-gray-500 font-medium text-[15px] leading-relaxed">
+        <div className="lg:col-span-3 ml-19">
+          <h2 className="text-gray-500 font-medium text-sm leading-relaxed">
             Pixalive Gold Network’s <br />
             Strategic Collaboration <br />
             With MMTC-PAMP
           </h2>
         </div>
 
-        {/* Right Block */}
-        <div className="lg:w-2/3 space-y-10">
-          <h3 className="text-3xl md:text-4xl font-semibold leading-snug text-black">
-            Pixalive Gold Network’s partnership with MMTC-PAMP ensures trusted, secure, and
-            innovative gold investment through unmatched purity and expertise.
+        {/* Right Text + Authentication Component */}
+        <div className="lg:col-span-9 space-y-10 ml-30">
+          <h3 className="text-black text-2xl md:text-4xl font-medium leading-snug">
+            Pixalive Gold Network’s partnership with<br />
+            MMTC-PAMP ensures trusted, secure, and<br />
+            innovative gold investment through<br />
+            unmatched purity and expertise.
           </h3>
 
-          {/* Accordion */}
-          <div className="space-y-4">
-            {accordionData.map((item, index) => (
-              <div
-                key={index}
-                className="border border-gray-300 rounded-lg p-4 bg-white cursor-pointer"
-                onClick={() => toggleAccordion(index)}
-              >
-                <div className="font-semibold text-lg text-black">{item.title}</div>
-                {activeIndex === index && (
-                  <div className="mt-2 text-gray-600 text-sm">{item.content}</div>
-                )}
-              </div>
-            ))}
-          </div>
+          {/* Imported Authentication Component */}
         </div>
       </div>
     </section>
