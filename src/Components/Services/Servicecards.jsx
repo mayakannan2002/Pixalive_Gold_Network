@@ -87,38 +87,38 @@ const cardData = [
 
 const ServiceCardSlider = () => {
   return (
-    <section className="bg-[#f5f5f5] px-4 md:px-16 py-12">
-      <h2 className="text-lg font-medium text-gray-700 mb-10 text-center md:text-left ml-25">
-        Our Services
-      </h2>
+    <section className="bg-[#f6f6f6] py-14 px-4 sm:px-6 md:px-10 lg:px-12 max-w-[1580px] mx-auto">
+      <div className="mb-6 m-5 md:mr-20">
+        <h2 className="text-gray-600 text-sm md:text-base font-medium">
+          Our Services
+        </h2>
+      </div>
 
-      <div className="max-w-7xl mx-auto">
-      <Swiper
-  slidesPerView={3}
-  spaceBetween={16}
-  loop={true}
-  initialSlide={cardData.length - 1}   // Start at last slide index
-  centeredSlides={false}                // Align slides normally, not centered
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-    reverseDirection: true,             // Scroll slides rightwards
-  }}
-  speed={800}
-  modules={[Autoplay]}
-  className="pb-6"
-  breakpoints={{
-    640: { slidesPerView: 1.5 },
-    768: { slidesPerView: 2.2 },
-    1024: { slidesPerView: 3 },
-    1280: { slidesPerView: 3.5 },
-  }}
->
-
+      {/* Desktop Swiper */}
+      <div className="hidden md:block">
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={16}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }}
+          speed={800}
+          modules={[Autoplay]}
+          className="!pl-0 !ml-0 pb-6"
+          breakpoints={{
+            640: { slidesPerView: 1.5 },
+            768: { slidesPerView: 2.2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 3.5 },
+          }}
+        >
           {cardData.map((card, index) => (
             <SwiperSlide key={index} className="!h-auto">
               <div className="h-full">
-                <div className="bg-white border border-gray-300 shadow-amber-50 flex flex-col h-full overflow-hidden">
+                <div className="bg-white border border-white shadow-3xl flex flex-col h-[580px] rounded-md overflow-hidden mr-5">
                   <img
                     src={card.img}
                     alt={card.title}
@@ -147,6 +147,38 @@ const ServiceCardSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+
+      {/* Mobile View: Stacked Cards */}
+      <div className="block md:hidden space-y-8 mt-8">
+        {cardData.map((card, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-md rounded-md overflow-hidden"
+          >
+            <img
+              src={card.img}
+              alt={card.title}
+              className="w-full h-40 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
+              <p className="text-sm text-gray-700 mb-3">{card.desc}</p>
+              <p className="text-sm font-semibold mb-1">Features:</p>
+              <ul className="list-disc list-inside text-sm text-gray-600 mb-4 space-y-1">
+                {card.features.map((feature, i) => (
+                  <li key={i}>{feature}</li>
+                ))}
+              </ul>
+              <button
+                className="bg-black text-white text-sm font-semibold py-2 w-full hover:bg-gray-900"
+                onClick={() => (window.location.href = "/")}
+              >
+                KNOW MORE
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

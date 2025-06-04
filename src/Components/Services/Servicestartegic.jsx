@@ -1,31 +1,29 @@
-// src/components/StrategicCollaboration.jsx
 import React from 'react';
-import Authentication from './Authentication';
 
 const StrategicCollaboration = () => {
   return (
-    <section className="bg-[#f5f5f5] py-16 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10">
-        {/* Left Text Block */}
-        <div className="lg:col-span-3 ml-19">
-          <h2 className="text-gray-500 font-medium text-sm leading-relaxed">
+    <section className="bg-[#f5f5f5] py-12 px-4 sm:px-8 md:px-12 lg:px-20 max-w-[1280px] mx-auto ml-5">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        {/* Left Text */}
+        <div className="lg:col-span-3 text-left mt-2">
+          <h2 className="text-gray-500 font-medium text-sm sm:text-base leading-relaxed">
             Pixalive Gold Network’s <br />
             Strategic Collaboration <br />
             With MMTC-PAMP
           </h2>
         </div>
 
-        {/* Right Text + Authentication Component */}
-        <div className="lg:col-span-9 space-y-10 ml-30">
-          <h3 className="text-black text-2xl md:text-4xl font-medium leading-snug">
-            Pixalive Gold Network’s partnership with<br />
-            MMTC-PAMP ensures trusted, secure, and<br />
-            innovative gold investment through<br />
-            unmatched purity and expertise.
-          </h3>
+        {/* Right Text - Exactly 4 lines */}
+        <div className="lg:col-span-9">
+  <h2 className="text-[20px] sm:text-[32px] md:text-[36px] lg:text-[41px] font-medium leading-relaxed text-black max-w-5xl ml-2">
+    Pixalive Gold Network’s partnership with <br />
+    MMTC-PAMP ensures trusted, secure, and <br />
+    innovative gold investment through <br />
+    unmatched purity and expertise.
+  </h2>
+</div>
 
-          {/* Imported Authentication Component */}
-        </div>
       </div>
     </section>
   );
