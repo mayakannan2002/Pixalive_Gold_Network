@@ -1,38 +1,43 @@
 import React from "react";
-
+import GS1 from "./../../assets/gs1.png";
+import GS2 from "./../../assets/gs2.png";
+import GS3 from "./../../assets/gs3.png";
+import GS4 from "./../../assets/gs4.png";
+import GS5 from "./../../assets/gs5.png";
+import GS6 from "./../../assets/gs6.png";
 const features = [
   {
-    icon: "/images/gold-services.png",
+    icon: GS1,
     title: "Comprehensive Gold Services",
     description:
       "Provides end-to-end gold services including digital investment, physical redemption, loans, and jewelry purchases.",
   },
   {
-    icon: "/images/gold-ecosystem.png",
+    icon: GS2,
     title: "Gold-Backed Ecosystem",
     description:
       "Integrates gold into everyday life, allowing users to redeem their gold for groceries, pharmacy products, dining, salon services, and more.",
   },
   {
-    icon: "/images/secure-transparent.png",
+    icon: GS3,
     title: "Secure and Transparent",
     description:
       "Ensures top-tier security with trusted partners like MMTC-PAMP, Brink’s, and blockchain-backed operations for transparency.",
   },
   {
-    icon: "/images/community-centric.png",
+    icon: GS4,
     title: "Community-Centric Approach",
     description:
       "Empowers local businesses and users through partnerships, franchise opportunities, and gold-backed rewards programs.",
   },
   {
-    icon: "/images/profit-opportunities.png",
+    icon: GS5,
     title: "Profit Opportunities",
     description:
       "Provides earning potential through franchise models, referral rewards, and gold leasing programs.",
   },
   {
-    icon: "/images/trusted-brand.png",
+    icon: GS6,
     title: "Trusted Brand",
     description:
       "Operated by Pixalive Group, a leader in integrating gold, technology, and community-driven services.",
@@ -60,7 +65,7 @@ const WhyChooseUs = () => {
               <img
                 src={feature.icon}
                 alt={feature.title}
-                className="w-10 h-10 object-contain md:w-12 md:h-12"
+                className="w-8 h-8 object-contain md:w-10 md:h-10"
               />
               <h4 className="text-[16px] md:text-[17px] lg:text-[22px] font-bold text-black">
                 {feature.title}

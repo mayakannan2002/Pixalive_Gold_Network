@@ -14,6 +14,7 @@ import FAQ from '../Components/Home/FaqSection'
 import BlogPage from '../Components/About/Blog'
 import PixaliveGoldSection from '../Components/Home/PixaliveGoldSection'
 import Testimonials from '../Components/Home/Testimonials'
+import HeroSections from '../Components/Home/Herosections'
 
 const Home = () => {
   return (
@@ -31,6 +32,7 @@ const Home = () => {
        
        <Testimonials/>
        <BlogPage/>
+       <HeroSections/>
 
 
        
