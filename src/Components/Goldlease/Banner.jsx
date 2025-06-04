@@ -2,11 +2,11 @@ import React from "react";
 
 const GetStartedSection = () => {
   return (
-    <section className="bg py-20  md:px-10 lg:px-24">
-      <div className="max-w-[1280px] mx-auto bg-[#eeeeee] p-10 text-center shadow-sm">
+    <section className="bg-[#f6f6f6] text-black py-14 px-6  flex justify-center">
+      <div className="max-w-[1280px] mx-auto w-full bg-[#eeeeee] p-10 text-center shadow-sm">
         {/* Red dot + subtitle */}
         <div className="flex justify-center items-center gap-2 mb-3">
-          <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+          <span className="w-2 h-2 bg-red-500 rounded-full" />
           <p className="text-gray-600 text-sm">Pixalive Gold Network</p>
         </div>
 
@@ -16,13 +16,16 @@ const GetStartedSection = () => {
         </h2>
 
         {/* Subtext */}
-        <p className="text-gray-600 text-base leading-relaxed mb-8">
-          For more information or personalized advice, our dedicated team is ready to assist. <br />
+        <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8">
+          For more information or personalized advice, our dedicated team is ready to assist. <br className="hidden md:block" />
           Let us help you secure your future with Pixalive Gold Lease.
         </p>
 
         {/* Button */}
-        <button className="bg-black text-white px-6 py-2 hover:bg-gray-800 transition">
+        <button
+          className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-300"
+          aria-label="Contact us for Pixalive Gold Lease"
+        >
           Contact Us
         </button>
       </div>

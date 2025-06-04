@@ -29,13 +29,13 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="bg py-30 px-4 md:px-10 lg:px-24">
-      <div className="max-w-[1280px] mx-auto">
+    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto">
         <div className="flex flex-col md:flex-row gap-12">
           {/* Left label */}
           <div className="md:w-1/4">
-            <p className="text-sm text-gray-500 font-medium">
-              Why Choose Pixalive<br/> Gold Lease
+            <p className="text-sm text-gray-500 font-medium leading-6">
+              Why Choose <br /> Pixalive Gold Lease
             </p>
           </div>
 
@@ -55,7 +55,6 @@ const WhyChoose = () => {
                     alt={card.title}
                     className="w-10 h-10 object-contain"
                   />
-                  <br/>
                   <h3 className="font-semibold text-lg text-black">
                     {card.title}
                   </h3>
@@ -65,7 +64,7 @@ const WhyChoose = () => {
             </div>
           </div>
         </div>
-      </div>
+       </div>
     </section>
   );
 };
