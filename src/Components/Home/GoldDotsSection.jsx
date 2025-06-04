@@ -2,7 +2,7 @@ import React from "react";
 
 const GoldDotsSection = () => {
   return (
-    <section className="bg-white px-4 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
+    <section className=" px-4 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
       {/* Small heading */}
       <p className="text-center text-gray-500 text-sm sm:text-base md:text-lg font-medium tracking-wide mb-6">
         Gold Dots — Your Digital Wealth Currency

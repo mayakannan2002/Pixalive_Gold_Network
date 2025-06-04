@@ -2,7 +2,7 @@ import React from "react";
 
 const PixaliveGoldNetwork = () => {
   return (
-    <section className="bg-white px-4 sm:px-6 lg:px-20 py-12 min-h-screen">
+    <section className=" px-4 sm:px-6 lg:px-20 py-12 min-h-screen">
       <div className="max-w-screen-xl mx-auto">
         {/* Header section */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-10 mb-10">

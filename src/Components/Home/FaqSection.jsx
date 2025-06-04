@@ -52,7 +52,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="w-full bg-white py-14 px-4 md:px-8">
+    <section className="w-full  py-14 px-4 md:px-8">
       <div className="max-w-7xl mx-auto bg-white shadow-2xl p-6 md:p-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Image */}
