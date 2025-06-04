@@ -40,7 +40,7 @@ const StatBox = ({ end, suffix, label }) => {
 
 export default function SecurityAndStats() {
   return (
-    <section className="w-full max-w-[1380px] mx-auto px-4 py-12 md:py-20 bg-white font-[Lufga]">
+    <section className="w-full max-w-[1380px] mx-auto px-4 py-12 md:py-20  font-[Lufga]">
       <h2 className="text-center text-black text-lg sm:text-2xl font-lufga mb-8 sm:mb-10">
         Secured By
       </h2>
