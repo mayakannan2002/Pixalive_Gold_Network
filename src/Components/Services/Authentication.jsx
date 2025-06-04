@@ -37,7 +37,7 @@ const Authentication = () => {
 
   return (
     <div className="w-full flex justify-center px-4 md:px-0 bg-[#f6f6f6] py-10">
-      <div className="border-10 border-white shadow-lg  grid md:grid-cols-2 max-w-6xl w-full bg-white overflow-hidden">
+      <div className="border-10 border-white shadow-lg  grid md:grid-cols-2 max-w-[1280px] w-full bg-white overflow-hidden">
         {/* Image Section */}
         <div className="w-full h-full flex items-center justify-center">
           <img
