@@ -1,35 +1,33 @@
 import React from "react";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
-const QuoteSection = () => {
+const GetStartedSection = () => {
   return (
-    <section className="bg-[#140113] text-gray-400 text-center px-6 py-12">
-      <div className="max-w-4xl mx-auto relative">
-        {/* Left Quote Icon */}
-        <FaQuoteLeft className="text-xl md:text-xl text-gray-500 mb-4" />
+    <section className="bg py-16 px-4">
+      <div className="max-w-[1101px] mx-auto bg-[#eeeeee] p-10 text-center shadow-sm">
+        {/* Red dot + subtitle */}
+        <div className="flex justify-center items-center gap-2 mb-3">
+          <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+          <p className="text-gray-600 text-sm">Pixalive Gold Network</p>
+        </div>
 
-        {/* Quote Text */}
-        <p className="text-lg md:text-xl leading-relaxed font-light">
-          <span className="text-gray-400">Pixalive Gold Lease offers </span>
-          <span className="text-white font-medium">a unique and secure way to invest in gold</span>
-          <span className="text-gray-400">. With our gold-backed lease programs, </span>
-          <span className="text-white font-medium">you can enjoy attractive returns</span>
-          <span className="text-gray-400">
-            {" "}
-            while ensuring that your gold is safely stored and protected. Whether you're
-            a seasoned investor or just starting out, Pixalive Gold Lease offers the{" "}
-          </span>
-          <span className="text-white font-medium">
-            flexibility, security, and profitability
-          </span>
-          <span className="text-gray-400"> you need to grow your wealth.</span>
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+          Get Started Today
+        </h2>
+
+        {/* Subtext */}
+        <p className="text-gray-600 text-base leading-relaxed mb-8">
+          For more information or personalized advice, our dedicated team is ready to assist. <br />
+          Let us help you secure your future with Pixalive Gold Lease.
         </p>
 
-        {/* Right Quote Icon */}
-        <FaQuoteRight className="text-xl md:text-xl text-gray-500 mt-4" />
+        {/* Button */}
+        <button className="bg-black text-white px-6 py-2 hover:bg-gray-800 transition">
+          Contact Us
+        </button>
       </div>
     </section>
   );
 };
 
-export default QuoteSection;
+export default GetStartedSection;
