@@ -1,46 +1,114 @@
-import React from 'react';
-import aboutImage from './../../assets/About/about2.png';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import bgImage from "../../assets/About/aboutbg.png";
+import logo from "../../assets/Headermain/logo copy.png";
 
-const AboutUs = () => {
+const Hero = () => {
+  const navigate = useNavigate();
+  const [navOpen, setNavOpen] = React.useState(false);
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Gold dots", path: "/golddots" },
+    { name: "Buy Coins", path: "/buycoins" },
+    { name: "Franchise", path: "/franchise" },
+    { name: "Gold Lease", path: "/goldlease" },
+    { name: "About us", path: "/about" },
+  ];
+
   return (
-    <div className="relative w-full px-4 pb-4 pt-0 bg-[#140113]">
-      {/* Border matching the header */}
-      <div className="absolute inset-0 border-b-8 border-l-8 border-r-8 border-[#140113] rounded-2xl pointer-events-none z-[-1]" />
+    <div
+      className="min-h-screen bg-cover bg-center relative "
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/55 bg-opacity-50 z-0"></div>
 
-      {/* Image Section with rounded corners */}
-      <section
-        className="relative w-[94%] mx-auto overflow-hidden rounded-2xl"
-        style={{
-           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${aboutImage})`,
-          
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          minHeight: '80vh',
-        }}
-      >
-        {/* Overlay heading */}
-        <div className="absolute inset-0 flex items-center justify-center text-center px-4">
-          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">
-            Building India's Future With Gold <br className="hidden sm:block" />
-            You Can Trust
-          </h1>
+      {/* Main content */}
+      <div className="relative z-10 pt-[15px] ">
+        {/* Header */}
+        <header className="flex items-center max-w-[1260px] mx-auto justify-between p-4 bg-opacity-70">
+          <Link to="/">
+            <img src={logo} className="w-[42px] h-[42px] cursor-pointer" alt="Pixalive Logo" />
+          </Link>
+
+          <nav className="hidden md:flex gap-6">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => navigate(item.path)}
+                className="text-white text-[16px]  border-b-[1px] cursor-pointer    border-transparent hover:border-white transition-all duration-200"
+              >
+                {item.name}
+              </button>
+            ))}
+          </nav>
+
+
+          <div className="hidden md:block">
+            <button className="group bg-white text-black px-4 py-2 cursor-pointer">
+              Sign up &nbsp;
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                ↗
+              </span>
+            </button>
+          </div>
+
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button onClick={() => setNavOpen(!navOpen)}>
+              <FaBars className="text-xl text-white" />
+            </button>
+          </div>
+        </header>
+
+        {/* Mobile nav */}
+        {navOpen && (
+          <div className="md:hidden bg-white bg-opacity-90 border-b shadow-md relative z-10">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => {
+                  navigate(item.path);
+                  setNavOpen(false);
+                }}
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-yellow-100"
+              >
+                {item.name}
+              </button>
+            ))}
+            <div className="p-4">
+              <button className="bg-black text-white px-4 py-2 w-full rounded">Sign up</button>
+            </div>
+          </div>
+        )}
+
+        <div className="py-20 max-w-[1260px] px-4 mx-auto  flex flex-col md:flex-row items-center justify-between">
+          {/* Left Text div */}
+          <div className="max-w-3xl space-y-6 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+              Experience the Future of Gold with    <br />
+              <span className="text-white"> Pixalive Gold Network</span>
+            </h1>
+            <p className="text-[16px] text-white" style={{ wordSpacing: '0.2em' }}>
+              "Unlock the power of gold like never before — seamlessly invest, trade, and connect in a trusted ecosystem that blends financial services with your everyday life."
+            </p>
+
+            <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+              <button className="group bg-white text-black px-5 py-2 cursor-pointer">
+                Explore Pixalive Network &nbsp;
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                  ↗
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
-
-        {/* Spacer to maintain height */}
-        <div className="w-full h-[80vh]" />
-      </section>
-
-      {/* Bottom text section with matching background and bottom rounded */}
-      <div className="w-[94%] mx-auto bg-[#140113] rounded-b-2xl py-10 px-6 text-center -mt-1">
-        <p className="text-lg sm:text-xl md:text-2xl italic text-[#b3b3b3] leading-relaxed max-w-4xl mx-auto">
-          <span className="text-3xl font-bold text-[#7a7a7a]">“ </span>
-          Join the Pixalive Gold Network and be part of{' '}
-          <span className="text-white font-semibold">Pixalive Gold Network</span> is India’s first social gold platform, combining the timeless value of gold with the power of innovation and connectivity. Our platform aims to redefine the gold ecosystem, providing a seamless integration of gold investments, financial services, and daily life needs.
-          <span className="text-3xl font-bold text-[#7a7a7a]"> ”</span>
-        </p>
       </div>
     </div>
   );
 };
 
-export default AboutUs;
+export default Hero;

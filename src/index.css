@@ -7,6 +7,7 @@
 
 body {
   font-family: 'Lufga', sans-serif;
+  background: #f6f6f6;
 }
 
 html,
@@ -39,3 +40,4 @@ body::-webkit-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none; /* IE and Edge */
 }
+body{background: #f6f6f6;}
