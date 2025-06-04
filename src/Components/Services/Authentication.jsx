@@ -15,19 +15,19 @@ const accordionData = [
   {
     title: 'Secure Storage',
     content:
-      'Your gold is stored in fully insured, secure vaults managed by MMTC-PAMP, ensuring peace of mind and physical safety for your digital assets.',
+      'MMTC-PAMP provides bank-grade vault storage for all digital gold, guaranteeing safety and peace of mind for users.',
     image: office1,
   },
   {
     title: 'Seamless Transactions',
     content:
-      'Experience quick and hassle-free transactions when buying or selling gold, with full transparency and instant updates.',
+      'Users can buy, sell, and redeem their digital gold with ease, supported by MMTC-PAMP infrastructure for physical gold delivery.',
     image: office2,
   },
   {
     title: 'Accessibility',
     content:
-      'Invest in digital gold anytime, anywhere, using the Pixalive platform—accessible on both web and mobile devices.',
+      'The collaboration makes gold investment simple and accessible, integrating secure gold transactions into Pixalive diverse services.',
     image: office3,
   },
 ];

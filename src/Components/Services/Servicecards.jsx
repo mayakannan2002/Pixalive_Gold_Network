@@ -3,13 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import img1 from "./../../assets/Service/services/Service-1.png";
-import img2 from "./../../assets/Service/services/service-2.png";
-import img3 from "./../../assets/Service/services/service-3.png";
-import img4 from "./../../assets/Service/services/service-4.png";
-import img5 from "./../../assets/Service/services/service-5.png";
-import img6 from "./../../assets/Service/services/service-6.png";
-import img7 from "./../../assets/Service/services/service-7.png";
+import img1 from "./../../assets/Service/g1.png";
+import img2 from "./../../assets/Service/g2.png";
+import img3 from "./../../assets/Service/g3.png";
+import img4 from "./../../assets/Service/g4.png";
+import img5 from "./../../assets/Service/g5.png";
+import img6 from "./../../assets/Service/g6.png";
+import img7 from "./../../assets/Service/g7.png";
 
 const cardData = [
   {
@@ -96,7 +96,7 @@ const ServiceCardSlider = () => {
         </h2>
       </div>
 
-      <div className="-ml-4 md:-ml-16">
+      <div className="-ml-4 md:-ml-16 border-10 border-white shadow-3xl">
     <Swiper
       slidesPerView={3}
       spaceBetween={16}
