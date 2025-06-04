@@ -2,12 +2,27 @@ import React from "react";
 
 const GetStartedSection = () => {
   return (
-    <section className="bg py-16 px-4">
-      <div className="max-w-[1101px] mx-auto bg-[#eeeeee] p-10 text-center shadow-sm">
-        {/* Red dot + subtitle */}
-        <div className="flex justify-center items-center gap-2 mb-3">
-          <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-          <p className="text-gray-600 text-sm">Pixalive Gold Networks</p>
+    <section>
+    <div className="bg-[#f6f6f6] text-black py-14 px-6  flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto">
+
+        {/* Top Section: "Our Partnership" label and Main Quote */}
+        <div className="grid grid-cols-1 md:grid-cols-12 md:gap-24 mb-16 md:mb-24">
+          {/* Left Column for "Our Partnership" label */}
+          <div className="md:col-span-4 flex-shrink-0 mb-8 md:mb-0">
+            <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Our Partnership</p>
+          </div>
+
+          {/* Right Column for Main Quote (spans the remaining 8 columns) */}
+          <div className="md:col-span-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black leading-snug">
+              "We have partnered with MMTC-PAMP, India's
+              most trusted refinery, to ensure that every
+              gram of gold you own through Pixalive Gold is
+              certified, pure, and insured. Your investment is
+              real, secure, and future-ready."
+            </h1>
+          </div>
         </div>
         <br/>
         {/* Heading */}
@@ -20,10 +35,53 @@ const GetStartedSection = () => {
           Be part of a platform that is redefining the way India interacts <br /> with gold. 
         </p>
 
-        {/* Button */}
-        <button className="bg-black text-white px-6 py-2 hover:bg-gray-800 transition">
-          Contact Us
-        </button>
+          {/* Container for the two cards, spanning the remaining 8 columns */}
+          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
+            {/* Card 1: MMTC-PAMP */}
+            <div className=" p-6 md:p-8 shadow-sm flex flex-col items-center"> {/* Removed justify-center here */}
+              {/* Fixed height container for the image */}
+              <div className="flex items-center justify-center h-24 mb-8"> {/* Added fixed height h-24 */}
+                <img
+                  src={mmtcPampLogo}
+                  alt="MMTC-PAMP Logo"
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+              {/* Text content, centered globally but left-aligned within its own block */}
+              <div className="w-full text-center"> {/* Added w-full and text-center to center content within this block */}
+                <h3 className="text-lg font-semibold text-black mb-2">LBMA Good Delivery Refiner</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  MMTC-PAMP is India's only LBMA-accredited
+                  gold and silver refinery, combining Swiss
+                  precision and Indian expertise to set global
+                  standards in precious metals.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2: LBMA Member */}
+            <div className=" p-6 md:p-8 shadow-sm flex flex-col items-center"> {/* Removed justify-center here */}
+              {/* Fixed height container for the image */}
+              <div className="flex items-center justify-center h-24 mb-8"> {/* Added fixed height h-24 */}
+                <img
+                  src={lbmaMemberLogo}
+                  alt="LBMA Member Logo"
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+              {/* Text content, centered globally but left-aligned within its own block */}
+              <div className="w-full text-center"> {/* Added w-full and text-center to center content within this block */}
+                <h3 className="text-lg font-semibold text-black mb-2">LBMA Good Delivery Refiner</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  MMTC-PAMP is India's only LBMA-accredited
+                  gold and silver refinery, combining Swiss
+                  precision and Indian expertise to set global
+                  standards in precious metals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

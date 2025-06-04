@@ -17,6 +17,7 @@ const MainHome = () => {
         { name: "Gold Lease", path: "/goldlease" },
         { name: "About us", path: "/about" },
     ];
+    const [activeTab, setActiveTab] = React.useState("Buy");
 
     return (
         <div
@@ -81,7 +82,7 @@ const MainHome = () => {
                             </button>
                         ))}
                         <div className="p-4">
-                            <button className="bg-black text-white px-4 py-2 w-full rounded">Sign up</button>
+                            <button className="bg-black text-white px-4 py-2 w-full ">Sign up</button>
                         </div>
                     </div>
                 )}
@@ -119,37 +120,87 @@ const MainHome = () => {
                         </div>
                     </div>
 
+
+
                     {/* Buy Gold Widget */}
-                    <div className="bg-white text-black p-6  shadow-lg w-full md:w-96 mt-10 md:mt-0">
-                        <div className="flex items-center border-b mb-4">
-                            <button className="flex-1 font-semibold text-yellow-600 border-b-2 border-yellow-500 py-2">Buy</button>
-                            <button className="flex-1 text-gray-500 py-2">Sell</button>
-                            <button className="flex-1 text-gray-500 py-2">Jewellery</button>
+                    <div className="bg-white text-black p-6 shadow-lg w-full md:w-96 mt-10 md:mt-0 ">
+                        {/* Tabs */}
+                        <div className="flex items-center justify-between border-b mb-4 cursor-pointer">
+                            {["Buy", "Sell", "Jewellery"].map((tab) => (
+                                <button
+                                    key={tab}
+                                    onClick={() => setActiveTab(tab)}
+                                    className={`flex-1 py-2 cursor-pointer text-sm font-medium text-center ${activeTab === tab
+                                        ? "text-yellow-600 font-semibold border-b-2 border-black"
+                                        : "text-gray-500 mb-2"
+                                        }`}
+                                >
+                                    {tab}
+                                </button>
+                            ))}
                         </div>
 
-                        <div className="mb-4">
-                            <p className="text-sm text-gray-500">Live Buy Price</p>
-                            <p className="text-xl font-bold text-yellow-600">₹10,200.64/gm</p>
-                            <p className="text-sm text-gray-500">
-                                Purity: <span className="text-yellow-600 font-medium">24k 99.99%</span>
-                            </p>
+                        {/* Fixed height content container */}
+                        <div className="min-h-[220px] flex flex-col justify-between">
+                            {activeTab === "Buy" && (
+                                <>
+                                    <div>
+                                        <div className="flex justify-between items-center mb-3 text-sm">
+                                            <div>
+                                                <p className="text-gray-500 flex items-center gap-1">
+                                                    <span className="w-2 h-2 bg-red-500  inline-block"></span> Live Buy Price
+                                                </p>
+                                                <p className="text-lg font-bold text-gray-800">₹10,200.64/ gm</p>
+                                            </div>
+                                            <div>
+                                                <p className="text-gray-500">Purity</p>
+                                                <p className="text-yellow-600 font-medium">24k 99.99%</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex gap-4 mb-3 text-sm">
+                                            <label className="flex items-center gap-2">
+                                                <input type="radio" name="buyOption" defaultChecked />
+                                                Buy in rupees
+                                            </label>
+                                            <label className="flex items-center gap-2">
+                                                <input type="radio" name="buyOption" />
+                                                Buy in grams
+                                            </label>
+                                        </div>
+
+                                        <div className="mb-4">
+                                            <input
+                                                type="text"
+                                                defaultValue="₹2000"
+                                                className="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none px-2 py-1 text-lg"
+                                            />
+                                            <p className="text-right text-xs text-gray-500 mt-1">= 0.9854 gm</p>
+                                        </div>
+                                    </div>
+
+                                    <button className="bg-black text-white cursor-pointer w-full py-2  hover:scale-105 transition-transform mt-4">
+                                        Buy Gold
+                                    </button>
+                                </>
+                            )}
+
+                            {activeTab === "Sell" && (
+                                <div className="text-center text-gray-600 text-sm flex items-center justify-center h-full">
+                                    <p>Sell gold feature coming soon.</p>
+                                </div>
+                            )}
+
+                            {activeTab === "Jewellery" && (
+                                <div className="text-center text-gray-600 text-sm flex items-center justify-center h-full">
+                                    <p>Explore jewellery options here.</p>
+                                </div>
+                            )}
                         </div>
-
-                        <div className="mb-4">
-                            <label className="block text-sm font-medium mb-1">Buy in rupees</label>
-                            <input
-                                type="text"
-                                defaultValue="₹2000"
-                                className="w-full border px-3 py-2  focus:outline-yellow-500"
-                            />
-                            <p className="text-right text-xs text-gray-500 mt-1">≈ 0.19645 gm</p>
-                        </div>
-
-                        <button className="bg-black cursor-pointer text-white w-full py-2 transition-transform duration-300 hover:scale-105">
-                            Buy Gold
-                        </button>
-
                     </div>
+
+
+
                 </div>
             </div>
         </div>

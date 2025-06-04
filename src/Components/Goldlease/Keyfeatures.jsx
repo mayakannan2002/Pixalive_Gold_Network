@@ -36,8 +36,8 @@ const KeyFeatures = () => {
   };
 
   return (
-    <section className="bg-[#F5F5F5] py-16 px-4 md:px-10 lg:px-24">
-      <div className="max-w-[1280px] mx-auto">
+    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+      <div className="max-w-[1280px] mx-auto w-full">
         {/* Header section with left and right layout */}
         <div className="flex flex-col md:flex-row gap-6 mb-10">
           {/* Left: Label */}

@@ -2,6 +2,8 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Division/Header';
+import ScrollToTopOnRouteChange from './Components/ScrollToTopOnRouteChange';
+import ScrollToTop from './Components/ScrollToTop';
 
 // Lazy load pages/components for code splitting
 const Home = lazy(() => import('./Pages/Home'));
@@ -26,25 +28,29 @@ const AppContent = () => {
 
   return (
     <>
-  {/* <Header /> */}
-  <Suspense fallback={<div className="text-center p-10">Loading Please Wait...</div>}>
-    <Routes>
-      <Route  path="/" element={<Home />} />
-      <Route path="/divisions" element={<Divisionsection />} />
-      <Route path="/faq" element={<Quick />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/blogpage" element={<BlogPostPage />} />
-      <Route path="/services" element={<Servicesection />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/about" element={<Aboutsection />} />
-      <Route path="/franchise" element={<Franchisesection />} />
-      <Route path="/goldlease" element={<Goldlease />} />
-      <Route path="/divisionpage" element={<DivisionPage />} />
-    </Routes>
-  </Suspense>
-  {!hideFooter && <Footer />}
-</>
+      {/* <Header /> */}
+      
+      <Suspense fallback={<div className="text-center p-10">Loading Please Wait...</div>}>
+      <ScrollToTopOnRouteChange /> {/* top scroll on route change and refresh */}
+      <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/divisions" element={<Divisionsection />} />
+          <Route path="/faq" element={<Quick />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blogpage" element={<BlogPostPage />} />
+          <Route path="/services" element={<Servicesection />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<Aboutsection />} />
+          <Route path="/franchise" element={<Franchisesection />} />
+          <Route path="/goldlease" element={<Goldlease />} />
+          <Route path="/divisionpage" element={<DivisionPage />} />
+        </Routes>
+      
+      {!hideFooter && <Footer />}
+      </Suspense>
+    </>
 
   );
 };
