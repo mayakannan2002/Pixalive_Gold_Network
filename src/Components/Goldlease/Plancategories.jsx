@@ -71,82 +71,81 @@ const PricingTabs = () => {
   const [activeTab, setActiveTab] = useState("under1000");
 
   return (
-    <section className="bg py-16 px-4 md:px-10 lg:px-24">
-      {/* Header */}
-      <div className="mb-8">
-        <p className="text-sm text-gray-500 mb-2">Price and Plans</p>
+    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto">
+        {/* Header and Tabs */}
+        <div className="mb-8">
+          <p className="text-sm text-gray-500 mb-2">Price and Plans</p>
 
-        {/* Tab Buttons */}
-        <div className="flex justify-center mb-10">
-          <div className="flex bg-[#f2f2f2] rounded p-1">
-            <div
-              className={`px-6 py-2 font-medium cursor-pointer ${
-                activeTab === "under1000"
-                  ? "bg-[#150015] text-white"
-                  : "text-gray-800"
-              }`}
-              onClick={() => setActiveTab("under1000")}
-            >
-              Up to 1000 grams
+          <div className="flex justify-center mb-10">
+            <div className="flex bg-[#f2f2f2] rounded p-1">
+              <div
+                className={`px-6 py-2 font-medium cursor-pointer rounded ${
+                  activeTab === "under1000"
+                    ? "bg-[#150015] text-white"
+                    : "text-gray-800"
+                }`}
+                onClick={() => setActiveTab("under1000")}
+              >
+                Up to 1000 grams
+              </div>
+              <div
+                className={`px-6 py-2 font-medium cursor-pointer rounded ${
+                  activeTab === "above1000"
+                    ? "bg-[#150015] text-white"
+                    : "text-gray-800"
+                }`}
+                onClick={() => setActiveTab("above1000")}
+              >
+                Above 1000 grams
+              </div>
             </div>
-            <div
-              className={`px-6 py-2 font-medium cursor-pointer ${
-                activeTab === "above1000"
-                  ? "bg-[#150015] text-white"
-                  : "text-gray-800"
-              }`}
-              onClick={() => setActiveTab("above1000")}
-            >
-              Above 1000 grams
-            </div>
+          </div>
+
+          {/* Plan Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {plans[activeTab].map((plan, idx) => (
+              <div
+                key={idx}
+                className="bg-white shadow-sm p-6 flex flex-col justify-between"
+              >
+                <div>
+                  <h3 className="text-lg font-semibold text-black">{plan.title}</h3>
+                  <p className="text-sm text-gray-500 mt-1 mb-3">
+                    Significant potential due to larger volumes.
+                  </p>
+                  <p className="text-2xl font-bold text-black mb-4">
+                    {plan.range} <span className="text-sm font-normal">/grams</span>
+                  </p>
+
+                  <button className="bg-black text-white px-4 py-2 mb-5 hover:bg-gray-800 transition">
+                    Contact us
+                  </button>
+
+                  <div className="border-t border-gray-300 my-4" />
+
+                  <ul className="text-sm text-gray-700 space-y-2 mb-5">
+                    {plan.details.map((item, i) => (
+                      <li key={i}>
+                        ✓ {item.label}:{" "}
+                        <span className="float-right">{item.value}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="border-t border-gray-300 my-4" />
+
+                  <p className="font-semibold text-black mb-1">Key Benefits :</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    {plan.benefits.map((benefit, j) => (
+                      <li key={j}>✓ {benefit}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-
-      {/* Plan Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {plans[activeTab].map((plan, idx) => (
-          <div
-            key={idx}
-            className="bg-white shadow-sm p-6 flex flex-col justify-between"
-          >
-            <div>
-              <h3 className="text-lg font-semibold text-black">{plan.title}</h3>
-              <p className="text-sm text-gray-500 mt-1 mb-3">
-                Significant potential due to larger volumes.
-              </p>
-              <p className="text-2xl font-bold text-black mb-4">
-                {plan.range} <span className="text-sm font-normal">/grams</span>
-              </p>
-
-              <button className="bg-black text-white px-4 py-2 mb-5">
-                Contact us
-              </button>
-
-              {/* Border below Contact Us */}
-              <div className="border-t border-gray-300 my-4" />
-
-              <ul className="text-sm text-gray-700 space-y-1 mb-5">
-                {plan.details.map((item, i) => (
-                  <li key={i}>
-                    ✓ {item.label}:{" "}
-                    <span className="float-right">{item.value}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Border above Key Benefits */}
-              <div className="border-t border-gray-300 my-4" />
-
-              <p className="font-semibold text-black mb-1">Key Benefits :</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                {plan.benefits.map((benefit, j) => (
-                  <li key={j}>✓ {benefit}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
       </div>
     </section>
   );

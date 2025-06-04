@@ -2,8 +2,8 @@ import React from "react";
 
 const GetStartedSection = () => {
   return (
-    <section className="bg py-16 px-4">
-      <div className="max-w-[1101px] mx-auto bg-[#eeeeee] p-10 text-center shadow-sm">
+    <section className="bg-[#f6f6f6] text-black py-14 px-6  flex justify-center">
+      <div className="max-w-[1280px] mx-auto w-full bg-[#eeeeee] p-10 text-center shadow-sm">
         {/* Red dot + subtitle */}
         <div className="flex justify-center items-center gap-2 mb-3">
           <span className="w-2 h-2 bg-red-400 rounded-full"></span>

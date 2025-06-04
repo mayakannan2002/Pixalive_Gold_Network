@@ -29,38 +29,39 @@ const terms = [
 
 const InvestmentTerms = () => {
   return (
-    <section className="bg py-20  md:px-10 lg:px-24">
-      <div className="max-w-[1280px] mx-auto grid md:grid-cols-4 gap-8">
-        {/* Left label */}
-        <div className="col-span-1">
-          <p className="text-sm text-gray-500 mb-2">Investment Terms</p>
-        </div>
+    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto">
+        <div className="flex flex-col md:flex-row gap-12">
+          {/* Left label */}
+          <div className="md:w-1/4">
+            <p className="text-sm text-gray-500 font-medium">Investment Terms</p>
+          </div>
 
-        {/* Right content */}
-        <div className="col-span-3 space-y-10">
-          {/* Heading */}
-          <h2 className="text-2xl md:text-3xl font-semibold text-black leading-relaxed">
-            Pixalive's investment terms outline the conditions under which
-            investors fund the platform.
-          </h2>
+          {/* Right content */}
+          <div className="md:w-3/4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-black leading-relaxed mb-10">
+              Pixalive's investment terms outline the conditions under which
+              investors fund the platform.
+            </h2>
 
-          {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-            {terms.map((term, index) => (
-              <div key={index} className="flex flex-col gap-3 max-w-[220px] w-full">
-                <img
-                  src={term.icon}
-                  alt={term.title}
-                  className="w-8 h-8 object-contain"
-                />
-                <div>
-                  <h3 className="text-md font-semibold text-black mb-1">
-                    {term.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">{term.text}</p>
+            {/* Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+              {terms.map((term, index) => (
+                <div key={index} className="flex flex-col gap-3 max-w-[220px] w-full">
+                  <img
+                    src={term.icon}
+                    alt={term.title}
+                    className="w-8 h-8 object-contain"
+                  />
+                  <div>
+                    <h3 className="text-md font-semibold text-black mb-1">
+                      {term.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{term.text}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
