@@ -88,7 +88,6 @@ const cardData = [
 const ServiceCardSlider = () => {
   return (
     <section className="bg-[#f5f5f5] px-4 md:px-16 py-12">
-<<<<<<< HEAD
       <h2 className="text-lg font-medium text-gray-700 mb-6">Our Services</h2>
       <Swiper
         slidesPerView={1.2}
@@ -140,68 +139,6 @@ const ServiceCardSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-=======
-      <h2 className="text-lg font-medium text-gray-700 mb-10 text-center md:text-left ml-25">
-        Our Services
-      </h2>
-
-      <div className="max-w-7xl mx-auto">
-      <Swiper
-  slidesPerView={3}
-  spaceBetween={16}
-  loop={true}
-  initialSlide={cardData.length - 1}   // Start at last slide index
-  centeredSlides={false}                // Align slides normally, not centered
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-    reverseDirection: true,             // Scroll slides rightwards
-  }}
-  speed={800}
-  modules={[Autoplay]}
-  className="pb-6"
-  breakpoints={{
-    640: { slidesPerView: 1.5 },
-    768: { slidesPerView: 2.2 },
-    1024: { slidesPerView: 3 },
-    1280: { slidesPerView: 3.5 },
-  }}
->
-
-          {cardData.map((card, index) => (
-            <SwiperSlide key={index} className="!h-auto">
-              <div className="h-full">
-                <div className="bg-white border border-gray-300 shadow-amber-50 flex flex-col h-full overflow-hidden">
-                  <img
-                    src={card.img}
-                    alt={card.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="flex flex-col flex-grow p-5">
-                    <h3 className="text-xl font-semibold mb-1">{card.title}</h3>
-                    <p className="text-sm text-gray-700 mb-4">{card.desc}</p>
-                    <p className="font-semibold text-sm mb-2">Features:</p>
-                    <ul className="list-disc list-inside text-sm text-gray-600 mb-6 space-y-1">
-                      {card.features.map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
-                    </ul>
-                    <div className="mt-auto">
-                      <button
-                        className="bg-black text-white text-sm font-semibold py-2 w-full hover:bg-gray-900"
-                        onClick={() => (window.location.href = "/")}
-                      >
-                        KNOW MORE
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
->>>>>>> Mayakannan
     </section>
   );
 };

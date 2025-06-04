@@ -6,11 +6,7 @@ const Service = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
         {/* Left text */}
         <div className="w-full md:w-1/3">
-<<<<<<< HEAD
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-=======
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed ml-10">
->>>>>>> Mayakannan
             Start Your Digital Wealth Journey <br />
             With 24K Pure Gold
           </p>
