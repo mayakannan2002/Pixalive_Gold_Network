@@ -1,9 +1,9 @@
 // src/components/StrategicCollaboration.jsx
-import React from 'react';
+import React, { useState } from 'react'; // ✅ Import useState
 import Authentication from './Authentication';
 
 const StrategicCollaboration = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null); // ✅ Now it will work
 
   const accordionData = [
     {
@@ -53,7 +53,25 @@ const StrategicCollaboration = () => {
             unmatched purity and expertise.
           </h3>
 
-          {/* Imported Authentication Component */}
+          {/* You can conditionally render the accordion or Authentication */}
+          <Authentication />
+
+          {/* Optional Accordion UI */}
+          <div className="space-y-4">
+            {accordionData.map((item, index) => (
+              <div key={index} className="border-b border-gray-300 pb-4">
+                <button
+                  onClick={() => toggleAccordion(index)}
+                  className="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none"
+                >
+                  {item.title}
+                </button>
+                {activeIndex === index && (
+                  <p className="mt-2 text-gray-600 text-sm">{item.content}</p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
