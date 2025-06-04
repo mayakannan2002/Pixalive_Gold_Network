@@ -1,4 +1,4 @@
-import aboutImage from './../../assets/Franchise/hero.png';
+import Hero from './../../assets/Franchise/Hero.png';
 
 const AboutUs = () => {
   return (
@@ -10,7 +10,7 @@ const AboutUs = () => {
       <section
         className="relative w-[94%] mx-auto overflow-hidden rounded-2xl"
         style={{
-           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${aboutImage})`,
+           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${Hero})`,
           
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -20,8 +20,8 @@ const AboutUs = () => {
         {/* Overlay heading */}
         <div className="absolute inset-0 flex items-center justify-center text-center px-4">
           <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">
-            Own a Piece of the Future with <br className="hidden sm:block" />
-            Pixalive Gold Network!
+            Became a Franchise Partener With <br className="hidden sm:block" />
+            Pixalive Gold Network
           </h1>
         </div>
 

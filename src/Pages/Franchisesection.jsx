@@ -1,10 +1,10 @@
 import React from 'react'
-
-import Hero from '../Components/Franchise/Hero'
-import Franchisecards from '../Components/Franchise/Franchisecards'
-import Focomodel from '../Components/Franchise/Focomodel'
-import FranchiseForm from '../Components/Franchise/Franchiseform'
-
+import Hero from '../Components/Franchise/Hero';
+import Franchisecards from './../Components/Franchise/Franchisecards';
+import Focomodel from './../Components/Franchise/Focomodel';
+import Franchiseform from './../Components/Franchise/Franchiseform';
+import Franchisepara from './../Components/Franchise/Franchisepara';
+import Franchiselast from './../Components/Franchise/Franchiselast';
 const Franchisesection = () => {
   return (
     <div>
@@ -12,7 +12,11 @@ const Franchisesection = () => {
       <Hero/>
       <Franchisecards/>
       <Focomodel/>
-      <FranchiseForm/>
+      <Franchiseform/>
+      <Franchisepara/>
+      <Franchiselast/>
+      
+      
     </div>
   )
 }
