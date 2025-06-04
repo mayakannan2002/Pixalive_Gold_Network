@@ -3,6 +3,7 @@ import { FiSearch } from 'react-icons/fi';
 import Blog1 from './../../assets/Blogs/blog1.png';
 import Blog2 from './../../assets/Blogs/blog2.png';
 import { Link } from 'react-router-dom'; // Import Link
+import HeaderAlone from '../HeaderAlone';
 
 const cardData = [
   {
@@ -83,7 +84,9 @@ export default function BlogPage() {
     });
 
   return (
-    <div className="min-h-screen bg-[#f6f6f6] text-black px-4 py-8 lg:px-20">
+    <>
+    <div><HeaderAlone /></div>
+     <div className="min-h-screen bg-[#f6f6f6] text-black px-4 py-8 lg:px-20">
       {/* Hero Section */}
       <div className=" bg-[#f6f6f6] text-black px-4 py-8 ">
         {/* Adjusted gap and flex alignment for desktop */}
@@ -211,5 +214,8 @@ export default function BlogPage() {
         </div>
       </div>
     </div>
+    
+    </>
+   
   );
 }

@@ -6,6 +6,7 @@ import blogThumb2 from './../../assets/Blogs/blog2.png';
 import authorImage from './../../assets/Blogs/author.png';
 import { FaRegShareSquare } from 'react-icons/fa';
 import { BiCopy } from 'react-icons/bi';
+import HeaderAlone from '../HeaderAlone';
 
 const BlogPostPage = () => {
   const [featuredBlog, setFeaturedBlog] = useState({
@@ -44,7 +45,9 @@ const BlogPostPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f6f6f6] text-black px-4 py-8 lg:px-20">
+    <>
+    <HeaderAlone />
+     <div className="min-h-screen bg-[#f6f6f6] text-black px-4 py-8 lg:px-20">
       <style>{`
         html {
           scroll-behavior: smooth;
@@ -287,6 +290,8 @@ const BlogPostPage = () => {
         </div>
       </div>
     </div>
+    </>
+   
   );
 };
 
