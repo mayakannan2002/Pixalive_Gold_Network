@@ -1,76 +1,32 @@
-import React from 'react';
-import mmtcPampLogo from './../../assets/About/mmtc-pamp.png'; // Assuming you have these images
-import lbmaMemberLogo from './../../assets/About/lbma-member.png'; // Assuming you have these images
+import React from "react";
 
-const OurPartnershipSection = () => {
+const GetStartedSection = () => {
   return (
-    <div className="bg-[#f6f6f6] text-black py-16 px-4 lg:px-20 flex justify-center">
-      <div className="max-w-[1280px] w-full mx-auto">
-
-        {/* Top Section: "Our Partnership" label and Main Quote */}
-        <div className="grid grid-cols-1 md:grid-cols-12 md:gap-24 mb-16 md:mb-24">
-          {/* Left Column for "Our Partnership" label */}
-          <div className="md:col-span-4 flex-shrink-0 mb-8 md:mb-0">
-            <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Our Partnership</p>
-          </div>
-
-          {/* Right Column for Main Quote (spans the remaining 8 columns) */}
-          <div className="md:col-span-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black leading-snug">
-              "We have partnered with MMTC-PAMP, India's
-              most trusted refinery, to ensure that every
-              gram of gold you own through Pixalive Gold is
-              certified, pure, and insured. Your investment is
-              real, secure, and future-ready."
-            </h1>
-          </div>
+    <section className="bg py-16 px-4">
+      <div className="max-w-[1101px] mx-auto bg-[#eeeeee] p-10 text-center shadow-sm">
+        {/* Red dot + subtitle */}
+        <div className="flex justify-center items-center gap-2 mb-3">
+          <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+          <p className="text-gray-600 text-sm">Pixalive Gold Networks</p>
         </div>
+        <br/>
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+          Join the Gold Revolution
+        </h2>
 
-        {/* Bottom Section: Two Image Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-12 md:gap-16">
-          {/* Empty column to push cards to the right, matching the quote alignment */}
-          <div className="md:col-span-4 hidden md:block">
-            {/* This div is intentionally empty on medium screens and up to create the blank space */}
-          </div>
+        {/* Subtext */}
+        <p className="text-gray-600 text-base leading-relaxed mb-8">
+          Be part of a platform that is redefining the way India interacts <br /> with gold. 
+        </p>
 
-          {/* Container for the two cards, spanning the remaining 8 columns */}
-          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
-            {/* Card 1: MMTC-PAMP */}
-            <div className=" border border-gray-200 p-6 md:p-8 flex flex-col items-start text-left">
-              <img
-                src={mmtcPampLogo}
-                alt="MMTC-PAMP Logo"
-                className="mb-8 w-48 h-auto object-contain"
-              />
-              <h3 className="text-lg font-semibold text-black mb-2">LBMA Good Delivery Refiner</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                MMTC-PAMP is India's only LBMA-accredited
-                gold and silver refinery, combining Swiss
-                precision and Indian expertise to set global
-                standards in precious metals.
-              </p>
-            </div>
-
-            {/* Card 2: LBMA Member */}
-            <div className=" border border-gray-200 p-6 md:p-8 flex flex-col items-start text-left">
-              <img
-                src={lbmaMemberLogo}
-                alt="LBMA Member Logo"
-                className="mb-8 w-48 h-auto object-contain"
-              />
-              <h3 className="text-lg font-semibold text-black mb-2">LBMA Good Delivery Refiner</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                MMTC-PAMP is India's only LBMA-accredited
-                gold and silver refinery, combining Swiss
-                precision and Indian expertise to set global
-                standards in precious metals.
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* Button */}
+        <button className="bg-black text-white px-6 py-2 hover:bg-gray-800 transition">
+          Contact Us
+        </button>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default OurPartnershipSection;
+export default GetStartedSection;

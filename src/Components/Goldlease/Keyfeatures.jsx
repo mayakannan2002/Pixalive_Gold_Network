@@ -1,76 +1,81 @@
-import React from "react";
-import img8 from "./../../assets/Goldlease/key1.png";
-import img9 from "./../../assets/Goldlease/key2.png";
-import img10 from "./../../assets/Goldlease/key3.png";
-import img11 from "./../../assets/Goldlease/key4.png";
+import React, { useState } from "react";
 
 const features = [
   {
-    id: "01",
-    src: img8,
+    id: 1,
     title: "Bank Guarantee",
     description:
-      "Enjoy complete peace of mind knowing your gold is backed by a trusted financial institution.",
+      "All digital gold investments on the Pixalive platform are backed by MMTC-PAMP’s 24K, 9999 pure gold, ensuring the highest standards of quality and authenticity.",
   },
   {
-    id: "02",
-    src: img9,
+    id: 2,
     title: "Flexible Lease Terms",
-    description:
-      "Choose from a range of lease durations, including 6 months, 1 year, and longer.",
+    description: "",
   },
   {
-    id: "03",
-    src: img10,
+    id: 3,
     title: "Gold Price Appreciation",
-    description:
-      "Your gold investment appreciates with the market, giving you added value along with lease returns.",
+    description: "",
   },
   {
-    id: "04",
-    src: img11,
+    id: 4,
     title: "High-Security Storage",
-    description:
-      "Your gold is stored in state-of-the-art vaults, with 24/7 monitoring and guaranteed protection.",
+    description: "",
   },
 ];
 
 const KeyFeatures = () => {
+  const [active, setActive] = useState(1);
+
+  const toggleFeature = (id) => {
+    setActive(active === id ? null : id);
+  };
+
   return (
-    <section className="bg-[#140113] text-white py-16 px-4 md:px-18">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">KEY FEATURES</h2>
-        <p className="text-gray-400 mb-12 max-w-3xl mx-auto text-sm md:text-base">
-          Flexible Maturity Options — Upon Completing The Lease Term, You Can
-          Either Take Back Your Gold Or Extend The Lease, Giving You Full
-          Control Over Your Gold Investment Journey
-        </p>
+    <section className="bg-[#F5F5F5] py-16 px-4 md:px-10 lg:px-24">
+      <div className="max-w-[1280px] mx-auto">
+        {/* Header section with left and right layout */}
+        <div className="flex flex-col md:flex-row gap-6 mb-10">
+          {/* Left: Label */}
+          <div className="md:w-1/4">
+            <p className="text-sm text-gray-500 mb-2">Key Features</p>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              tabIndex={0}
-              className="group bg-white text-black rounded-xl p-6 shadow-sm h-[240px] flex flex-col justify-start items-start relative overflow-hidden focus:outline-none"
-            >
-              {/* Icon */}
-              <div className="mb-2">
-                <img src={feature.src} alt={feature.title} className="w-8 h-8" />
-              </div>
+          {/* Right: Heading */}
+          <div className="md:w-3/4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-black leading-relaxed">
+              Flexible Maturity Options — Upon completing the lease term, you can
+              either take back your gold or extend the lease, giving you full
+              control over your gold investment journey
+            </h2>
+          </div>
+        </div>
 
-              {/* Title + ID */}
-              <div className="transition-all duration-300 group-hover:translate-y-0 group-focus-within:translate-y-0 translate-y-12 text-left">
-                <div className="text-sm text-gray-400">{feature.id}</div>
-                <h3 className="text-lg font-semibold leading-snug">{feature.title}</h3>
-              </div>
-
-              {/* Divider line */}
-              <div className="w-full border-t border-gray-300 my-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300"></div>
-
-              {/* Description */}
-              <div className="transition-all duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 text-left">
-                <p className="text-sm text-gray-600">{feature.description}</p>
-              </div>
+        {/* Accordion list */}
+        <div className=" bg-white shadow-sm divide-y divide-gray-200">
+          {features.map((feature) => (
+            <div key={feature.id}>
+              <button
+                className="w-full text-left px-6 py-5 flex justify-between items-center"
+                onClick={() => toggleFeature(feature.id)}
+              >
+                <div>
+                  <div className="text-xl font-bold text-black">
+                    {String(feature.id).padStart(2, "0")}
+                  </div>
+                  <div className="text-md font-semibold text-black mt-1">
+                    {feature.title}
+                  </div>
+                  {active === feature.id && feature.description && (
+                    <p className="text-sm text-gray-600 mt-3 max-w-xl">
+                      {feature.description}
+                    </p>
+                  )}
+                </div>
+                <div className="text-2xl text-gray-400">
+                  {active === feature.id ? "−" : "+"}
+                </div>
+              </button>
             </div>
           ))}
         </div>

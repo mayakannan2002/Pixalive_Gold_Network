@@ -12,12 +12,12 @@ const Goldlease = () => {
     <div>
 
 <Hero/>
-<Banner/>
 <WhyChoose/>
 <HowItWorks/>
 <KeyFeatures/>
 <InvestmentTerms/>
 <PlanCategories/>
+<Banner/>
     </div>
   )
 }
