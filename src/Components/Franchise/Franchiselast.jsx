@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const GetStartedSection = () => {
   return (
@@ -24,7 +25,8 @@ const GetStartedSection = () => {
         {/* Buttons */}
         <div className="flex justify-center gap-4 flex-wrap">
           {/* Contact Us Button */}
-          <button className="group flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 transition-colors duration-200">
+          <Link to="/contact">
+          <button className="group flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium  text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 transition-colors duration-200">
             Contact Us
             <svg
               className="ml-2 -mr-1 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-200"
@@ -45,6 +47,7 @@ const GetStartedSection = () => {
               />
             </svg>
           </button>
+          </Link>
 
           {/* Download Brochure Button */}
           <button className="group flex items-center justify-center px-8 py-3 border border-gray-700 text-base font-medium  text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-200">

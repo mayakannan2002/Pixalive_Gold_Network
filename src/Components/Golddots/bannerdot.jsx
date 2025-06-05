@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const SupportSection = () => {
   return (
     <section className=" py-14 px-6 flex justify-center">
@@ -43,9 +43,11 @@ const SupportSection = () => {
           </p>
 
           {/* Button */}
+          <Link to="/contact">
           <button className="bg-black text-white text-sm font-medium px-6 py-3 hover:bg-gray-800 transition-colors duration-300">
             Contact Us
           </button>
+          </Link>
         </div>
       </div>
     </section>
