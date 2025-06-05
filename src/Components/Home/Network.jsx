@@ -1,67 +1,84 @@
-import React from 'react';
-
+import React from "react";
+import GS1 from "./../../assets/gs1.png";
+import GS2 from "./../../assets/gs2.png";
+import GS3 from "./../../assets/gs3.png";
+import GS4 from "./../../assets/gs4.png";
+import GS5 from "./../../assets/gs5.png";
+import GS6 from "./../../assets/gs6.png";
 const features = [
   {
-    title: '1. Comprehensive Gold Services:',
+    icon: GS1,
+    title: "Comprehensive Gold Services",
     description:
-      'Offers a complete range of gold-related services, including digital gold investment, physical gold redemption, gold loans, and jewelry purchases.',
-    image: '/images/gold-services.png',
+      "Provides end-to-end gold services including digital investment, physical redemption, loans, and jewelry purchases.",
   },
   {
-    title: '2. Gold-Backed Ecosystem:',
+    icon: GS2,
+    title: "Gold-Backed Ecosystem",
     description:
-      'Integrates gold into everyday life, allowing users to redeem their gold for groceries, pharmacy products, dining, salon services, and more.',
-    image: '/images/gold-ecosystem.png',
+      "Integrates gold into everyday life, allowing users to redeem their gold for groceries, pharmacy products, dining, salon services, and more.",
   },
   {
-    title: '3. Secure and Transparent:',
+    icon: GS3,
+    title: "Secure and Transparent",
     description:
-      'Ensures top-tier security with trusted partners like MMTC-PAMP, Brink’s, and blockchain-based operations for transparency.',
-    image: '/images/secure-transparent.png',
+      "Ensures top-tier security with trusted partners like MMTC-PAMP, Brink’s, and blockchain-backed operations for transparency.",
   },
   {
-    title: '4. Community-Centric Approach:',
+    icon: GS4,
+    title: "Community-Centric Approach",
     description:
-      'Empowers local businesses and users through partnerships, franchise opportunities, and gold-backed rewards programs.',
-    image: '/images/community-centric.png',
+      "Empowers local businesses and users through partnerships, franchise opportunities, and gold-backed rewards programs.",
   },
   {
-    title: '5. Profit Opportunities:',
+    icon: GS5,
+    title: "Profit Opportunities",
     description:
-      'Provides earning potential through franchise models, referral rewards, and gold leasing programs.',
-    image: '/images/profit-opportunities.png',
+      "Provides earning potential through franchise models, referral rewards, and gold leasing programs.",
   },
   {
-    title: '6. Trusted Brand:',
+    icon: GS6,
+    title: "Trusted Brand",
     description:
-      'Operated by Pixalive Group, a leader in integrating gold, technology, and community-driven services.',
-    image: '/images/trusted-brand.png',
+      "Operated by Pixalive Group, a leader in integrating gold, technology, and community-driven services.",
   },
 ];
 
-const GoldFeatures = () => {
+const WhyChooseUs = () => {
   return (
-    <section className="bg-white py-16 px-4 md:px-10">
-      <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-12">
-        WHY CHOOSE <span className="text-[#B98A30]">PIXALIVE GOLD NETWORK?</span>
-      </h2>
-      <div className="max-w-5xl mx-auto space-y-10">
-        {features.map((feature, index) => (
-          <div key={index} className="flex items-center justify-between border-b border-gray-200 pb-6">
-            <div className="w-3/4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-              <p className="text-gray-700 text-sm">{feature.description}</p>
+    <section className="  w-full px-4 md:px-8 lg:px-6 py-16 max-w-[1280px] mx-auto font-[Lufga]">
+      {/* Header Row */}
+      <div className="flex flex-col md:flex-row justify-between items-start mb-14">
+        <h3 className="text-sm md:text-base text-[#4B4B4B] font-medium md:w-1/4">
+          Why Choose Us
+        </h3>
+        <p className="text-[20px] md:text-[32px] lg:text-[44px] leading-[32px] md:leading-[54px] text-black font-lufga md:w-3/4">
+          Provides end-to-end gold services including digital investment, physical redemption, loans, and jewelry purchases.
+        </p>
+      </div>
+
+      {/* Aligned Grid under Paragraph */}
+      <div className="md:ml-[25%] w-full md:w-[75%]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+          {features.map((feature, index) => (
+            <div key={index} className="flex flex-col gap-3">
+              <img
+                src={feature.icon}
+                alt={feature.title}
+                className="w-8 h-8 object-contain md:w-10 md:h-10"
+              />
+              <h4 className="text-[16px] md:text-[17px] lg:text-[22px] font-bold text-black">
+                {feature.title}
+              </h4>
+              <p className="text-[14px] md:text-[15px] lg:text-[18px] text-[#666666] leading-[22px] md:leading-[24px] lg:leading-[30px]">
+                {feature.description}
+              </p>
             </div>
-            <img
-              src={feature.image}
-              alt={feature.title}
-              className="w-28 h-28 object-contain"
-            />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default GoldFeatures;
+export default WhyChooseUs;

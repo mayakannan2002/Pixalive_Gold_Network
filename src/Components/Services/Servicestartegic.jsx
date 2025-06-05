@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import office from "./../../assets/Service/office.png";
+// src/components/StrategicCollaboration.jsx
+import React, { useState } from 'react'; // ✅ Import useState
+import Authentication from './Authentication';
 
 const StrategicCollaboration = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null); // ✅ Now it will work
 
   const accordionData = [
     {
@@ -12,74 +13,64 @@ const StrategicCollaboration = () => {
     },
     {
       title: 'Secure Storage',
-      content: '',
+      content:
+        'Your gold is stored in 100% secure and insured vaults by MMTC-PAMP, ensuring complete peace of mind.',
     },
     {
       title: 'Seamless Transactions',
-      content: '',
+      content:
+        'Buy, sell, or convert your gold digitally anytime through the Pixalive platform with a smooth and transparent process.',
     },
     {
       title: 'Accessibility',
-      content: '',
+      content:
+        'Invest in gold starting from as low as ₹1, making it accessible for everyone across the country.',
     },
   ];
 
+  const toggleAccordion = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
+
   return (
-    <section className="bg-[#f5f5f5] py-16 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+    <section className="bg-[#f5f5f5] py-16 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10">
         {/* Left Text Block */}
-        <div className="lg:w-1/3">
-          <h2 className="text-gray-500 font-medium text-[15px] leading-relaxed">
+        <div className="lg:col-span-3 ml-19">
+          <h2 className="text-gray-500 font-medium text-sm leading-relaxed">
             Pixalive Gold Network’s <br />
             Strategic Collaboration <br />
             With MMTC-PAMP
           </h2>
         </div>
 
-        {/* Right Block */}
-        <div className="lg:w-2/3 space-y-10">
-          {/* Heading */}
-          <h3 className="text-3xl md:text-4xl font-semibold leading-snug text-black">
-            Pixalive Gold Network’s partnership with MMTC-PAMP ensures trusted, secure, and
-            innovative gold investment through unmatched purity and expertise.
+        {/* Right Text + Authentication Component */}
+        <div className="lg:col-span-9 space-y-10 ml-30">
+          <h3 className="text-black text-2xl md:text-4xl font-medium leading-snug">
+            Pixalive Gold Network’s partnership with<br />
+            MMTC-PAMP ensures trusted, secure, and<br />
+            innovative gold investment through<br />
+            unmatched purity and expertise.
           </h3>
 
-          {/* White Box with Image + Accordion */}
-          <div className="bg-white rounded-xl shadow-md overflow-hidden grid md:grid-cols-2">
-            {/* Left Image */}
-            <div className="w-full h-[420px]">
-              <img
-                src={office}
-                alt="Handshake"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          {/* You can conditionally render the accordion or Authentication */}
+          <Authentication />
 
-            {/* Accordion Content */}
-            <div className="p-8 space-y-5">
-              {accordionData.map((item, index) => (
-                <div
-                  key={index}
-                  className="border-b pb-4 cursor-pointer"
-                  onClick={() => setActiveIndex(index === activeIndex ? null : index)}
+          {/* Optional Accordion UI */}
+          <div className="space-y-4">
+            {accordionData.map((item, index) => (
+              <div key={index} className="border-b border-gray-300 pb-4">
+                <button
+                  onClick={() => toggleAccordion(index)}
+                  className="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none"
                 >
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <p className="text-2xl font-bold text-black">{`0${index + 1}`}</p>
-                      <h4 className="font-semibold text-black mt-1">{item.title}</h4>
-                    </div>
-                    <span className="text-2xl text-gray-600">
-                      {activeIndex === index ? '−' : '+'}
-                    </span>
-                  </div>
-                  {activeIndex === index && item.content && (
-                    <p className="mt-2 text-gray-600 text-sm leading-relaxed pr-4">
-                      {item.content}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
+                  {item.title}
+                </button>
+                {activeIndex === index && (
+                  <p className="mt-2 text-gray-600 text-sm">{item.content}</p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
