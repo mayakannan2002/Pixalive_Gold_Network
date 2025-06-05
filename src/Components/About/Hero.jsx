@@ -47,12 +47,15 @@ const Hero = () => {
 
 
           <div className="hidden md:block">
+            <Link to="/signup">
             <button className="group bg-white text-black px-4 py-2 cursor-pointer">
               Sign up &nbsp;
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                 ↗
               </span>
+              
             </button>
+            </Link>
           </div>
 
 
@@ -74,13 +77,14 @@ const Hero = () => {
                   navigate(item.path);
                   setNavOpen(false);
                 }}
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-yellow-100"
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-200"
               >
                 {item.name}
               </button>
             ))}
             <div className="p-4">
-              <button className="bg-black text-white px-4 py-2 w-full rounded">Sign up</button>
+              <Link to="/signup">
+              <button className="bg-black text-white px-4 py-2 w-full rounded">Sign up</button></Link>
             </div>
           </div>
         )}
@@ -97,12 +101,14 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+              <Link to="/">
               <button className="group bg-white text-black px-5 py-2 cursor-pointer">
                 Explore Pixalive Network &nbsp;
                 <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                   ↗
                 </span>
               </button>
+              </Link>
             </div>
           </div>
         </div>

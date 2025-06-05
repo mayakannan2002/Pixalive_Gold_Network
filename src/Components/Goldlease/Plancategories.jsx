@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const plans = {
   under1000: [
@@ -117,10 +118,10 @@ const PricingTabs = () => {
                   <p className="text-2xl font-bold text-black mb-4">
                     {plan.range} <span className="text-sm font-normal">/grams</span>
                   </p>
-
+                  <Link to="/contact">
                   <button className="bg-black text-white px-4 py-2 mb-5 hover:bg-gray-800 transition">
                     Contact us
-                  </button>
+                  </button></Link>
 
                   <div className="border-t border-gray-300 my-4" />
 

@@ -1,99 +1,71 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
-import logo from "./../../assets/Headermain/logo.png";
-import goldAnimation from "./../../assets/Animation1.gif";
-import mmtc from "./../../assets/Headermain/mmtcpamp.png"; // Ensure this path is correct
-import lbma from "./../../assets/Headermain/lbma.png"; // Ensure this path is correct
-import { useNavigate } from 'react-router-dom'; // Make sure you have react-router-dom installed
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import jewImage from "./../../assets/jewImage.png";
+import Pixalive from "./../../assets/Techlogo.png";
 
-export default function LoginPage() {
-  const [showTerms, setShowTerms] = useState(false);
+const LoginPage = () => {
   const navigate = useNavigate();
 
-  const handleGoHome = () => {
-    navigate('/');
-  };
-
   return (
-    <div className="min-h-screen bg-[#f9f6f2] flex flex-col items-center">
-      {/* Header */}
-      <div className="w-full bg-[#f9f6f2] flex items-center justify-center  ">
-        <img src={logo} alt="Pixalive Gold Logo" className="h-50 w-50" />
+    <div className="flex h-screen w-full">
+      {/* Left Section */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-white p-6 relative">
+        {/* Pixalive Logo */}
+        <div className="mb-6">
+          <img src={Pixalive} alt="Pixalive Logo" className="w-10 h-10" />
+        </div>
+
+        {/* Welcome Message */}
+        <h2 className="text-2xl md:text-5xl text-black mb-10 font-normal">
+          Welcome back!
+        </h2>
+
+        {/* Mobile Number Input */}
+        <input
+          type="tel"
+          placeholder="Enter mobile number"
+          className="w-[260px] border border-gray-300 px-4 py-2 mb-4 focus:outline-none focus:border-black"
+        />
+
+        {/* Login Button */}
+        <button className="w-[260px] bg-black text-white py-2 mb-3 hover:opacity-90 transition">
+          Login
+        </button>
+
+        {/* Google Login */}
+        <button className="w-[260px] border border-gray-300 flex items-center justify-center gap-2 py-2 text-sm bg-white hover:bg-gray-100 transition">
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            alt="Google"
+            className="w-5 h-5"
+          />
+          Login with Google
+        </button>
+
+        {/* Terms */}
+        <p className="text-[11px] text-gray-400 mt-6 underline cursor-pointer">
+          Terms and Conditions
+        </p>
+
+        {/* Home Button */}
+        <button
+          onClick={() => navigate("/")}
+          className="absolute bottom-6 text-sm text-black underline hover:text-gray-700 transition"
+        >
+          ← Go back to Home
+        </button>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-center items-center flex-1 w-full max-w-5xl p-5">
-        {/* Left Side - Animation & Text */}
-        
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex-1 text-center lg:text-left px-6 py-4"
-        >
-          <img
-            src={goldAnimation}
-            alt="Gold Animation"
-            className="rounded-full w-60 h-60 mx-auto lg:mx-0 object-cover"
-          />
-          <h2 className="text-xl mt-4 text-[#B98A30] font-semibold">
-            Earn Up To 16% <br /> From Your Gold Every Year
-          </h2>
-        </motion.div>
-        {/* Right Side - Form */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex-1 max-w-md bg-white shadow-xl rounded-2xl p-6 flex flex-col"
-        >
-          <button className="text-[#B98A30] mb-4">
-            <ArrowLeft />
-          </button>
-          <h1 className="text-2xl font-bold mb-4 text-gray-800">Login or Sign Up</h1>
-          <input
-            type="text"
-            placeholder="Enter Mobile Number"
-            className="w-full border border-[#B98A30] px-4 py-2 rounded-md mb-4 focus:outline-none"
-          />
-          <button className="w-full bg-[#B98A30] text-white font-semibold py-2 rounded-full hover:bg-[#966d24]">
-            Continue
-          </button>
-
-          <p
-            className="text-sm text-center text-[#B98A30] mt-4 cursor-pointer underline"
-            onClick={() => setShowTerms(!showTerms)}
-          >
-            Terms and Conditions
-          </p>
-
-          {showTerms && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="mt-4 text-sm text-gray-600 space-y-2"
-            >
-              <p>1. Minimum investment required is ₹100.</p>
-              <p>2. Gold value may fluctuate as per market conditions.</p>
-              <p>3. Annual returns up to 16% depend on leasing plans.</p>
-              <p>4. Withdrawals are subject to processing time.</p>
-            </motion.div>
-          )}
-
-<div className="text-xs text-center mt-6 text-gray-400 flex items-center justify-center gap-2">
-  Secured by
-  <img src={mmtc}  className="h-6 w-auto" />
-  <img src={lbma} alt="Description of Secured By Partner 2" className="h-6 w-auto" />
-</div>
-
-          <button
-            onClick={handleGoHome}
-            className="mt-4 w-full bg-gray-300 text-gray-700 font-semibold py-2 rounded-full hover:bg-gray-400"
-          >
-            Go Back Home
-          </button>
-        </motion.div>
+      {/* Right Image Section */}
+      <div className="hidden md:block w-1/2 h-full">
+        <img
+          src={jewImage}
+          alt="Jewellery"
+          className="w-full h-full object-fill"
+        />
       </div>
     </div>
   );
-}
+};
+
+export default LoginPage;
