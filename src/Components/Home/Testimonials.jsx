@@ -5,18 +5,18 @@ import PriyaImg from "./../../assets/About/avatar2.png"; // Update with actual p
 
 const testimonials = [
   {
-    text: `"A seamless and secure way to invest in gold!" I’ve always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.`,
+    text: "A seamless and secure way to invest in gold! I’ve always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.",
     name: "Priya R",
     location: "Chennai",
     rating: 4,
     badge: {
       icon: <BsShieldCheck className="w-4 h-4 text-green-600" />,
-      text: "100% Sale and Secure",
+      text: "100% Safe and Secure",
       position: "bottom",
     },
   },
   {
-    text: `"Pixalive feels less like an office and more like a creative playground. As a freelance designer, I’ve finally found a space that keeps me focused and inspired."`,
+    text: "Pixalive feels less like an office and more like a creative playground. As a freelance designer, I’ve finally found a space that keeps me focused and inspired.",
     name: "Karan P",
     location: "Mumbai",
     rating: 4,
@@ -24,7 +24,7 @@ const testimonials = [
     centerText: true,
   },
   {
-    text: `"A seamless and secure way to invest in gold!" I’ve always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.`,
+    text: "A seamless and secure way to invest in gold! I’ve always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.",
     name: "Anjali S",
     location: "Bangalore",
     rating: 4,
@@ -42,17 +42,15 @@ export default function TestimonialSection() {
   const length = testimonials.length;
 
   useEffect(() => {
-    // Handle auto sliding
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % length);
     }, 3000);
 
-    // Handle resize
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-    window.addEventListener("resize", handleResize);
 
+    window.addEventListener("resize", handleResize);
     return () => {
       clearInterval(interval);
       window.removeEventListener("resize", handleResize);
@@ -60,11 +58,7 @@ export default function TestimonialSection() {
   }, [length]);
 
   const getVisibleIndexes = () => {
-    if (windowWidth < 768) {
-      // mobile: only show center card
-      return [activeIndex];
-    }
-    // md+: show prev, center, next
+    if (windowWidth < 768) return [activeIndex];
     const prev = (activeIndex - 1 + length) % length;
     const next = (activeIndex + 1) % length;
     return [prev, activeIndex, next];
@@ -84,15 +78,15 @@ export default function TestimonialSection() {
         </p>
       </div>
 
-      {/* Slider container */}
-      <div
-        className={`flex justify-center items-stretch gap-8 overflow-hidden ${
-          windowWidth < 768 ? "flex-col" : "flex-row"
-        }`}
-      >
-        {getVisibleIndexes().map((index) => {
-          const item = testimonials[index];
-          const isCenter = index === activeIndex;
+        {/* Slider Cards */}
+        <div
+          className={`flex justify-center items-stretch gap-8 overflow-hidden ${
+            windowWidth < 768 ? "flex-col" : "flex-row"
+          }`}
+        >
+          {getVisibleIndexes().map((index) => {
+            const item = testimonials[index];
+            const isCenter = index === activeIndex;
 
           return (
             <div

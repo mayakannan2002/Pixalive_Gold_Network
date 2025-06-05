@@ -2,14 +2,14 @@ import React from "react";
 
 const GetStartedSection = () => {
   return (
-    <section className="bg-[#f6f6f6] py-20 px-6 flex justify-center">
+    <section className=" py-20 px-6 flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto bg-[#eeeeee] p-10 text-center shadow-sm ">
         {/* Red dot + subtitle */}
         <div className="flex justify-center items-center gap-2 mb-2">
-          <span className="w-2 h-2 bg-red-400 "></span>
-          <p className="text-gray-600 text-sm">Pixalive Gold Network</p>
+          <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+          <p className="text-gray-600 text-base">Pixalive Gold Network</p>
         </div>
-
+<br />
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
           Ready to Grow with Us?
