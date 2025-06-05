@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import featuredImageBase from './../../assets/Blogs/blog-1.png';
+import featuredImageBase from './../../assets/Blogs/blogpage.png';
 import promoImage from './../../assets/Blogs/blog-promo.png';
 import blogThumb1 from './../../assets/Blogs/B1.png';
-import blogThumb2 from './../../assets/Blogs/B2.png'; // updated file name
+import blogThumb2 from './../../assets/Blogs/B2.png';
 import authorImage from './../../assets/Blogs/author.png';
 import { FaRegShareSquare } from 'react-icons/fa';
 import { BiCopy } from 'react-icons/bi';
 import HeaderAlone from '../HeaderAlone';
+import { Link } from 'react-router-dom';
 
 const BlogPostPage = () => {
   const [featuredBlog, setFeaturedBlog] = useState({
@@ -20,10 +21,12 @@ const BlogPostPage = () => {
       thumb: blogThumb1,
     },
     {
-      title: 'How to protect your wealth in a digital world',
+      title: 'Guide to Invest in Gold Through SIP: Know This Before You Invest',
       thumb: blogThumb2,
     },
   ]);
+
+  const [activeTocItem, setActiveTocItem] = useState(null);
 
   const handleRecentBlogClick = (index) => {
     const clickedBlog = recentBlogs[index];
@@ -32,6 +35,14 @@ const BlogPostPage = () => {
     newRecentBlogs[index] = currentFeatured;
     setFeaturedBlog(clickedBlog);
     setRecentBlogs(newRecentBlogs);
+  };
+
+  const handleTocClick = (id) => {
+    setActiveTocItem(id);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -247,9 +258,11 @@ const BlogPostPage = () => {
                   <p className="text-sm text-gray-700 mb-4">
                     Join the network trusted for digital gold, loans, jewelry & more — all in one seamless, secure platform.
                   </p>
+                  <Link to="/">
                   <button className="bg-black text-white text-sm px-4 py-2 mt-2">
                     Explore Pixalive Gold
                   </button>
+                  </Link>
                 </div>
 
                 {/* Image */}

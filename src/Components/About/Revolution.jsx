@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const GetStartedSection = () => {
   return (
@@ -21,9 +22,11 @@ const GetStartedSection = () => {
         </p>
 
         {/* Button */}
+        <Link to="/contact">
         <button className="bg-black text-white px-6 py-2 hover:bg-gray-800 transition">
           Contact Us
         </button>
+        </Link>
       </div>
     </section>
   );

@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 
 const faqItems = [
@@ -48,10 +45,10 @@ const FranchiseAdvantage = () => {
   };
 
   return (
-    <section className="bg">
-      {/* Franchise Advantage Text Section */}
-      <div className="py-20 px-4 md:px-10 lg:px-24">
-        <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-12">
+    <section className=" py-14 px-6 flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto">
+        {/* Franchise Advantage Text Section */}
+        <div className="flex flex-col md:flex-row gap-12 mb-12">
           {/* Left Label */}
           <div className="md:w-1/4">
             <p className="text-sm text-gray-500 font-medium leading-snug">
@@ -61,19 +58,17 @@ const FranchiseAdvantage = () => {
 
           {/* Right Intro Text */}
           <div className="md:w-3/4">
-            <p className="text-3xl md:text-4xl text-black font-semibold leading-snug mb-12">
-              Unlock exclusive growth potential with a <br />
-              trusted gold-tech brand offering scalable <br />
-              models, strong support, and future-ready <br />
+            <p className="text-2xl md:text-3xl text-black meadium leading-snug">
+              Unlock exclusive growth potential with a 
+              trusted gold-tech brand offering scalable 
+              models, strong support, and future-ready 
               opportunities.
             </p>
           </div>
         </div>
-      </div>
 
-      {/* FAQ Section */}
-      <div className="px-6 md:px-20 pb-20">
-        <div className="max-w-[1280px] mx-auto grid md:grid-cols-2 gap-8 bg-white p-6 md:p-10  shadow-sm">
+        {/* FAQ Section */}
+        <div className="grid md:grid-cols-2 gap-8 bg-white p-6 md:p-10 shadow-sm">
           {faqItems.map((item, index) => (
             <div
               key={index}
@@ -85,31 +80,30 @@ const FranchiseAdvantage = () => {
                   {item.question}
                 </h3>
                 <span className="ml-2">
-  {openIndex === index ? (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-4 w-4"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-    </svg>
-  ) : (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-4 w-4"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  )}
-</span>
-
+                  {openIndex === index ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
+                </span>
               </div>
               {openIndex === index && (
                 <p className="mt-2 text-[14px] text-gray-600 leading-relaxed">

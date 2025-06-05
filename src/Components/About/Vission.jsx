@@ -1,30 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const Vission = () => {
-  const data = [
-    {
-      count: "30+",
-      title: "Empowering India Through a Trusted Gold Ecosystem",
-      subtitle: "Our Vision",
-      description:
-        "To establish Pixalive Gold Network as the largest and most trusted gold ecosystem in India, fostering financial empowerment and accessibility through innovative services and strategic partnerships",
-    },
-    {
-      count: "06+",
-      title: "EmpowerCore: Bringing Gold Closer to Everyday Life",
-      subtitle: "Our Mission",
-      description:
-        "To empower individuals and businesses by creating a secure, transparent, and innovative gold ecosystem that brings the value of gold closer to everyday life.",
-    },
-    {
-      count: "4000+",
-      title: "Our Branches and Premier Partnerships",
-      subtitle: "Our Goal",
-      description:
-        "Expand to 4000+ branches across India to make gold services widely accessible. Build trust through partnerships with top brands like MMTC-PAMP.",
-    },
-  ];
-
+const AboutPageHero = () => {
   return (
     // Outer container for background and min-height, no padding here
     <div className="min-h-screen bg-[#f6f6f6] text-black">

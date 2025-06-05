@@ -2,7 +2,7 @@ import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
-// ✅ Import logos
+// ✅ Manually imported logo images
 import MMTC from "./../../assets/secured/mmtc.png";
 import LBMA from "./../../assets/secured/lbma.png";
 import UPI from "./../../assets/secured/upi.png";
@@ -18,18 +18,19 @@ const companies = [
   { name: "Unified Payments Interface", logo: UPI, link: "https://www.npci.org.in/what-we-do/upi/product-overview" },
   { name: "PhonePe", logo: PHONEPE, link: "https://www.phonepe.com" },
   { name: "NPCI", logo: NPCI, link: "https://www.npci.org.in" },
+  { name: "PhonePe", logo: PHONEPE, link: "https://www.phonepe.com" },
+  { name: "NPCI", logo: NPCI, link: "https://www.npci.org.in" },
   { name: "Cashfree Payments", logo: CASHFREE, link: "https://www.cashfree.com" },
   { name: "Startup India", logo: STARTUP, link: "https://www.startupindia.gov.in" },
   { name: "Bureau of Indian Standards", logo: BIS, link: "https://www.bis.gov.in" },
 ];
 
-// ✅ StatBox component
 const StatBox = ({ end, suffix, label }) => {
   const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
     <div className="text-center" ref={ref}>
-      <div className="text-5xl sm:text-6xl md:text-7xl font-bold text-black">
+      <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
         {inView && <CountUp start={0} end={end} duration={2} suffix={suffix} />}
       </div>
       <p className="text-sm mt-2 text-black">{label}</p>
@@ -37,7 +38,7 @@ const StatBox = ({ end, suffix, label }) => {
   );
 };
 
-const SecurityAndStats = () => {
+export default function SecurityAndStats() {
   return (
     <section className="w-full max-w-[1380px] mx-auto px-4 py-12 md:py-20 font-[Lufga]">
       {/* Section Title */}
@@ -45,7 +46,7 @@ const SecurityAndStats = () => {
         Secured By
       </h2>
 
-      {/* Logos */}
+      {/* Company Logos Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mb-10 sm:mb-12">
         {companies.map((company, idx) => (
           <a
@@ -53,7 +54,7 @@ const SecurityAndStats = () => {
             href={company.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 sm:gap-3 border border-[#E6E6E6] p-3 sm:py-4 sm:px-2 hover:shadow-md transition"
+            className="flex items-center gap-2 sm:gap-3 border border-[#E6E6E6] p-3 sm:py-4 sm:px-2 hover:shadow-md transition "
           >
             <img
               src={company.logo}
@@ -72,7 +73,7 @@ const SecurityAndStats = () => {
         Pixalive Gold Network is secured by MMTC-PAMP, Brink's, and blockchain technology.
       </p>
 
-      {/* Stats */}
+      {/* Stats Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
         <StatBox end={8} suffix="+" label="Trusted Partners" />
         <StatBox end={1} suffix="L+" label="Active Gold Users" />
@@ -80,6 +81,4 @@ const SecurityAndStats = () => {
       </div>
     </section>
   );
-};
-
-export default SecurityAndStats;
+}

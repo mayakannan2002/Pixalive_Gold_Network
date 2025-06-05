@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const GetStartedSection = () => {
   return (
@@ -9,7 +10,7 @@ const GetStartedSection = () => {
           <span className="w-2 h-2 bg-red-500 rounded-full" />
           <p className="text-gray-600 text-sm">Pixalive Gold Network</p>
         </div>
-        <br/>
+
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
           Get Started Today
@@ -22,12 +23,14 @@ const GetStartedSection = () => {
         </p>
 
         {/* Button */}
+        <Link to="/contact">
         <button
-          className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-300"
+          className="bg-black text-white px-6 py-3  hover:bg-gray-800 transition-colors duration-300"
           aria-label="Contact us for Pixalive Gold Lease"
         >
           Contact Us
         </button>
+        </Link>
       </div>
     </section>
   );

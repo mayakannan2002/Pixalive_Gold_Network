@@ -5,8 +5,6 @@ import logo from "./../../assets/logowhite.png";
 import { Link } from "react-router-dom";
 import pixaliveFooterImage from "./../../assets/Pixalive.png";
 
-
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -43,8 +41,8 @@ const Footer = () => {
               <div className="flex flex-col gap-5 md:mr-10 text-left">
                 <Link to="/" onClick={scrollToTop} className="hover:underline cursor-pointer">Home</Link>
                 <Link to="/services" onClick={scrollToTop} className="hover:underline cursor-pointer">Services</Link>
-                <Link to="/gold-dots" onClick={scrollToTop} className="hover:underline cursor-pointer">Gold dots</Link>
-                <Link to="/buy-coins" onClick={scrollToTop} className="hover:underline cursor-pointer">Buy Coins</Link>
+                <Link to="/golddots" onClick={scrollToTop} className="hover:underline cursor-pointer">Gold dots</Link>
+                <Link to="/buycoins" onClick={scrollToTop} className="hover:underline cursor-pointer">Buy Coins</Link>
               </div>
               <div className="flex flex-col gap-5 text-left">
                 <Link to="/franchise" onClick={scrollToTop} className="hover:underline cursor-pointer">Franchise</Link>
@@ -107,8 +105,6 @@ const Footer = () => {
           className="max-w-[1440px] w-full h-auto object-contain"
         />
       </div>
-
-
     </footer>
   );
 };

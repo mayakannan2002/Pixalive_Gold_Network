@@ -87,10 +87,10 @@ const cardData = [
 
 const ServiceCardSlider = () => {
   return (
-    <section className="bg-[#f5f5f5] py-16 px-4">
-      <div className="max-w-[1280px] mx-auto">
+    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto">
         <h2 className="text-lg font-medium text-gray-700 mb-6">Our Services</h2>
-
+        
         <Swiper
           slidesPerView={1.2}
           spaceBetween={16}
@@ -112,7 +112,7 @@ const ServiceCardSlider = () => {
           {cardData.map((card, index) => (
             <SwiperSlide key={index} className="!h-auto">
               <div className="h-full">
-                <div className="bg-white flex flex-col h-full shadow-md rounded-lg overflow-hidden">
+                <div className="bg-white flex flex-col h-full shadow-md  overflow-hidden">
                   <img
                     src={card.img}
                     alt={card.title}
@@ -129,7 +129,7 @@ const ServiceCardSlider = () => {
                     </ul>
                     <div className="mt-auto">
                       <button
-                        className="bg-black text-white text-sm font-semibold py-2 w-full hover:bg-gray-900 rounded"
+                        className="bg-black text-white text-sm font-semibold py-2 w-full hover:bg-gray-900"
                         onClick={() => window.location.href = "/"}
                       >
                         KNOW MORE

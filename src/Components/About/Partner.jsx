@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
+import mmtcPampLogo from './../../assets/About/mmtc-pamp.png'; // Assuming you have these images
+import lbmaMemberLogo from './../../assets/About/lbma-member.png'; // Assuming you have these images
 
-const GetStartedSection = () => {
+const OurPartnershipSection = () => {
   return (
-    <section>
     <div className="bg-[#f6f6f6] text-black py-14 px-6  flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto">
 
@@ -24,16 +25,13 @@ const GetStartedSection = () => {
             </h1>
           </div>
         </div>
-        <br/>
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-          Join the Gold Revolution
-        </h2>
 
-        {/* Subtext */}
-        <p className="text-gray-600 text-base leading-relaxed mb-8">
-          Be part of a platform that is redefining the way India interacts <br /> with gold. 
-        </p>
+        {/* Bottom Section: Two Image Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-12 md:gap-16">
+          {/* Empty column to push cards to the right, matching the quote alignment */}
+          <div className="md:col-span-4 hidden md:block">
+            {/* This div is intentionally empty on medium screens and up to create the blank space */}
+          </div>
 
           {/* Container for the two cards, spanning the remaining 8 columns */}
           <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
@@ -83,8 +81,8 @@ const GetStartedSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default GetStartedSection;
+export default OurPartnershipSection;
