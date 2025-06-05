@@ -1,4 +1,3 @@
-// src/components/Authentication.jsx
 import React, { useState } from 'react';
 import office from './../../assets/Service/office.png';
 import office1 from './../../assets/Service/office1.png';
@@ -9,25 +8,25 @@ const accordionData = [
   {
     title: 'Authenticity and Quality',
     content:
-      'All digital gold investments on the Pixalive platform are backed by MMTC-PAMP’s 24K, 999.9 pure gold, ensuring the highest standards of quality and authenticity.',
+      ' All digital gold investments on the Pixalive platform are backed by MMTC-PAMP 24K, 999.9 pure gold, ensuring the highest standards of quality and authenticity.',
     image: office,
   },
   {
     title: 'Secure Storage',
     content:
-      'Your gold is stored in fully insured, secure vaults managed by MMTC-PAMP, ensuring peace of mind and physical safety for your digital assets.',
+      'MMTC-PAMP provides bank-grade vault storage for all digital gold, guaranteeing safety and peace of mind for users.',
     image: office1,
   },
   {
     title: 'Seamless Transactions',
     content:
-      'Experience quick and hassle-free transactions when buying or selling gold, with full transparency and instant updates.',
+      'Users can buy, sell, and redeem their digital gold with ease, supported by MMTC-PAMP infrastructure for physical gold delivery.',
     image: office2,
   },
   {
     title: 'Accessibility',
     content:
-      'Invest in digital gold anytime, anywhere, using the Pixalive platform—accessible on both web and mobile devices.',
+      'The collaboration makes gold investment simple and accessible, integrating secure gold transactions into Pixalive diverse services.',
     image: office3,
   },
 ];
@@ -37,13 +36,14 @@ const Authentication = () => {
 
   return (
     <div className="w-full flex justify-center px-4 md:px-0 bg-[#f6f6f6] py-10">
-      <div className="border-10 border-white shadow-lg  grid md:grid-cols-2 max-w-[1280px] w-full bg-white overflow-hidden">
+      <div className="border-10 border-white shadow-lg grid md:grid-cols-2 max-w-[1280px] w-full bg-white overflow-hidden">
+        
         {/* Image Section */}
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="flex items-center justify-center w-full h-full md:w-[500px] md:h-[600px] overflow-hidden">
           <img
             src={accordionData[activeIndex].image}
             alt="Accordion Visual"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
 

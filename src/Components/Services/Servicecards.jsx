@@ -3,13 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import img1 from "./../../assets/Service/services/Service-1.png";
-import img2 from "./../../assets/Service/services/service-2.png";
-import img3 from "./../../assets/Service/services/service-3.png";
-import img4 from "./../../assets/Service/services/service-4.png";
-import img5 from "./../../assets/Service/services/service-5.png";
-import img6 from "./../../assets/Service/services/service-6.png";
-import img7 from "./../../assets/Service/services/service-7.png";
+import img1 from "./../../assets/Service/g1.png"
+import img2 from "./../../assets/Service/g2.png"
+import img3 from "./../../assets/Service/g3.png"
+import img4 from "./../../assets/Service/g4.png"
+import img5 from "./../../assets/Service/g5.png"
+import img6 from "./../../assets/Service/g6.png"
+import img7 from "./../../assets/Service/g7.png"
 
 const cardData = [
   {
@@ -87,58 +87,61 @@ const cardData = [
 
 const ServiceCardSlider = () => {
   return (
-    <section className="bg-[#f5f5f5] px-4 md:px-16 py-12">
-      <h2 className="text-lg font-medium text-gray-700 mb-6">Our Services</h2>
-      <Swiper
-        slidesPerView={1.2}
-        spaceBetween={16}
-        breakpoints={{
-          640: { slidesPerView: 1.5 },
-          768: { slidesPerView: 2.2 },
-          1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 3.5 },
-        }}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: true,
-          pauseOnMouseEnter: true,
-        }}
-        loop={true}
-        modules={[Autoplay]}
-        className="pb-4"
-      >
-        {cardData.map((card, index) => (
-          <SwiperSlide key={index} className="!h-auto">
-            <div className="h-full">
-              <div className="bg-white border rounded-lg shadow-md flex flex-col h-full">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-48 object-cover rounded-t-lg"
-                />
-                <div className="flex flex-col flex-grow p-5">
-                  <h3 className="text-xl font-semibold mb-1">{card.title}</h3>
-                  <p className="text-sm text-gray-700 mb-4">{card.desc}</p>
-                  <p className="font-semibold text-sm mb-2">Features:</p>
-                  <ul className="list-disc list-inside text-sm text-gray-600 mb-6 space-y-1">
-                    {card.features.map((feature, i) => (
-                      <li key={i}>{feature}</li>
-                    ))}
-                  </ul>
-                  <div className="mt-auto">
-                    <button
-                      className="bg-black text-white text-sm font-semibold py-2 w-full rounded hover:bg-gray-900"
-                      onClick={() => window.location.href = "/"}
-                    >
-                      KNOW MORE
-                    </button>
+    <section className="bg-[#f5f5f5] px-4 md:px-0 py-12 max-w-[1280px] mx-auto">
+      <h2 className="text-lg font-medium text-gray-700 mb-6 -ml-2">Our Services</h2>
+
+      <div className="-ml-2">
+        <Swiper
+          slidesPerView={1.2}
+          spaceBetween={16}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false, // continues after user interacts
+            pauseOnMouseEnter: true,     // pauses on hover
+          }}
+          breakpoints={{
+            640: { slidesPerView: 1.5 },
+            768: { slidesPerView: 2.2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 3.5 },
+          }}
+          modules={[Autoplay]}
+          className="pb-4"
+        >
+          {cardData.map((card, index) => (
+            <SwiperSlide key={index} className="!h-auto">
+              <div className="h-full">
+                <div className="bg-white flex flex-col h-full">
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className="w-full h-48 object-cover border-5 border-white"
+                  />
+                  <div className="flex flex-col flex-grow p-5">
+                    <h3 className="text-xl font-semibold mb-1">{card.title}</h3>
+                    <p className="text-sm text-gray-700 mb-4">{card.desc}</p>
+                    <p className="font-semibold text-sm mb-2">Features:</p>
+                    <ul className="list-disc list-inside text-sm text-gray-600 mb-6 space-y-1">
+                      {card.features.map((feature, i) => (
+                        <li key={i}>{feature}</li>
+                      ))}
+                    </ul>
+                    <div className="mt-auto">
+                      <button
+                        className="bg-black text-white text-sm font-semibold py-2 w-full hover:bg-gray-900"
+                        onClick={() => window.location.href = "/"}
+                      >
+                        KNOW MORE
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 };

@@ -1,4 +1,7 @@
 import React from 'react';
+import logo1 from "./../../assets/Service/a1.png";
+import logo2 from "./../../assets/Service/a2.png";
+import logo3 from "./../../assets/Service/a3.png";
 
 const BenefitsSection = () => {
   return (
@@ -21,7 +24,7 @@ const BenefitsSection = () => {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1 */}
             <div>
-              <div className="text-4xl mb-4">🙌</div>
+              <img src={logo1} alt="100% Gold-Backed Security" className="w-16 h-16 mb-4" />
               <h4 className="font-semibold text-black mb-2">100% Gold-Backed Security</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Provides end-to-end gold services including digital investment, physical redemption, loans, and jewelry purchases.
@@ -30,7 +33,7 @@ const BenefitsSection = () => {
 
             {/* Card 2 */}
             <div>
-              <div className="text-4xl mb-4">🌼</div>
+              <img src={logo2} alt="One Network, Multiple Services" className="w-16 h-16 mb-4" />
               <h4 className="font-semibold text-black mb-2">One Network, Multiple Services</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Integrates gold into everyday life, allowing users to redeem their gold for groceries, pharmacy products, dining, salon services, and more.
@@ -39,7 +42,7 @@ const BenefitsSection = () => {
 
             {/* Card 3 */}
             <div>
-              <div className="text-4xl mb-4">🛡️</div>
+              <img src={logo3} alt="Smart, Flexible & Transparent Growth" className="w-16 h-16 mb-4" />
               <h4 className="font-semibold text-black mb-2">Smart, Flexible & Transparent Growth</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Ensures top-tier security with trusted partners like MMTC-PAMP, Brink’s, and blockchain-backed operations for transparency.
