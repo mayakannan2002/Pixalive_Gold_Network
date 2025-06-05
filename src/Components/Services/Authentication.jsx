@@ -35,10 +35,10 @@ const Authentication = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full flex justify-center px-4 md:px-0 bg-[#f6f6f6] py-10">
-      <div className="border-[10px] border-white shadow-lg grid md:grid-cols-2 max-w-[1280px] w-full bg-white overflow-hidden">
+    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto bg-white border-[10px] border-white shadow-lg grid md:grid-cols-2 overflow-hidden">
         {/* Image Section */}
-        <div className="flex items-center justify-center w-full h-full md:w-[500px] md:h-[600px] overflow-hidden">
+        <div className="w-full h-full max-h-[600px]">
           <img
             src={accordionData[activeIndex].image}
             alt={`Illustration for ${accordionData[activeIndex].title}`}
@@ -56,30 +56,26 @@ const Authentication = () => {
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  setActiveIndex(index);
-                }
+                if (e.key === 'Enter' || e.key === ' ') setActiveIndex(index);
               }}
               aria-expanded={activeIndex === index}
               aria-controls={`accordion-content-${index}`}
               id={`accordion-header-${index}`}
             >
-              <div className="flex items-start justify-between">
+              <div className="flex justify-between items-start">
                 <div>
-                  <p className="text-[26px] font-bold text-black leading-tight">{`0${index + 1}`}</p>
-                  <h4 className="font-semibold text-black mt-1 text-base hover:text-black">
-                    {item.title}
-                  </h4>
+                  <p className="text-[26px] font-bold text-black">{`0${index + 1}`}</p>
+                  <h4 className="text-base font-semibold text-black mt-1">{item.title}</h4>
                 </div>
-                <div className="text-2xl text-gray-600 leading-none select-none">
+                <div className="text-2xl text-gray-500 select-none">
                   {activeIndex === index ? '−' : '+'}
                 </div>
               </div>
+
               {activeIndex === index && (
                 <p
-                  className="mt-3 text-gray-600 text-sm leading-relaxed pr-2 transition-all duration-300 ease-in-out"
+                  className="mt-3 text-sm text-gray-600 leading-relaxed pr-2 transition-all duration-300"
                   id={`accordion-content-${index}`}
-                  aria-labelledby={`accordion-header-${index}`}
                 >
                   {item.content}
                 </p>
@@ -88,7 +84,7 @@ const Authentication = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

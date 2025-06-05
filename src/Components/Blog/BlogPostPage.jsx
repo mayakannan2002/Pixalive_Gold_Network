@@ -7,6 +7,7 @@ import authorImage from './../../assets/Blogs/author.png';
 import { FaRegShareSquare } from 'react-icons/fa';
 import { BiCopy } from 'react-icons/bi';
 import HeaderAlone from '../HeaderAlone';
+import { Link } from 'react-router-dom';
 
 const BlogPostPage = () => {
   const [featuredBlog, setFeaturedBlog] = useState({
@@ -257,9 +258,11 @@ const BlogPostPage = () => {
                   <p className="text-sm text-gray-700 mb-4">
                     Join the network trusted for digital gold, loans, jewelry & more — all in one seamless, secure platform.
                   </p>
+                  <Link to="/">
                   <button className="bg-black text-white text-sm px-4 py-2 mt-2">
                     Explore Pixalive Gold
                   </button>
+                  </Link>
                 </div>
 
                 {/* Image */}

@@ -47,7 +47,7 @@ const KeyFeatures = () => {
 
           {/* Right: Heading */}
           <div className="md:w-3/4">
-            <h2 className="text-2xl md:text-3xl font-semibold text-black leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-medium text-black leading-relaxed">
               Flexible Maturity Options — Upon completing the lease term, you can
               either take back your gold or extend the lease, giving you full
               control over your gold investment journey
