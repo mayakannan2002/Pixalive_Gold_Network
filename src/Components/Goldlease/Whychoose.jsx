@@ -41,7 +41,7 @@ const WhyChoose = () => {
 
           {/* Right content */}
           <div className="md:w-3/4">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black leading-snug mb-12">
+            <h2 className="text-2xl md:text-3xl font-medium text-black leading-snug mb-12">
               Gold is a tried-and-true asset that has historically maintained
               value, especially in uncertain economic climates.
             </h2>

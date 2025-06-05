@@ -39,7 +39,7 @@ const InvestmentTerms = () => {
 
           {/* Right content */}
           <div className="md:w-3/4">
-            <h2 className="text-2xl md:text-3xl font-semibold text-black leading-relaxed mb-10">
+            <h2 className="text-2xl md:text-3xl font-medium text-black leading-relaxed mb-10">
               Pixalive's investment terms outline the conditions under which
               investors fund the platform.
             </h2>

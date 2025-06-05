@@ -51,7 +51,7 @@ export default function BlogSection() {
           </div>
           {/* Main heading and "View all blogs" link on the right */}
           <div className="md:w-3/4">
-            <h2 className="text-2xl md:text-4xl font-medium text-gray-900 leading-snug mb-4">
+            <h2 className="text-2xl md:text-3xl font-medium text-gray-900 leading-snug mb-4">
               Pixalive Gold Network blogs share insights on digital gold,
               investment tips, and secure wealth-building through blockchain
             </h2>

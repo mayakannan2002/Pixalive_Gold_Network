@@ -86,17 +86,17 @@ export default function FranchiseSection() {
   }, []);
 
   return (
-    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+    <section className=" py-14 px-6 flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto">
         <div className="flex flex-col md:flex-row gap-12 mb-12">
           <div className="md:w-1/4">
             <p className="text-sm text-gray-500 font-medium leading-snug">Our Franchise Type</p>
           </div>
           <div className="md:w-3/4">
-            <p className="text-3xl md:text-4xl text-black font-semibold leading-snug">
-              Whether you're an experienced entrepreneur <br />
-              or a driven investor, the <span className="font-semibold">Pixalive Gold Network</span> <br />
-              offers a golden gateway to success across <br />
+            <p className="text-2xl md:text-3xl text-black font-medium leading-snug">
+              Whether you're an experienced entrepreneur 
+              or a driven investor, the Pixalive Gold Network 
+              offers a golden gateway to success across 
               multiple regions in India.
             </p>
           </div>

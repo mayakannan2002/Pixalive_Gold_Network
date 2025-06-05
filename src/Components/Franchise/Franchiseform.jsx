@@ -45,7 +45,7 @@ const FranchiseAdvantage = () => {
   };
 
   return (
-    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+    <section className=" py-14 px-6 flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto">
         {/* Franchise Advantage Text Section */}
         <div className="flex flex-col md:flex-row gap-12 mb-12">
@@ -58,10 +58,10 @@ const FranchiseAdvantage = () => {
 
           {/* Right Intro Text */}
           <div className="md:w-3/4">
-            <p className="text-3xl md:text-4xl text-black font-semibold leading-snug">
-              Unlock exclusive growth potential with a <br />
-              trusted gold-tech brand offering scalable <br />
-              models, strong support, and future-ready <br />
+            <p className="text-2xl md:text-3xl text-black meadium leading-snug">
+              Unlock exclusive growth potential with a 
+              trusted gold-tech brand offering scalable 
+              models, strong support, and future-ready 
               opportunities.
             </p>
           </div>
