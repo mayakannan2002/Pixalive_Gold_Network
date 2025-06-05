@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import Hero from './../../assets/Franchise/Hero.png';
-=======
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
@@ -19,7 +16,6 @@ const Hero = () => {
     { name: "Gold Lease", path: "/goldlease" },
     { name: "About us", path: "/about" },
   ];
->>>>>>> Mayakannan
 
   return (
     <div
@@ -29,25 +25,6 @@ const Hero = () => {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/55 bg-opacity-50 z-0"></div>
 
-<<<<<<< HEAD
-      {/* Image Section with rounded corners */}
-      <section
-        className="relative w-[94%] mx-auto overflow-hidden rounded-2xl"
-        style={{
-           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${Hero})`,
-          
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          minHeight: '80vh',
-        }}
-      >
-        {/* Overlay heading */}
-        <div className="absolute inset-0 flex items-center justify-center text-center px-4">
-          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">
-            Became a Franchise Partener With <br className="hidden sm:block" />
-            Pixalive Gold Network
-          </h1>
-=======
       {/* Main content */}
       <div className="relative z-10 pt-[15px] ">
         {/* Header */}
@@ -136,7 +113,6 @@ const Hero = () => {
               </button>
             </div>
           </div>
->>>>>>> Mayakannan
         </div>
       </div>
     </div>
