@@ -1,4 +1,3 @@
-// src/components/Authentication.jsx
 import React, { useState } from 'react';
 import office from './../../assets/Service/office.png';
 import office1 from './../../assets/Service/office1.png';
@@ -9,25 +8,25 @@ const accordionData = [
   {
     title: 'Authenticity and Quality',
     content:
-      'All digital gold investments on the Pixalive platform are backed by MMTC-PAMP’s 24K, 999.9 pure gold, ensuring the highest standards of quality and authenticity.',
+      'All digital gold investments on the Pixalive platform are backed by MMTC-PAMP 24K, 999.9 pure gold, ensuring the highest standards of quality and authenticity.',
     image: office,
   },
   {
     title: 'Secure Storage',
     content:
-      'Your gold is stored in fully insured, secure vaults managed by MMTC-PAMP, ensuring peace of mind and physical safety for your digital assets.',
+      'MMTC-PAMP provides bank-grade vault storage for all digital gold, guaranteeing safety and peace of mind for users.',
     image: office1,
   },
   {
     title: 'Seamless Transactions',
     content:
-      'Experience quick and hassle-free transactions when buying or selling gold, with full transparency and instant updates.',
+      'Users can buy, sell, and redeem their digital gold with ease, supported by MMTC-PAMP infrastructure for physical gold delivery.',
     image: office2,
   },
   {
     title: 'Accessibility',
     content:
-      'Invest in digital gold anytime, anywhere, using the Pixalive platform—accessible on both web and mobile devices.',
+      'The collaboration makes gold investment simple and accessible, integrating secure gold transactions into Pixalive diverse services.',
     image: office3,
   },
 ];
@@ -36,14 +35,14 @@ const Authentication = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full flex justify-center px-4 md:px-0">
-      <div className="border border-gray-300 rounded-2xl shadow-lg bg-white overflow-hidden grid md:grid-cols-2 max-w-5xl w-full">
+    <div className="w-full flex justify-center px-4 md:px-0 bg-[#f6f6f6] py-10">
+      <div className="border-[10px] border-white shadow-lg grid md:grid-cols-2 max-w-[1280px] w-full bg-white overflow-hidden">
         {/* Image Section */}
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="flex items-center justify-center w-full h-full md:w-[500px] md:h-[600px] overflow-hidden">
           <img
             src={accordionData[activeIndex].image}
-            alt="Accordion Visual"
-            className="w-full h-full object-cover"
+            alt={`Illustration for ${accordionData[activeIndex].title}`}
+            className="w-full h-full object-cover object-top"
           />
         </div>
 
@@ -54,18 +53,34 @@ const Authentication = () => {
               key={index}
               className="border-b pb-4 cursor-pointer"
               onClick={() => setActiveIndex(index)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  setActiveIndex(index);
+                }
+              }}
+              aria-expanded={activeIndex === index}
+              aria-controls={`accordion-content-${index}`}
+              id={`accordion-header-${index}`}
             >
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-[26px] font-bold text-black leading-tight">{`0${index + 1}`}</p>
-                  <h4 className="font-semibold text-black mt-1 text-base">{item.title}</h4>
+                  <h4 className="font-semibold text-black mt-1 text-base hover:text-black">
+                    {item.title}
+                  </h4>
                 </div>
-                <div className="text-2xl text-gray-600 leading-none">
+                <div className="text-2xl text-gray-600 leading-none select-none">
                   {activeIndex === index ? '−' : '+'}
                 </div>
               </div>
               {activeIndex === index && (
-                <p className="mt-3 text-gray-600 text-sm leading-relaxed pr-2">
+                <p
+                  className="mt-3 text-gray-600 text-sm leading-relaxed pr-2 transition-all duration-300 ease-in-out"
+                  id={`accordion-content-${index}`}
+                  aria-labelledby={`accordion-header-${index}`}
+                >
                   {item.content}
                 </p>
               )}

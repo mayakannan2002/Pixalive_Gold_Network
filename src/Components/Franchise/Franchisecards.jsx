@@ -43,7 +43,6 @@ const baseOptions = [
   },
 ];
 
-// Duplicate to create seamless scroll loop
 const franchiseOptions = [...baseOptions, ...baseOptions];
 
 export default function FranchiseSection() {
@@ -87,59 +86,61 @@ export default function FranchiseSection() {
   }, []);
 
   return (
-    <section className="bg py-20 px-4 md:px-10 lg:px-24 overflow-hidden">
-      <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-12 mb-12">
-        <div className="md:w-1/4">
-          <p className="text-sm text-gray-500 font-medium leading-snug">Our Franchise Type</p>
+    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto">
+        <div className="flex flex-col md:flex-row gap-12 mb-12">
+          <div className="md:w-1/4">
+            <p className="text-sm text-gray-500 font-medium leading-snug">Our Franchise Type</p>
+          </div>
+          <div className="md:w-3/4">
+            <p className="text-3xl md:text-4xl text-black font-semibold leading-snug">
+              Whether you're an experienced entrepreneur <br />
+              or a driven investor, the <span className="font-semibold">Pixalive Gold Network</span> <br />
+              offers a golden gateway to success across <br />
+              multiple regions in India.
+            </p>
+          </div>
         </div>
-        <div className="md:w-3/4">
-          <p className="text-3xl md:text-4xl text-black font-semibold leading-snug">
-            Whether you're an experienced entrepreneur <br />
-            or a driven investor, the <span className="font-semibold">Pixalive Gold Network</span> <br />
-            offers a golden gateway to success across <br />
-            multiple regions in India.
-          </p>
-        </div>
-      </div>
 
-      <div
-        ref={scrollRef}
-        className="max-w-[1280px] mx-auto overflow-x-hidden no-scrollbar"
-      >
-        <div className="flex gap-6 w-fit py-4">
-          {franchiseOptions.map((item, index) => (
-            <div
-              key={index}
-              className="w-[350px] bg-white shadow-sm flex-shrink-0 p-6 hover:shadow-md transition"
-            >
-              <img src={item.icon} alt={`${item.title} Icon`} className="w-12 h-12 mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
-              <p className="text-sm text-gray-600 mb-4">{item.description}</p>
-              <p className="text-lg font-semibold text-black mb-2">
-                {item.investment}{' '}
-                <span className="text-gray-600 text-sm">/ Investment</span>
-              </p>
-              <button className="bg-black text-white text-sm py-2 px-4  mb-4 hover:bg-gray-800 transition">
-                Contact Us
-              </button>
+        <div
+          ref={scrollRef}
+          className="overflow-x-hidden no-scrollbar"
+        >
+          <div className="flex gap-6 w-fit py-4">
+            {franchiseOptions.map((item, index) => (
+              <div
+                key={index}
+                className="w-[350px] bg-white shadow-sm flex-shrink-0 p-6 hover:shadow-md transition"
+              >
+                <img src={item.icon} alt={`${item.title} Icon`} className="w-12 h-12 mb-4" />
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
+                <p className="text-sm text-gray-600 mb-4">{item.description}</p>
+                <p className="text-lg font-semibold text-black mb-2">
+                  {item.investment}{' '}
+                  <span className="text-gray-600 text-sm">/ Investment</span>
+                </p>
+                <button className="bg-black text-white text-sm py-2 px-4  mb-4 hover:bg-gray-800 transition">
+                  Contact Us
+                </button>
 
-              <h3 className="text-sm font-bold text-black uppercase mb-3">What You Get :-</h3>
-              <div className="text-sm text-gray-700 space-y-2">
-                <p className="flex items-start">
-                  <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
-                  <strong>Scope:</strong> {item.scope}
-                </p>
-                <p className="flex items-start">
-                  <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
-                  <strong>Responsibilities:</strong> {item.responsibilities}
-                </p>
-                <p className="flex items-start">
-                  <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
-                  <strong>Franchise Period:</strong> {item.period}
-                </p>
+                <h3 className="text-sm font-bold text-black uppercase mb-3">What You Get :-</h3>
+                <div className="text-sm text-gray-700 space-y-2">
+                  <p className="flex items-start">
+                    <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
+                    <strong>Scope:</strong> {item.scope}
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
+                    <strong>Responsibilities:</strong> {item.responsibilities}
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
+                    <strong>Franchise Period:</strong> {item.period}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

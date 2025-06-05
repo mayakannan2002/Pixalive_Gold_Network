@@ -23,7 +23,7 @@ const GetStartedSection = () => {
 
         {/* Button */}
         <button
-          className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-300"
+          className="bg-black text-white px-6 py-3  hover:bg-gray-800 transition-colors duration-300"
           aria-label="Contact us for Pixalive Gold Lease"
         >
           Contact Us
