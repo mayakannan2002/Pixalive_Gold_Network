@@ -1,38 +1,49 @@
-import React from 'react';
-
+import React from "react";
+import GS1 from "./../../assets/gs1.png";
+import GS2 from "./../../assets/gs2.png";
+import GS3 from "./../../assets/gs3.png";
+import GS4 from "./../../assets/gs4.png";
+import GS5 from "./../../assets/gs5.png";
+import GS6 from "./../../assets/gs6.png";
 const features = [
   {
-    title: '1. Comprehensive Gold Services:',
+    icon: GS1,
+    title: "Comprehensive Gold Services",
     description:
       'Offers a complete range of gold-related services, including digital gold investment, physical gold redemption, gold loans, and jewelry purchases.',
     image: '/images/gold-services.png',
   },
   {
-    title: '2. Gold-Backed Ecosystem:',
+    icon: GS2,
+    title: "Gold-Backed Ecosystem",
     description:
       'Integrates gold into everyday life, allowing users to redeem their gold for groceries, pharmacy products, dining, salon services, and more.',
     image: '/images/gold-ecosystem.png',
   },
   {
-    title: '3. Secure and Transparent:',
+    icon: GS3,
+    title: "Secure and Transparent",
     description:
       'Ensures top-tier security with trusted partners like MMTC-PAMP, Brink’s, and blockchain-based operations for transparency.',
     image: '/images/secure-transparent.png',
   },
   {
-    title: '4. Community-Centric Approach:',
+    icon: GS4,
+    title: "Community-Centric Approach",
     description:
       'Empowers local businesses and users through partnerships, franchise opportunities, and gold-backed rewards programs.',
     image: '/images/community-centric.png',
   },
   {
-    title: '5. Profit Opportunities:',
+    icon: GS5,
+    title: "Profit Opportunities",
     description:
       'Provides earning potential through franchise models, referral rewards, and gold leasing programs.',
     image: '/images/profit-opportunities.png',
   },
   {
-    title: '6. Trusted Brand:',
+    icon: GS6,
+    title: "Trusted Brand",
     description:
       'Operated by Pixalive Group, a leader in integrating gold, technology, and community-driven services.',
     image: '/images/trusted-brand.png',
@@ -60,7 +71,7 @@ const GoldFeatures = () => {
               <img
                 src={feature.image}
                 alt={feature.title}
-                className="w-20 h-20 object-contain mb-2"
+                className="w-8 h-8 object-contain md:w-10 md:h-10"
               />
               <h4 className="text-[16px] md:text-[17px] lg:text-[22px] font-bold text-black">
                 {feature.title}

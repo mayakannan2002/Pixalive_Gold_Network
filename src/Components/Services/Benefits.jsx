@@ -6,10 +6,10 @@ import logo3 from "./../../assets/Service/a3.png";
 const BenefitsSection = () => {
   return (
     <section className="bg-[#f5f5f5] py-16 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
         {/* Left Side Title */}
-        <div className="lg:w-1/3">
-          <h2 className="text-gray-500 font-medium text-lg leading-snug">
+        <div className="lg:w-1/3 pt-2">
+          <h2 className="text-gray-500 font-medium text-lg leading-snug ml-15">
             Benefits Of The Pixalive <br />
             Gold Network
           </h2>
@@ -18,10 +18,10 @@ const BenefitsSection = () => {
         {/* Right Side Content */}
         <div className="lg:w-2/3">
           <h3 className="text-black text-2xl md:text-4xl font-medium leading-snug">
-            Pixalive Gold Network offers premium exposure, priority support, and exclusive tools to boost your digital presence and growth and trech
+            Pixalive Gold Network offers premium exposure, priority support, and exclusive tools to boost your digital presence and growth
           </h3>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1 */}
             <div>
               <img src={logo1} alt="100% Gold-Backed Security" className="w-16 h-16 mb-4" />
