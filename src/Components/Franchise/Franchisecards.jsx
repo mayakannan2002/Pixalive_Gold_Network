@@ -1,103 +1,148 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import React, { useRef, useEffect } from 'react';
+import Frame1 from './../../assets/Franchise/Frame1.png';
+import Frame2 from './../../assets/Franchise/Frame2.png';
+import Frame3 from './../../assets/Franchise/Frame3.png';
+import Frame4 from './../../assets/Franchise/Frame4.png';
 
-// Add your franchise images here
-import img1 from "./../../assets/Franchise/franchise1.png";
-import img2 from "./../../assets/Franchise/franchise2.png";
-import img3 from "./../../assets/Franchise/franchise3.png";
-import img4 from "./../../assets/Franchise/franchise4.png";
-
-const fallbackImg = "https://via.placeholder.com/300x200?text=Image+Missing";
-
-const franchiseData = [
-    {
-        title: "Zonal Franchise",
-        investment: "₹ 10 Crores",
-        scope: "Oversee multiple states within a designated zone.",
-        responsibilities: "Oversee multiple states within a designated zone.",
-        franchisePeriod: "10 years, renewable",
-        img: img1 || fallbackImg,
-    },
-    {
-        title: "State Franchise",
-        investment: "₹ 5 Crores",
-        scope: "Operate and manage all district and area franchises within a state.",
-        responsibilities: "Handle statewide marketing, operations, and partner onboarding.",
-        franchisePeriod: "10 years, renewable",
-        img: img2 || fallbackImg,
-    },
-    {
-        title: "District Franchise",
-        investment: "₹ 50 Lakhs",
-        scope: "Manage all area franchises within a district.",
-        responsibilities: "Local offers, customer connection, and smooth daily operations.",
-        franchisePeriod: "10 years, renewable",
-        img: img3 || fallbackImg,
-    },
-    {
-        title: "Area Franchise",
-        investment: "₹ 25 Lakhs",
-        scope: "Operate in a specific locality or area within a district.",
-        responsibilities: "Direct customer interactions, sales, and service delivery.",
-        franchisePeriod: "10 years, renewable",
-        img: img4 || fallbackImg,
-    },
+const baseOptions = [
+  {
+    title: "Zonal Franchise",
+    description: "Become the leading partner for an entire region",
+    investment: "₹ 10 Crores",
+    scope: "Oversee multiple states within a designated zone.",
+    responsibilities: "Oversee multiple states within a designated zone.",
+    period: "10 years renewable.",
+    icon: Frame1,
+  },
+  {
+    title: "State Franchise",
+    description: "Own the rights to operate and grow Pixalive Gold Network across an entire state",
+    investment: "₹ 5 Crores",
+    scope: "Operate and manage all district and area franchises within a state.",
+    responsibilities: "Oversee state marketing, operations, and partner setup.",
+    period: "10 years renewable.",
+    icon: Frame2,
+  },
+  {
+    title: "District Franchise",
+    description: "Take charge of Pixalive Gold's operations in your district",
+    investment: "₹ 50 Lakhs",
+    scope: "Manage all area franchises within a district.",
+    responsibilities: "Local offers, customer connection, and smooth daily operations.",
+    period: "10 years renewable.",
+    icon: Frame3,
+  },
+  {
+    title: "Area Franchise",
+    description: "The most accessible and local level of partnership",
+    investment: "₹ 25 Lakhs",
+    scope: "Handle local-level franchise activities.",
+    responsibilities: "Local promotions, setup, and branding.",
+    period: "10 years renewable.",
+    icon: Frame4,
+  },
 ];
 
-const FranchiseCarousel = () => {
-    return (
-        <section className="bg-[#fef7ff] text-black px-6 md:px-20 py-16">
-            <h2 className="text-center text-xl md:text-2xl font-bold mb-10">
-                OUR <span className="text-[#B98A30]">FRANCHISE</span>
-            </h2>
+const franchiseOptions = [...baseOptions, ...baseOptions];
 
-             <Swiper
-              slidesPerView={1}
-              spaceBetween={30}
-              pagination={{ clickable: true }}
-              breakpoints={{
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-              modules={[Pagination, Autoplay]}
-              autoplay={{
-                delay: 1500,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true, // ⭐ Added this line
-              }}
-              loop={true}
-            >
-                {franchiseData.map((card, index) => (
-                    <SwiperSlide key={index}>
-                        <div className="bg-white p-6 rounded-xl shadow-md flex flex-col justify-between mb-8" style={{ minHeight: '480px' }}>
-                            <img
-                                src={card.img}
-                                alt={card.title}
-                                className="mx-auto mb-4 h-28 object-contain"
-                                onError={(e) => (e.currentTarget.src = fallbackImg)}
-                            />
-                            <h3 className="font-bold text-md mb-1">{index + 1}. {card.title}</h3>
-                            <p className="text-sm text-gray-700 mb-2"><strong>Investment:</strong> {card.investment}</p>
-                            <p className="text-sm text-gray-700 mb-2"><strong>Scope:</strong> {card.scope}</p>
-                            <p className="text-sm text-gray-700 mb-2"><strong>Responsibilities:</strong> {card.responsibilities}</p>
-                            <p className="text-sm text-gray-700 mb-2"><strong>Franchise Period:</strong> {card.franchisePeriod}</p>
-                            <button
-                                className="bg-[#B98A30] text-white mt-4 px-4 py-2 text-sm rounded-md"
-                                onClick={() => {
-                                    window.location.href = '/';
-                                }}
-                            >
-                                KNOW MORE
-                            </button>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </section>
-    );
-};
+export default function FranchiseSection() {
+  const scrollRef = useRef(null);
+  const intervalRef = useRef(null);
+  const scrollSpeed = 0.5;
+  const intervalTime = 10;
 
-export default FranchiseCarousel;
+  const startScrolling = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      const container = scrollRef.current;
+      if (container) {
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
+          container.scrollLeft = 0;
+        } else {
+          container.scrollLeft += scrollSpeed;
+        }
+      }
+    }, intervalTime);
+  };
+
+  const stopScrolling = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  };
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    startScrolling();
+
+    container.addEventListener('mouseenter', stopScrolling);
+    container.addEventListener('mouseleave', startScrolling);
+
+    return () => {
+      stopScrolling();
+      container.removeEventListener('mouseenter', stopScrolling);
+      container.removeEventListener('mouseleave', startScrolling);
+    };
+  }, []);
+
+  return (
+    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto">
+        <div className="flex flex-col md:flex-row gap-12 mb-12">
+          <div className="md:w-1/4">
+            <p className="text-sm text-gray-500 font-medium leading-snug">Our Franchise Type</p>
+          </div>
+          <div className="md:w-3/4">
+            <p className="text-3xl md:text-4xl text-black font-semibold leading-snug">
+              Whether you're an experienced entrepreneur <br />
+              or a driven investor, the <span className="font-semibold">Pixalive Gold Network</span> <br />
+              offers a golden gateway to success across <br />
+              multiple regions in India.
+            </p>
+          </div>
+        </div>
+
+        <div
+          ref={scrollRef}
+          className="overflow-x-hidden no-scrollbar"
+        >
+          <div className="flex gap-6 w-fit py-4">
+            {franchiseOptions.map((item, index) => (
+              <div
+                key={index}
+                className="w-[350px] bg-white shadow-sm flex-shrink-0 p-6 hover:shadow-md transition"
+              >
+                <img src={item.icon} alt={`${item.title} Icon`} className="w-12 h-12 mb-4" />
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
+                <p className="text-sm text-gray-600 mb-4">{item.description}</p>
+                <p className="text-lg font-semibold text-black mb-2">
+                  {item.investment}{' '}
+                  <span className="text-gray-600 text-sm">/ Investment</span>
+                </p>
+                <button className="bg-black text-white text-sm py-2 px-4  mb-4 hover:bg-gray-800 transition">
+                  Contact Us
+                </button>
+
+                <h3 className="text-sm font-bold text-black uppercase mb-3">What You Get :-</h3>
+                <div className="text-sm text-gray-700 space-y-2">
+                  <p className="flex items-start">
+                    <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
+                    <strong>Scope:</strong> {item.scope}
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
+                    <strong>Responsibilities:</strong> {item.responsibilities}
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
+                    <strong>Franchise Period:</strong> {item.period}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

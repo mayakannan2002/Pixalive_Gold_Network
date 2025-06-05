@@ -2,14 +2,14 @@ import React from "react";
 
 const GetStartedSection = () => {
   return (
-    <section className="bg py-20  md:px-10 lg:px-24">
-      <div className="max-w-[1280px] mx-auto bg-[#eeeeee] p-10 text-center shadow-sm">
+    <section className="bg-[#f6f6f6] py-20 px-6 flex justify-center">
+      <div className="max-w-[1280px] w-full mx-auto bg-[#eeeeee] p-10 text-center shadow-sm ">
         {/* Red dot + subtitle */}
-        <div className="flex justify-center items-center gap-2 mb-3">
-          <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+        <div className="flex justify-center items-center gap-2 mb-2">
+          <span className="w-2 h-2 bg-red-400 "></span>
           <p className="text-gray-600 text-sm">Pixalive Gold Network</p>
         </div>
-        <br/>
+
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
           Ready to Grow with Us?
@@ -17,9 +17,9 @@ const GetStartedSection = () => {
 
         {/* Subtext */}
         <p className="text-gray-600 text-base leading-relaxed mb-8">
-          Join the Pixalive Gold Network and grow with India’s trusted gold business. Choose your<br/> franchise type and get full support to succeed.
+          Join the Pixalive Gold Network and grow with India’s trusted gold business. Choose your
+          franchise type and get full support to succeed.
         </p>
-
 
         {/* Buttons */}
         <div className="flex justify-center gap-4 flex-wrap">
@@ -47,9 +47,8 @@ const GetStartedSection = () => {
           </button>
 
           {/* Download Brochure Button */}
-          <button className="group flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-200">
+          <button className="group flex items-center justify-center px-8 py-3 border border-gray-700 text-base font-medium  text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-200">
             Download Brochure
-            {/* SVG for Download Icon (document icon) */}
             <svg
               className="ml-2 -mr-1 h-5 w-5 text-gray-500 group-hover:text-gray-600 transition-colors duration-200"
               xmlns="http://www.w3.org/2000/svg"
