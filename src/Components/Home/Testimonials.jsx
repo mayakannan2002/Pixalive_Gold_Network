@@ -1,103 +1,217 @@
-import React from "react";
-import { Phone, ShieldCheck, Star, Quote } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { FaStar } from "react-icons/fa";
+import { BsHeadset, BsShieldCheck } from "react-icons/bs";
+import PriyaImg from "./../../assets/About/avatar2.png"; // Update with actual path
 
-const PixaliveTestimonialSection = () => {
+const testimonials = [
+  {
+    text: "A seamless and secure way to invest in gold! I’ve always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.",
+    name: "Priya R",
+    location: "Chennai",
+    rating: 4,
+    badge: {
+      icon: <BsShieldCheck className="w-4 h-4 text-green-600" />,
+      text: "100% Safe and Secure",
+      position: "bottom",
+    },
+  },
+  {
+    text: "Pixalive feels less like an office and more like a creative playground. As a freelance designer, I’ve finally found a space that keeps me focused and inspired.",
+    name: "Karan P",
+    location: "Mumbai",
+    rating: 4,
+    badge: null,
+    centerText: true,
+  },
+  {
+    text: "A seamless and secure way to invest in gold! I’ve always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.",
+    name: "Anjali S",
+    location: "Bangalore",
+    rating: 4,
+    badge: {
+      icon: <BsHeadset className="w-4 h-4 text-blue-600" />,
+      text: "24/7 Support",
+      position: "top",
+    },
+  },
+];
+
+export default function TestimonialSection() {
+  const [activeIndex, setActiveIndex] = useState(1);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const length = testimonials.length;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % length);
+    }, 3000);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [length]);
+
+  const getVisibleIndexes = () => {
+    if (windowWidth < 768) return [activeIndex];
+    const prev = (activeIndex - 1 + length) % length;
+    const next = (activeIndex + 1) % length;
+    return [prev, activeIndex, next];
+  };
+
   return (
     <section className="bg-[#f6f6f6] py-16 px-6 text-black">
-      <div className="max-w-[1280px] mx-auto">
+      <div className="max-w-[1280px] w-full mx-auto">
         {/* Header */}
-        <p className="text-gray-500 text-sm mb-2">Loved by the People Who Work Here</p>
-        <h2 className="text-4xl font-semibold max-w-4xl leading-snug mb-12">
-          Joining Pixalive Gold Network has been a game-changer for my business.
-          The support, visibility, and growth opportunities I received are unmatched.
-        </h2>
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-12">
+          <div className="md:w-1/4">
+            <p className="text-sm text-gray-500 mb-2">
+              Loved by the People Who Work Here
+            </p>
+          </div>
+          <div className="md:w-3/4">
+            <h2 className="text-2xl md:text-4xl font-medium text-gray-900 leading-snug mb-4">
+              Joining Pixalive Gold Network has been a game-changer for my
+              business. The support, visibility, and growth opportunities I
+              received are unmatched.
+            </h2>
+          </div>
+        </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Left Column */}
-          <div className="flex flex-col gap-4">
-            <div className="bg-white p-6 rounded-md shadow-sm flex flex-col justify-between min-h-[250px]">
-              <p className="text-sm mb-6">
-                "A seamless and secure way to invest in gold!" I’ve always wanted to invest in gold,
-                but Pixalive Gold Network made it easy and trustworthy.
-              </p>
-              <div className="border-t pt-3 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img src="/avatar.png" alt="Priya R" className="w-10 h-10 rounded-full object-cover" />
-                  <div>
-                    <p className="font-semibold text-sm">Priya R</p>
-                    <p className="text-gray-500 text-sm">Chennai</p>
+        {/* Slider Cards */}
+        <div
+          className={`flex justify-center items-stretch gap-8 overflow-hidden ${
+            windowWidth < 768 ? "flex-col" : "flex-row"
+          }`}
+        >
+          {getVisibleIndexes().map((index) => {
+            const item = testimonials[index];
+            const isCenter = index === activeIndex;
+
+            return (
+              <div
+                key={index}
+                className="flex flex-col gap-3 w-full max-w-xs md:max-w-sm lg:max-w-md"
+              >
+                {/* Badge Top */}
+                {item.badge?.position === "top" && (
+                  <div
+                    className={`px-4 py-5 flex items-center gap-2 shadow-sm w-full mb-4 ${
+                      isCenter ? "bg-black text-white" : "bg-white text-gray-800"
+                    }`}
+                  >
+                    <div
+                      className={`p-1.5 shadow ${
+                        isCenter ? "bg-gray-900" : "bg-white"
+                      }`}
+                    >
+                      {item.badge.icon}
+                    </div>
+                    <span className="text-sm lg:text-lg font-medium">
+                      {item.badge.text}
+                    </span>
+                  </div>
+                )}
+
+                {/* Main Testimonial Card */}
+                <div
+                  className={`shadow-md p-6 h-full flex flex-col justify-between transition-transform duration-700 ease-in-out ${
+                    isCenter
+                      ? "bg-black text-white scale-110 z-10"
+                      : "bg-white text-gray-800"
+                  } ${item.centerText ? "text-center" : ""}`}
+                  style={{ minHeight: "350px" }}
+                >
+                  <div
+                    className={`${
+                      item.centerText
+                        ? "flex-grow flex items-center justify-center"
+                        : ""
+                    }`}
+                  >
+                    <p
+                      className={`text-base lg:text-lg leading-relaxed mb-6 md:mb-10 lg:mb-15 ${
+                        isCenter ? "text-white" : ""
+                      }`}
+                    >
+                      {item.text}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between border-t pt-4 border-gray-300">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={PriyaImg}
+                        alt={item.name}
+                        className={`w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full object-cover ${
+                          isCenter ? "ring-2 ring-white" : ""
+                        }`}
+                      />
+                      <div>
+                        <p
+                          className={`text-sm sm:text-md lg:text-lg font-semibold ${
+                            isCenter ? "text-white" : "text-gray-800"
+                          }`}
+                        >
+                          {item.name}
+                        </p>
+                        <p
+                          className={`text-xs sm:text-sm lg:text-lg ${
+                            isCenter ? "text-gray-300" : "text-[#7A7A7A]"
+                          }`}
+                        >
+                          {item.location}
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className={`flex items-center gap-1 text-base md:text-md lg:text-lg ${
+                        isCenter ? "text-white" : "text-black"
+                      }`}
+                    >
+                      {item.rating}{" "}
+                      <FaStar
+                        className={`w-6 h-6 ${
+                          isCenter ? "text-yellow-400" : "text-yellow-500"
+                        }`}
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-center text-yellow-500">
-                  <span className="mr-1 text-sm">4</span>
-                  <Star fill="currentColor" size={16} />
-                </div>
-              </div>
-            </div>
-            <div className="bg-white p-4 rounded-md shadow-sm flex items-center gap-3">
-              <ShieldCheck size={18} className="text-gray-800" />
-              <span className="text-sm font-medium">100% Sale and Secure</span>
-            </div>
-          </div>
 
-          {/* Center Column (Black Card) */}
-          <div className="bg-black text-white p-6 rounded-md relative overflow-hidden min-h-[250px] flex flex-col justify-between">
-            <div>
-              <Quote size={32} className="mb-4" />
-              <p className="text-sm leading-relaxed">
-                "Pixalive feels less like an office and more like a creative playground. As a freelance
-                designer, I’ve finally found a space that keeps me focused and inspired."
-              </p>
-            </div>
-            <div className="border-t border-gray-700 pt-3 flex items-center justify-between mt-4">
-              <div className="flex items-center gap-3">
-                <img src="/avatar.png" alt="Priya R" className="w-10 h-10 rounded-full object-cover" />
-                <div>
-                  <p className="font-semibold text-sm">Priya R</p>
-                  <p className="text-gray-400 text-sm">Chennai</p>
-                </div>
-              </div>
-              <div className="flex items-center text-yellow-500">
-                <span className="mr-1 text-sm">4</span>
-                <Star fill="currentColor" size={16} />
-              </div>
-            </div>
-            {/* Grid lines (optional visual effect) */}
-            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(#444_1px,transparent_1px)] [background-size:20px_20px] opacity-20 z-0" />
-          </div>
-
-          {/* Right Column */}
-          <div className="flex flex-col gap-4">
-            <div className="bg-white p-4 rounded-md shadow-sm flex items-center gap-3">
-              <Phone size={18} className="text-gray-800" />
-              <span className="text-sm font-medium">24/7 Support</span>
-            </div>
-
-            <div className="bg-white p-6 rounded-md shadow-sm flex flex-col justify-between min-h-[180px]">
-              <p className="text-sm mb-6">
-                "A seamless and secure way to invest in gold!" I’ve always wanted to invest in gold,
-                but Pixalive Gold Network made it easy and trustworthy.
-              </p>
-              <div className="border-t pt-3 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img src="/avatar.png" alt="Priya R" className="w-10 h-10 rounded-full object-cover" />
-                  <div>
-                    <p className="font-semibold text-sm">Priya R</p>
-                    <p className="text-gray-500 text-sm">Chennai</p>
+                {/* Badge Bottom */}
+                {item.badge?.position === "bottom" && (
+                  <div
+                    className={`px-4 py-5 flex items-center gap-2 shadow-sm w-full mt-4 ${
+                      isCenter ? "bg-black text-white" : "bg-white text-gray-800"
+                    }`}
+                  >
+                    <div
+                      className={`p-1.5 shadow ${
+                        isCenter ? "bg-gray-900" : "bg-white"
+                      }`}
+                    >
+                      {item.badge.icon}
+                    </div>
+                    <span
+                      className={`text-sm lg:text-lg font-medium ${
+                        isCenter ? "text-white" : ""
+                      }`}
+                    >
+                      {item.badge.text}
+                    </span>
                   </div>
-                </div>
-                <div className="flex items-center text-yellow-500">
-                  <span className="mr-1 text-sm">4</span>
-                  <Star fill="currentColor" size={16} />
-                </div>
+                )}
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
-};
-
-export default PixaliveTestimonialSection;
+}
