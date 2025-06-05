@@ -18,6 +18,8 @@ const companies = [
   { name: "Unified Payments Interface", logo: UPI, link: "https://www.npci.org.in/what-we-do/upi/product-overview" },
   { name: "PhonePe", logo: PHONEPE, link: "https://www.phonepe.com" },
   { name: "NPCI", logo: NPCI, link: "https://www.npci.org.in" },
+  { name: "PhonePe", logo: PHONEPE, link: "https://www.phonepe.com" },
+  { name: "NPCI", logo: NPCI, link: "https://www.npci.org.in" },
   { name: "Cashfree Payments", logo: CASHFREE, link: "https://www.cashfree.com" },
   { name: "Startup India", logo: STARTUP, link: "https://www.startupindia.gov.in" },
   { name: "Bureau of Indian Standards", logo: BIS, link: "https://www.bis.gov.in" },
@@ -28,7 +30,7 @@ const StatBox = ({ end, suffix, label }) => {
 
   return (
     <div className="text-center" ref={ref}>
-      <div className="text-5xl sm:text-6xl md:text-7xl font-bold text-black">
+      <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
         {inView && <CountUp start={0} end={end} duration={2} suffix={suffix} />}
       </div>
       <p className="text-sm mt-2 text-black">{label}</p>
