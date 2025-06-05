@@ -3,13 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import img1 from "./../../assets/Service/g1.png"
-import img2 from "./../../assets/Service/g2.png"
-import img3 from "./../../assets/Service/g3.png"
-import img4 from "./../../assets/Service/g4.png"
-import img5 from "./../../assets/Service/g5.png"
-import img6 from "./../../assets/Service/g6.png"
-import img7 from "./../../assets/Service/g7.png"
+import img1 from "./../../assets/Service/g1.png";
+import img2 from "./../../assets/Service/g2.png";
+import img3 from "./../../assets/Service/g3.png";
+import img4 from "./../../assets/Service/g4.png";
+import img5 from "./../../assets/Service/g5.png";
+import img6 from "./../../assets/Service/g6.png";
+import img7 from "./../../assets/Service/g7.png";
 
 const cardData = [
   {
@@ -87,18 +87,18 @@ const cardData = [
 
 const ServiceCardSlider = () => {
   return (
-    <section className="bg-[#f5f5f5] px-4 md:px-0 py-12 max-w-[1280px] mx-auto">
-      <h2 className="text-lg font-medium text-gray-700 mb-6 -ml-2">Our Services</h2>
+    <section className="bg-[#f5f5f5] py-16 px-4">
+      <div className="max-w-[1280px] mx-auto">
+        <h2 className="text-lg font-medium text-gray-700 mb-6">Our Services</h2>
 
-      <div className="-ml-2">
         <Swiper
           slidesPerView={1.2}
           spaceBetween={16}
           loop={true}
           autoplay={{
             delay: 3000,
-            disableOnInteraction: false, // continues after user interacts
-            pauseOnMouseEnter: true,     // pauses on hover
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           breakpoints={{
             640: { slidesPerView: 1.5 },
@@ -112,11 +112,11 @@ const ServiceCardSlider = () => {
           {cardData.map((card, index) => (
             <SwiperSlide key={index} className="!h-auto">
               <div className="h-full">
-                <div className="bg-white flex flex-col h-full">
+                <div className="bg-white flex flex-col h-full shadow-md rounded-lg overflow-hidden">
                   <img
                     src={card.img}
                     alt={card.title}
-                    className="w-full h-48 object-cover border-5 border-white"
+                    className="w-full h-48 object-cover"
                   />
                   <div className="flex flex-col flex-grow p-5">
                     <h3 className="text-xl font-semibold mb-1">{card.title}</h3>
@@ -129,7 +129,7 @@ const ServiceCardSlider = () => {
                     </ul>
                     <div className="mt-auto">
                       <button
-                        className="bg-black text-white text-sm font-semibold py-2 w-full hover:bg-gray-900"
+                        className="bg-black text-white text-sm font-semibold py-2 w-full hover:bg-gray-900 rounded"
                         onClick={() => window.location.href = "/"}
                       >
                         KNOW MORE

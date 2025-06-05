@@ -5,11 +5,11 @@ import logo3 from "./../../assets/Service/a3.png";
 
 const BenefitsSection = () => {
   return (
-    <section className="bg-[#f5f5f5] py-16 px-4">
+    <section className="bg-[#f5f5f5] py-16 px-4 max-w-[1280px] mx-auto">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
         {/* Left Side Title */}
         <div className="lg:w-1/3 pt-2">
-          <h2 className="text-gray-500 font-medium text-lg leading-snug ml-15">
+          <h2 className="text-gray-500 font-medium text-lg leading-snug ">
             Benefits Of The Pixalive <br />
             Gold Network
           </h2>
