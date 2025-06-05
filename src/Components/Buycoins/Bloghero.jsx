@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 import goldCoinImage from './../../assets/coin-1g.png';
+import goldCoinImage1 from "./../../assets/coin-2g.png";
+import goldCoinImage2 from "./../../assets/coin-3g.png";
+import goldCoinImage3 from "./../../assets/coin-4g.png";
 
 const productData = [
   {
@@ -16,36 +20,36 @@ const productData = [
   },
   {
     id: 2,
-    name: '1 Gram PixaliveGold Coin',
+    name: '2 Gram PixaliveGold Coin',
     purity: '24K, 99.99%',
-    price: '10,630.4',
+    price: '21,260.8',
     deliveryInfo: '2-5+ Delivers',
-    image: goldCoinImage,
+    image: goldCoinImage1,
     productType: 'Bullion',
     shape: 'Coin',
-    weight: '1g',
+    weight: '2g',
   },
   {
     id: 3,
-    name: '1 Gram PixaliveGold Coin',
+    name: '3 Gram PixaliveGold Coin',
     purity: '24K, 99.99%',
-    price: '10,630.4',
+    price: '31,891.2',
     deliveryInfo: '2-5+ Delivers',
-    image: goldCoinImage,
+    image: goldCoinImage2,
     productType: 'Bullion',
     shape: 'Coin',
-    weight: '1g',
+    weight: '3g',
   },
   {
     id: 4,
-    name: '1 Gram PixaliveGold Coin',
+    name: '4 Gram PixaliveGold Coin',
     purity: '24K, 99.99%',
-    price: '10,630.4',
+    price: '42,521.6',
     deliveryInfo: '2-5+ Delivers',
-    image: goldCoinImage,
+    image: goldCoinImage3,
     productType: 'Bullion',
     shape: 'Coin',
-    weight: '1g',
+    weight: '4g',
   },
 ];
 
@@ -70,17 +74,11 @@ export default function ProductListingPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProductType, setSelectedProductType] = useState('All');
   const [selectedSortBy, setSelectedSortBy] = useState('Bullion');
-  const [selectedShape, setSelectedShape] = useState('');
-  const [selectedPriceRange, setSelectedPriceRange] = useState('');
-  const [selectedWeight, setSelectedWeight] = useState('');
 
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedProductType('All');
     setSelectedSortBy('Bullion');
-    setSelectedShape('');
-    setSelectedPriceRange('');
-    setSelectedWeight('');
   };
 
   const filteredProducts = productData
@@ -90,9 +88,6 @@ export default function ProductListingPage() {
         product.productType.toLowerCase() === selectedProductType.toLowerCase();
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesProductType && matchesSearch;
-    })
-    .sort((a, b) => {
-      return 0; // No sorting logic applied now
     });
 
   return (
@@ -169,45 +164,6 @@ export default function ProductListingPage() {
                 </label>
               ))}
             </div>
-            <hr className="border-gray-300 my-4" />
-
-            <h3 className="text-sm text-gray-600 mb-2 font-medium">Shape</h3>
-            <div className="space-y-2 text-sm text-gray-700">
-              <label className="flex items-center gap-2">
-                <input type="radio" name="shape" disabled className="form-radio" />
-                Circle
-              </label>
-              <label className="flex items-center gap-2">
-                <input type="radio" name="shape" disabled className="form-radio" />
-                Bar
-              </label>
-            </div>
-            <hr className="border-gray-300 my-4" />
-
-            <h3 className="text-sm text-gray-600 mb-2 font-medium">Price</h3>
-            <div className="space-y-2 text-sm text-gray-700">
-              <label className="flex items-center gap-2">
-                <input type="radio" name="price" disabled className="form-radio" />
-                ₹0 - ₹10,000
-              </label>
-              <label className="flex items-center gap-2">
-                <input type="radio" name="price" disabled className="form-radio" />
-                ₹10,001 - ₹50,000
-              </label>
-            </div>
-            <hr className="border-gray-300 my-4" />
-
-            <h3 className="text-sm text-gray-600 mb-2 font-medium">Weight</h3>
-            <div className="space-y-2 text-sm text-gray-700">
-              <label className="flex items-center gap-2">
-                <input type="radio" name="weight" disabled className="form-radio" />
-                1g
-              </label>
-              <label className="flex items-center gap-2">
-                <input type="radio" name="weight" disabled className="form-radio" />
-                2g
-              </label>
-            </div>
           </div>
         </div>
 
@@ -226,11 +182,18 @@ export default function ProductListingPage() {
                   style={{ border: '1px solid #f0f0f0' }}
                 >
                   <div className="flex flex-col items-center px-4 pt-6 pb-4">
-                    <div className="w-[120px] h-[120px] flex items-center justify-center mb-4">
-                      <img
+                    <div className="w-[120px] h-[120px] flex items-center justify-center mb-4" style={{ perspective: '1000px' }}>
+                      <motion.img
                         src={product.image}
                         alt={product.name}
                         className="max-w-full max-h-full object-contain"
+                        animate={{ rotateY: 360 }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 6,
+                          ease: "linear",
+                        }}
+                        style={{ transformStyle: "preserve-3d" }}
                       />
                     </div>
                     <div className="w-full mb-4">
@@ -245,12 +208,12 @@ export default function ProductListingPage() {
                     <p className="text-2xl font-semibold text-black mb-4">
                       ₹{product.price}
                     </p>
-                    <button className="bg-black text-white py-2 w-full text-sm font-medium hover:bg-gray-800 transition-colors rounded-sm">
-                      Add to Card
+                    <button className="bg-black text-white py-2 sm:py-2  lg:py-2 px-14 text-md lg:text-sm font-medium hover:bg-gray-800 transition-colors ">
+                      Add to Cart
                     </button>
                   </div>
                   <div
-                    className="w-full text-center py-2 text-xs font-medium"
+                    className="w-full text-center py-2 text-sm font-medium"
                     style={{
                       background: 'linear-gradient(to right, #FFFFFF, #f8c972, #FFFFFF)',
                       color: '#7A7A7A',
