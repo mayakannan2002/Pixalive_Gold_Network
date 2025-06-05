@@ -1,94 +1,107 @@
 import React from "react";
 import { Star, Quote, Phone, ShieldCheck } from "lucide-react";
 
-export default function TestimonialsSection() {
+const TestimonialSection = () => {
   return (
-    <section className="bg-[#f6f6f6] px-6 py-20 text-black">
-      <div className="max-w-7xl mx-auto">
-        {/* Top Headings */}
-        <div className="mb-10">
-          <p className="text-sm text-gray-500 mb-1">Loved by the People Who Work Here</p>
-          <h2 className="text-2xl md:text-4xl font-medium leading-snug text-gray-900">
-            Joining Pixalive Gold Network has been a game-changer for my business. The support, visibility, and growth opportunities I received are unmatched.
-          </h2>
-        </div>
+    <section className="bg-[#f6f6f6] py-16 px-6 text-black">
+      <div className="max-w-[1280px] mx-auto">
+        <p className="text-gray-500 text-sm mb-3">Loved by the People Who Work Here</p>
+        <h2 className="text-4xl md:text-5xl font-semibold leading-tight max-w-4xl mb-12">
+          Joining Pixalive Gold Network has been a game-changer for my business.
+          The support, visibility, and growth opportunities I received are unmatched.
+        </h2>
 
-        {/* Testimonial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Card 1 */}
-          <div className="bg-white p-6 flex flex-col justify-between shadow-sm">
-            <p className="text-sm text-gray-800 mb-4">
-              "A seamless and secure way to invest in gold!" I’ve always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.
+          {/* Left Card */}
+          <div className="bg-white p-6 rounded-md shadow-sm flex flex-col justify-between min-h-[280px]">
+            <p className="text-base mb-6">
+              "A seamless and secure way to invest in gold!" I've always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.
             </p>
-            <hr className="my-3" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya R" className="w-8 h-8 rounded-full" />
+            <div className="border-t pt-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/avatar.png"
+                  alt="Priya R"
+                  className="w-10 h-10 rounded-full object-cover"
+                />
                 <div>
-                  <p className="text-sm font-medium">Priya R</p>
-                  <p className="text-xs text-gray-500">Chennai</p>
+                  <p className="font-semibold text-sm">Priya R</p>
+                  <p className="text-gray-500 text-sm">Chennai</p>
                 </div>
               </div>
-              <div className="flex items-center text-sm text-gray-600 gap-1">
-                4 <Star size={14} fill="orange" stroke="orange" />
+              <div className="flex items-center text-yellow-500">
+                <span className="mr-1 font-medium">4</span>
+                <Star fill="currentColor" size={16} />
               </div>
             </div>
           </div>
 
-          {/* Card 2 (Highlighted Center) */}
-          <div className="bg-black text-white p-6 flex flex-col justify-between relative overflow-hidden">
-            <Quote size={32} className="mb-4 opacity-40" />
-            <p className="text-sm mb-6">
-              “Pixalive feels less like an office and more like a creative playground. As a freelance designer, I’ve finally found a space that keeps me focused and inspired.”
-            </p>
-            <hr className="border-gray-700 my-3" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya R" className="w-8 h-8 rounded-full" />
+          {/* Center Highlighted Card */}
+          <div className="bg-black text-white p-6 rounded-md grid place-content-between min-h-[280px] relative overflow-hidden">
+            <div>
+              <Quote size={36} className="mb-4" />
+              <p className="text-base leading-relaxed">
+                "Pixalive feels less like an office and more like a creative playground. As a freelance designer, I’ve finally found a space that keeps me focused and inspired."
+              </p>
+            </div>
+            <div className="border-t border-gray-700 pt-4 flex items-center justify-between mt-6">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/avatar.png"
+                  alt="Priya R"
+                  className="w-10 h-10 rounded-full object-cover"
+                />
                 <div>
-                  <p className="text-sm font-medium">Priya R</p>
-                  <p className="text-xs text-gray-400">Chennai</p>
+                  <p className="font-semibold text-sm">Priya R</p>
+                  <p className="text-gray-400 text-sm">Chennai</p>
                 </div>
               </div>
-              <div className="flex items-center text-sm text-white gap-1">
-                4 <Star size={14} fill="orange" stroke="orange" />
+              <div className="flex items-center text-yellow-500">
+                <span className="mr-1 font-medium">4</span>
+                <Star fill="currentColor" size={16} />
               </div>
             </div>
           </div>
 
-          {/* Card 3 */}
-          <div className="bg-white p-6 flex flex-col justify-between shadow-sm">
-            <p className="text-sm text-gray-800 mb-4">
-              "A seamless and secure way to invest in gold!" I’ve always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.
-            </p>
-            <hr className="my-3" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya R" className="w-8 h-8 rounded-full" />
-                <div>
-                  <p className="text-sm font-medium">Priya R</p>
-                  <p className="text-xs text-gray-500">Chennai</p>
+          {/* Right Card */}
+          <div className="flex flex-col gap-6">
+            <div className="bg-white flex items-center gap-3 p-4 rounded-md shadow-sm">
+              <Phone size={20} />
+              <p className="text-sm font-medium">24/7 Support</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-md shadow-sm flex flex-col justify-between min-h-[180px]">
+              <p className="text-base mb-6">
+                "A seamless and secure way to invest in gold!" I've always wanted to invest in gold, but Pixalive Gold Network made it easy and trustworthy.
+              </p>
+              <div className="border-t pt-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/avatar.png"
+                    alt="Priya R"
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="font-semibold text-sm">Priya R</p>
+                    <p className="text-gray-500 text-sm">Chennai</p>
+                  </div>
+                </div>
+                <div className="flex items-center text-yellow-500">
+                  <span className="mr-1 font-medium">4</span>
+                  <Star fill="currentColor" size={16} />
                 </div>
               </div>
-              <div className="flex items-center text-sm text-gray-600 gap-1">
-                4 <Star size={14} fill="orange" stroke="orange" />
-              </div>
             </div>
-          </div>
-        </div>
 
-        {/* Bottom Support Info */}
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="flex items-center gap-2 text-sm text-gray-700 bg-white px-4 py-3">
-            <ShieldCheck size={16} className="text-black" />
-            100% Sale and Secure
-          </div>
-          <div className="flex items-center gap-2 text-sm text-gray-700 bg-white px-4 py-3">
-            <Phone size={16} className="text-black" />
-            24/7 Support
+            <div className="bg-white flex items-center gap-3 p-4 rounded-md shadow-sm">
+              <ShieldCheck size={20} />
+              <p className="text-sm font-medium">100% Safe and Secure</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default TestimonialSection;
