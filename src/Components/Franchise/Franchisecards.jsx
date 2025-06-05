@@ -3,6 +3,7 @@ import Frame1 from './../../assets/Franchise/Frame1.png';
 import Frame2 from './../../assets/Franchise/Frame2.png';
 import Frame3 from './../../assets/Franchise/Frame3.png';
 import Frame4 from './../../assets/Franchise/Frame4.png';
+import { Link } from 'react-router-dom';
 
 const baseOptions = [
   {
@@ -119,9 +120,11 @@ export default function FranchiseSection() {
                   {item.investment}{' '}
                   <span className="text-gray-600 text-sm">/ Investment</span>
                 </p>
+                <Link to="/contact">
                 <button className="bg-black text-white text-sm py-2 px-4  mb-4 hover:bg-gray-800 transition">
                   Contact Us
                 </button>
+                </Link>
 
                 <h3 className="text-sm font-bold text-black uppercase mb-3">What You Get :-</h3>
                 <div className="text-sm text-gray-700 space-y-2">

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 import Frame from "./../../assets/frame.png";
+import Frame2 from "./../../assets/frame2.png";
+import Frame3 from "./../../assets/frame3.png";
 
 const faqData = [
   {
@@ -52,16 +54,30 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="  w-full px-4 md:px-8 lg:px-6 py-16 max-w-[1280px] mx-auto font-[Lufga]">
+    <section className="w-full px-4 md:px-8 lg:px-6 py-16 max-w-[1280px] mx-auto font-[Lufga]">
       <div className="max-w-7xl mx-auto bg-white shadow-2xl p-6 md:p-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Image */}
           <div className="w-full flex justify-center items-center">
-            <img
-              src={Frame}
-              alt="Shopping"
-              className="w-full max-w-[500px] h-auto sm:h-[680px] md:h-[760px] lg:h-[760px] xs:h-[600px] custom-md-img-height"
-            />
+            {openIndex === 1 ? (
+              <img
+                src={Frame2}
+                alt="Network"
+                className="w-full max-w-[500px] h-auto md:h-[650px] lg:h-[640px] xs:h-[600px] custom-md-img-height"
+              />
+            ) : openIndex === 2 ? (
+              <img
+                src={Frame3}
+                alt="Secure"
+                className="w-full max-w-[500px] h-auto md:h-[650px] lg:h-[640px] xs:h-[600px] custom-md-img-height"
+              />
+            ) : (
+              <img
+                src={Frame}
+                alt="Shopping"
+                className="w-full max-w-[500px] h-auto md:h-[650px] lg:h-[640px] xs:h-[600px] custom-md-img-height"
+              />
+            )}
           </div>
 
           {/* Right FAQ Content */}
@@ -74,10 +90,10 @@ export default function FAQSection() {
                 <div className="flex flex-wrap justify-between items-start w-full gap-4">
                   {/* Number & Title */}
                   <div className="flex-1 min-w-[250px]">
-                    <h2 className="text-[32px] sm:text-[42px] md:text-[48px] lg:text-[50px] font-bold text-black leading-none custom-md-number">
+                    <h2 className="text-[22px] sm:text-[28px] md:text-[34px] lg:text-[36px] font-bold text-black leading-none custom-md-number">
                       {item.number}
                     </h2>
-                    <h3 className="text-[15px] md:text-[16px] lg:text-[22px] font-bold text-black mt-3 md:mt-4 lg:mt-6 custom-md-title">
+                    <h3 className="text-[15px] md:text-[16px] lg:text-[18px] font-bold text-black mt-3 md:mt-4 lg:mt-6 custom-md-title">
                       {item.title}
                     </h3>
 
@@ -87,7 +103,7 @@ export default function FAQSection() {
                         openIndex === index ? "max-h-[1000px] mt-4" : "max-h-0"
                       }`}
                     >
-                      <div className="text-[#6D6D6D] text-[14px] md:text-[15px] lg:text-[18px] leading-relaxed space-y-3">
+                      <div className="text-[#6D6D6D] text-[14px] md:text-[14px] lg:text-[16px] leading-relaxed space-y-3">
                         <p>{item.content.paragraph}</p>
                         <ul className="list-disc list-inside text-black space-y-4 pt-3">
                           {item.content.points.map((point, i) => (

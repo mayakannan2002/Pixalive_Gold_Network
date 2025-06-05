@@ -47,12 +47,14 @@ const Hero = () => {
 
 
           <div className="hidden md:block">
+            <Link to="/signup">
             <button className="group bg-white text-black px-4 py-2 cursor-pointer">
               Sign up &nbsp;
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                 ↗
               </span>
             </button>
+            </Link>
           </div>
 
 
@@ -74,13 +76,15 @@ const Hero = () => {
                   navigate(item.path);
                   setNavOpen(false);
                 }}
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-yellow-100"
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-200"
               >
                 {item.name}
               </button>
             ))}
             <div className="p-4">
+              <Link to="/signup">
               <button className="bg-black text-white px-4 py-2 w-full rounded">Sign up</button>
+              </Link>
             </div>
           </div>
         )}
@@ -96,22 +100,25 @@ const Hero = () => {
               Join the Pixalive Gold Network and be part of India’s biggest gold-focused ecosystem. With a goal of 4,000+ branches, we offer a great opportunity to grow with us in the gold investment and services space.            </p>
 
             <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-              <button className="group bg-white text-black px-5 py-2 cursor-pointer">
-                Apply for franchise &nbsp;
-                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                  ↗
-                </span>
-              </button>
+  <Link to="/contact">
+    <button className="group bg-white text-black px-5 py-2 cursor-pointer w-full md:w-auto">
+      Apply for Franchise &nbsp;
+      <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+        ↗
+      </span>
+    </button>
+  </Link>
 
-              <button className="flex items-center gap-2 bg-transparent border border-white text-white px-5 py-2 cursor-pointer">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg"
-                  alt="Play Store"
-                  className="w-5 h-5"
-                />
-               Download Brochure
-              </button>
-            </div>
+  <button className="flex items-center gap-2 bg-transparent border border-white text-white px-5 py-2 cursor-pointer w-full md:w-auto">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg"
+      alt="Play Store"
+      className="w-5 h-5"
+    />
+    Download Brochure
+  </button>
+</div>
+
           </div>
         </div>
       </div>

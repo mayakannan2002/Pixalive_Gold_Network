@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-// import HeaderAlone from '../HeaderAlone'; // Removed as per discussion, re-add if needed
-
-// Placeholder for product image (you'll replace this with actual image paths)
-import goldCoinImage from './../../assets/coin-1g.png'; // Using coin-1g.png for consistency
+import { motion } from 'framer-motion';
+import goldCoinImage from './../../assets/coin-1g.png';
+import goldCoinImage1 from "./../../assets/coin-2g.png";
+import goldCoinImage2 from "./../../assets/coin-3g.png";
+import goldCoinImage3 from "./../../assets/coin-4g.png";
 
 const productData = [
   {
@@ -19,38 +20,37 @@ const productData = [
   },
   {
     id: 2,
-    name: '1 Gram PixaliveGold Coin',
+    name: '2 Gram PixaliveGold Coin',
     purity: '24K, 99.99%',
-    price: '10,630.4',
+    price: '21,260.8',
     deliveryInfo: '2-5+ Delivers',
-    image: goldCoinImage,
+    image: goldCoinImage1,
     productType: 'Bullion',
     shape: 'Coin',
-    weight: '1g',
+    weight: '2g',
   },
   {
     id: 3,
-    name: '1 Gram PixaliveGold Coin',
+    name: '3 Gram PixaliveGold Coin',
     purity: '24K, 99.99%',
-    price: '10,630.4',
+    price: '31,891.2',
     deliveryInfo: '2-5+ Delivers',
-    image: goldCoinImage,
+    image: goldCoinImage2,
     productType: 'Bullion',
     shape: 'Coin',
-    weight: '1g',
+    weight: '3g',
   },
   {
     id: 4,
-    name: '1 Gram PixaliveGold Coin',
+    name: '4 Gram PixaliveGold Coin',
     purity: '24K, 99.99%',
-    price: '10,630.4',
+    price: '42,521.6',
     deliveryInfo: '2-5+ Delivers',
-    image: goldCoinImage,
+    image: goldCoinImage3,
     productType: 'Bullion',
     shape: 'Coin',
-    weight: '1g',
+    weight: '4g',
   },
-  // Removed additional product data to ensure only 4 cards are displayed
 ];
 
 const productTypes = [
@@ -74,17 +74,11 @@ export default function ProductListingPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProductType, setSelectedProductType] = useState('All');
   const [selectedSortBy, setSelectedSortBy] = useState('Bullion');
-  const [selectedShape, setSelectedShape] = useState('');
-  const [selectedPriceRange, setSelectedPriceRange] = useState('');
-  const [selectedWeight, setSelectedWeight] = useState('');
 
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedProductType('All');
     setSelectedSortBy('Bullion');
-    setSelectedShape('');
-    setSelectedPriceRange('');
-    setSelectedWeight('');
   };
 
   const filteredProducts = productData
@@ -94,177 +88,88 @@ export default function ProductListingPage() {
         product.productType.toLowerCase() === selectedProductType.toLowerCase();
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesProductType && matchesSearch;
-    })
-    .sort((a, b) => {
-      // Sorting logic based on selectedSortBy can be added here if needed
-      return 0;
     });
 
   return (
-    <>
-      {/* <HeaderAlone /> */} {/* Removed as per discussion, re-add if needed */}
-      <div className="min-h-screen bg-[#f6f6f6] text-black pb-8">
-        {/* Hero Section */}
-        <div className="max-w-[1280px] mx-auto px-4 py-8">
-          <div className="w-full flex flex-col md:flex-row items-start md:gap-24">
-            {/* Left: Vertical Label */}
-            <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0">
-              <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Pixalive Blog</p>
-            </div>
-
-            {/* Right: Main Heading */}
-            <div className="w-full">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black leading-snug max-w-4xl">
-                Insights, updates, and stories from the pioneers of a next-gen gold network platform — where innovation meets real-world value.
-              </h1>
-            </div>
+    <div className="min-h-screen bg-[#f6f6f6] text-black pb-8">
+      {/* Hero Section */}
+      <div className="max-w-[1280px] mx-auto px-4 py-8">
+        <div className="w-full flex flex-col md:flex-row items-start md:gap-24">
+          <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0">
+            <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Pixalive Blog</p>
+          </div>
+          <div className="w-full">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black leading-snug max-w-4xl">
+              Insights, updates, and stories from the pioneers of a next-gen gold network platform — where innovation meets real-world value.
+            </h1>
           </div>
         </div>
+      </div>
 
-        {/* Search bar */}
-        <div className="max-w-[1280px] mx-auto px-4">
-          <div className="relative md:w-1/4 p-2 mb-4">
-            <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Search"
-              className="pl-10 pr-3 py-2 text-sm mt-3 w-full border-b border-gray-300 focus:outline-none focus:border-black bg-transparent"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
+      {/* Search Bar */}
+      <div className="max-w-[1280px] mx-auto px-4">
+        <div className="relative md:w-1/4 p-2 mb-4">
+          <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="pl-10 pr-3 py-2 text-sm mt-3 w-full border-b border-gray-300 focus:outline-none focus:border-black bg-transparent"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
         </div>
+      </div>
 
-        {/* Main content (Sidebar + Product Cards) */}
-        <div className="max-w-[1280px] mx-auto px-4  flex flex-col md:flex-row gap-6">
-          {/* Sidebar */}
-          <div className="md:w-1/4 space-y-6">
-            {/* Filter */}
-            <div className="bg-white p-4">
-              <div className="flex justify-between items-center mb-2">
-                <h2 className="font-semibold text-gray-700">Filter</h2>
+      {/* Sidebar + Products */}
+      <div className="max-w-[1280px] mx-auto px-4 flex flex-col md:flex-row md:gap-60">
+        {/* Sidebar */}
+        <div className="md:w-1/4 space-y-6 flex-shrink-0">
+          <div className="bg-white p-4">
+            <div className="flex justify-between items-center mb-2">
+              <h2 className="font-semibold text-gray-700">Filter</h2>
+              <button onClick={clearFilters} className="text-sm text-gray-500 hover:underline">
+                Clear Filter
+              </button>
+            </div>
+            <hr className="border-gray-300 mb-4" />
+            <h3 className="text-sm text-gray-600 mb-2 font-medium">Product Series Type</h3>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {productTypes.map((type) => (
                 <button
-                  onClick={clearFilters}
-                  className="text-sm text-gray-500 hover:underline"
+                  key={type}
+                  onClick={() => setSelectedProductType(type)}
+                  className={`px-3 py-1 text-sm border ${
+                    selectedProductType === type
+                      ? 'bg-black text-white'
+                      : 'bg-white text-black border-gray-300'
+                  }`}
                 >
-                  Clear Filter
+                  {type}
                 </button>
-              </div>
-              <hr className="border-gray-300 mb-4" />
-
-              {/* Product Series Type */}
-              <h3 className="text-sm text-gray-600 mb-2 font-medium">Product Series Type</h3>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {productTypes.map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => setSelectedProductType(type)}
-                    className={`px-3 py-1 text-sm border ${
-                      selectedProductType === type
-                        ? 'bg-black text-white'
-                        : 'bg-white text-black border-gray-300'
-                    }`}
-                  >
-                    {type}
-                  </button>
-                ))}
-              </div>
-
-              {/* Sort by */}
-              <h3 className="text-sm text-gray-600 mb-2 font-medium">Sort by</h3>
-              <div className="space-y-2 text-sm text-gray-700">
-                <label className="flex items-center gap-2">
+              ))}
+            </div>
+            <h3 className="text-sm text-gray-600 mb-2 font-medium">Sort by</h3>
+            <div className="space-y-2 text-sm text-gray-700">
+              {['Bullion', 'Devotional', 'Gifting', 'Classic'].map((option) => (
+                <label key={option} className="flex items-center gap-2">
                   <input
                     type="radio"
                     name="sortBy"
-                    value="Bullion"
-                    checked={selectedSortBy === 'Bullion'}
-                    onChange={() => setSelectedSortBy('Bullion')}
+                    value={option}
+                    checked={selectedSortBy === option}
+                    onChange={() => setSelectedSortBy(option)}
                     className="form-radio text-black focus:ring-0"
                   />
-                  Bullion
+                  {option}
                 </label>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="sortBy"
-                    value="Devotional"
-                    checked={selectedSortBy === 'Devotional'}
-                    onChange={() => setSelectedSortBy('Devotional')}
-                    className="form-radio text-black focus:ring-0"
-                  />
-                  Devotional
-                </label>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="sortBy"
-                    value="Gifting"
-                    checked={selectedSortBy === 'Gifting'}
-                    onChange={() => setSelectedSortBy('Gifting')}
-                    className="form-radio text-black focus:ring-0"
-                  />
-                  Gifting
-                </label>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="sortBy"
-                    value="Classic"
-                    checked={selectedSortBy === 'Classic'}
-                    onChange={() => setSelectedSortBy('Classic')}
-                    className="form-radio text-black focus:ring-0"
-                  />
-                  Classic
-                </label>
-              </div>
-              <hr className="border-gray-300 my-4" />
-
-              {/* Shape Filter (Placeholder) */}
-              <h3 className="text-sm text-gray-600 mb-2 font-medium">Shape</h3>
-              <div className="space-y-2 text-sm text-gray-700">
-                <label className="flex items-center gap-2">
-                  <input type="radio" name="shape" disabled className="form-radio" />
-                  Circle
-                </label>
-                <label className="flex items-center gap-2">
-                  <input type="radio" name="shape" disabled className="form-radio" />
-                  Bar
-                </label>
-              </div>
-              <hr className="border-gray-300 my-4" />
-
-              {/* Price Filter (Placeholder) */}
-              <h3 className="text-sm text-gray-600 mb-2 font-medium">Price</h3>
-              <div className="space-y-2 text-sm text-gray-700">
-                <label className="flex items-center gap-2">
-                  <input type="radio" name="price" disabled className="form-radio" />
-                  ₹0 - ₹10,000
-                </label>
-                <label className="flex items-center gap-2">
-                  <input type="radio" name="price" disabled className="form-radio" />
-                  ₹10,001 - ₹50,000
-                </label>
-              </div>
-              <hr className="border-gray-300 my-4" />
-
-              {/* Weight Filter (Placeholder) */}
-              <h3 className="text-sm text-gray-600 mb-2 font-medium">Weight</h3>
-              <div className="space-y-2 text-sm text-gray-700">
-                <label className="flex items-center gap-2">
-                  <input type="radio" name="weight" disabled className="form-radio" />
-                  1g
-                </label>
-                <label className="flex items-center gap-2">
-                  <input type="radio" name="weight" disabled className="form-radio" />
-                  2g
-                </label>
-              </div>
+              ))}
             </div>
           </div>
+        </div>
 
-          {/* Product Cards - Decreased width and limited to 4 */}
-          <div className="md:w-3/4 w-full grid mb-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 justify-start"> {/* Adjusted grid-cols to 2 for all breakpoints above sm, and justify-start to allow empty space on the right */}
+        {/* Product Cards */}
+        <div className="md:w-3/4 w-full mb-10 flex justify-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 w-full">
             {filteredProducts.length === 0 ? (
               <div className="col-span-full text-center text-gray-500 text-lg">
                 No products available.
@@ -273,52 +178,45 @@ export default function ProductListingPage() {
               filteredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-sm overflow-hidden flex flex-col justify-between"
-                  style={{ border: '1px solid #f0f0f0', maxWidth: '280px' }} // Explicitly set a max-width for individual cards to make them smaller
+                  className="bg-white rounded-sm overflow-hidden flex flex-col justify-between w-full sm:w-[280px]"
+                  style={{ border: '1px solid #f0f0f0' }}
                 >
-                  {/* Content area that will have internal padding */}
                   <div className="flex flex-col items-center px-4 pt-6 pb-4">
-                    {/* Coin Image */}
-                    <div className="w-[120px] h-[120px] flex items-center justify-center mb-4">
-                      <img
+                    <div className="w-[120px] h-[120px] flex items-center justify-center mb-4" style={{ perspective: '1000px' }}>
+                      <motion.img
                         src={product.image}
                         alt={product.name}
                         className="max-w-full max-h-full object-contain"
+                        animate={{ rotateY: 360 }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 6,
+                          ease: "linear",
+                        }}
+                        style={{ transformStyle: "preserve-3d" }}
                       />
                     </div>
-
-                    {/* Horizontal Rule */}
                     <div className="w-full mb-4">
                       <hr className="border-t border-gray-200 w-1/3 mx-auto" />
                     </div>
-
-                    {/* 24K. 99.99% Tag */}
                     <div className="bg-[#f6f6f6] text-[#EFA61A] text-xs font-medium px-2 py-1 mb-2 rounded-[2px]">
                       {product.purity}
                     </div>
-
-                    {/* Product Title */}
                     <p className="text-base text-gray-800 font-medium mb-2 text-center">
                       {product.name}
                     </p>
-
-                    {/* Price */}
                     <p className="text-2xl font-semibold text-black mb-4">
                       ₹{product.price}
                     </p>
-
-                    {/* Add to Card Button */}
-                    <button className="bg-black text-white py-2 w-full text-sm font-medium hover:bg-gray-800 transition-colors rounded-sm">
-                      Add to Card
+                    <button className="bg-black text-white py-2 sm:py-2  lg:py-2 px-14 text-md lg:text-sm font-medium hover:bg-gray-800 transition-colors ">
+                      Add to Cart
                     </button>
                   </div>
-
-                  {/* Delivery Info (Gradient Bar) - This needs to be at the very bottom, full width, no horizontal padding */}
                   <div
-                    className="w-full text-center py-2 text-xs font-medium"
+                    className="w-full text-center py-2 text-sm font-medium"
                     style={{
                       background: 'linear-gradient(to right, #FFFFFF, #f8c972, #FFFFFF)',
-                      color: '#7A7A7A', // Gray text color
+                      color: '#7A7A7A',
                     }}
                   >
                     {product.deliveryInfo}
@@ -329,6 +227,6 @@ export default function ProductListingPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
