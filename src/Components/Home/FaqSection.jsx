@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 import Frame from "./../../assets/frame.png";
+import Frame2 from "./../../assets/frame2.png";
+import Frame3 from "./../../assets/frame3.png";
 
 const faqData = [
   {
@@ -52,16 +54,30 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="  w-full px-4 md:px-8 lg:px-6 py-16 max-w-[1280px] mx-auto font-[Lufga]">
+    <section className="w-full px-4 md:px-8 lg:px-6 py-16 max-w-[1280px] mx-auto font-[Lufga]">
       <div className="max-w-7xl mx-auto bg-white shadow-2xl p-6 md:p-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Image */}
           <div className="w-full flex justify-center items-center">
-            <img
-              src={Frame}
-              alt="Shopping"
-              className="w-full max-w-[500px] h-auto  md:h-[650px] lg:h-[640px] xs:h-[600px] custom-md-img-height"
-            />
+            {openIndex === 1 ? (
+              <img
+                src={Frame2}
+                alt="Network"
+                className="w-full max-w-[500px] h-auto md:h-[650px] lg:h-[640px] xs:h-[600px] custom-md-img-height"
+              />
+            ) : openIndex === 2 ? (
+              <img
+                src={Frame3}
+                alt="Secure"
+                className="w-full max-w-[500px] h-auto md:h-[650px] lg:h-[640px] xs:h-[600px] custom-md-img-height"
+              />
+            ) : (
+              <img
+                src={Frame}
+                alt="Shopping"
+                className="w-full max-w-[500px] h-auto md:h-[650px] lg:h-[640px] xs:h-[600px] custom-md-img-height"
+              />
+            )}
           </div>
 
           {/* Right FAQ Content */}
