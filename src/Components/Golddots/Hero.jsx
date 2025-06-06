@@ -7,6 +7,7 @@ import logo from "../../assets/Headermain/logo copy.png";
 const Hero = () => {
   const navigate = useNavigate();
   const [navOpen, setNavOpen] = React.useState(false);
+
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
@@ -19,50 +20,54 @@ const Hero = () => {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center relative "
+      className="min-h-screen bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/55 bg-opacity-50 z-0"></div>
 
       {/* Main content */}
-      <div className="relative z-10 pt-[15px] ">
+      <div className="relative z-10 pt-[15px]">
         {/* Header */}
-        <header className="flex items-center max-w-[1260px] mx-auto justify-between p-4 bg-opacity-70">
-          <Link to="/">
-            <img src={logo} className="w-[42px] h-[42px] cursor-pointer" alt="Pixalive Logo" />
-          </Link>
-
-          <nav className="hidden md:flex gap-6">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => navigate(item.path)}
-                className="text-white text-[16px]  border-b-[1px] cursor-pointer    border-transparent hover:border-white transition-all duration-200"
-              >
-                {item.name}
-              </button>
-            ))}
-          </nav>
-
-
-          <div className="hidden md:block">
-            <Link to="/signup">
-            <button className="group bg-white text-black px-4 py-2 cursor-pointer">
-              Sign up &nbsp;
-              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                ↗
-              </span>
-            </button>
+        <header className="py-4 px-4 md:px-12 flex justify-center">
+          <div className="max-w-[1280px] w-full flex items-center justify-between">
+            <Link to="/">
+              <img
+                src={logo}
+                className="w-[42px] h-[42px] cursor-pointer"
+                alt="Pixalive Logo"
+              />
             </Link>
-          </div>
 
+            <nav className="hidden md:flex gap-6">
+              {navItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => navigate(item.path)}
+                  className="text-white text-[16px] border-b-[1px] border-transparent hover:border-white transition-all duration-200"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button onClick={() => setNavOpen(!navOpen)}>
-              <FaBars className="text-xl text-white" />
-            </button>
+            <div className="hidden md:block">
+              <Link to="/signup">
+                <button className="group bg-white text-black px-4 py-2 cursor-pointer">
+                  Sign up &nbsp;
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                    ↗
+                  </span>
+                </button>
+              </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button onClick={() => setNavOpen(!navOpen)}>
+                <FaBars className="text-xl text-white" />
+              </button>
+            </div>
           </div>
         </header>
 
@@ -83,44 +88,50 @@ const Hero = () => {
             ))}
             <div className="p-4">
               <Link to="/signup">
-              <button className="bg-black text-white px-4 py-2 w-full rounded">Sign up</button></Link>
+                <button className="bg-black text-white px-4 py-2 w-full rounded">
+                  Sign up
+                </button>
+              </Link>
             </div>
-
           </div>
         )}
 
-        <div className="py-20 max-w-[1260px] px-4 mx-auto  flex flex-col md:flex-row items-center justify-between">
-          {/* Left Text div */}
-          <div className="max-w-3xl space-y-6 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
-              Your Digital Rewards That Turn Actions Into Wealth    <br />
-              
-            </h1>
-            <p className="text-[16px] text-white" style={{ wordSpacing: '0.2em' }}>
-             Earn by engaging, shopping, and building your network — then convert your Gold Dots into real digital gold or redeem for exclusive products or services.</p>
+        {/* Hero Section */}
+        <section className="py-16 px-4 md:px-12 flex justify-center text-white">
+          <div className="max-w-[1280px] w-full mx-auto flex flex-col md:flex-row items-center justify-between">
+            {/* Left Text div */}
+            <div className="max-w-3xl space-y-6 text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                Your Digital Rewards That Turn Actions Into Wealth
+              </h1>
+              <p className="text-[16px]" style={{ wordSpacing: "0.2em" }}>
+                Earn by engaging, shopping, and building your network — then
+                convert your Gold Dots into real digital gold or redeem for
+                exclusive products or services.
+              </p>
 
-<div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-  <Link to="/">
-    <button className="group bg-white text-black px-5 py-2 cursor-pointer w-full md:w-auto">
-      Subscribe now &nbsp;
-      <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-        ↗
-      </span>
-    </button>
-  </Link>
+              <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                <Link to="/">
+                  <button className="group bg-white text-black px-5 py-2 cursor-pointer w-full md:w-auto">
+                    Subscribe now &nbsp;
+                    <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                      ↗
+                    </span>
+                  </button>
+                </Link>
 
-  <button className="flex items-center gap-2 bg-transparent border border-white text-white px-5 py-2 cursor-pointer w-full md:w-auto">
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg"
-      alt="Play Store"
-      className="w-5 h-5"
-    />
-    Download Brochure
-  </button>
-</div>
-
+                <button className="flex items-center gap-2 bg-transparent border border-white text-white px-5 py-2 cursor-pointer w-full md:w-auto">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg"
+                    alt="Play Store"
+                    className="w-5 h-5"
+                  />
+                  Download Brochure
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

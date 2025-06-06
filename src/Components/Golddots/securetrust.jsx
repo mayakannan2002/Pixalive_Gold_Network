@@ -2,7 +2,7 @@ import React from "react";
 
 const SecurityTrustSection = () => {
   return (
-    <section className="bg-black text-white py-16 px-6 md:px-40 text-center">
+    <section className="bg-black text-white py-16 px-4 md:px-12  text-center">
       <div className="max-w-4xl mx-auto">
         {/* Subtitle */}
         <p className="text-sm text-gray-400 tracking-widest uppercase mb-6">

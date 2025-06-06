@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const SupportSection = () => {
   return (
-    <section className=" py-14 px-6 flex justify-center">
+    <section className=" py-16 px-4 md:px-12 flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row gap-10 mb-16">

@@ -91,9 +91,9 @@ export default function ProductListingPage() {
     });
 
   return (
-    <div className="min-h-screen bg-[#f6f6f6] text-black pb-8">
+    <div className="min-h-screen bg-[#f6f6f6] text-black pb-8 px-4 md:px-12 py-16">
       {/* Hero Section */}
-      <div className="max-w-[1280px] mx-auto px-4 py-8">
+      <div className="max-w-[1280px] mx-auto ">
         <div className="w-full flex flex-col md:flex-row items-start md:gap-24">
           <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0">
             <p className="text-sm ml-2 text-gray-400 whitespace-nowrap">Pixalive Blog</p>
@@ -107,7 +107,7 @@ export default function ProductListingPage() {
       </div>
 
       {/* Search Bar */}
-      <div className="max-w-[1280px] mx-auto px-4">
+      <div className="max-w-[1280px] mx-auto ">
         <div className="relative md:w-1/4 p-2 mb-4">
           <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <input
@@ -121,7 +121,7 @@ export default function ProductListingPage() {
       </div>
 
       {/* Sidebar + Products */}
-      <div className="max-w-[1280px] mx-auto px-4 flex flex-col md:flex-row md:gap-60">
+      <div className="max-w-[1280px] mx-auto  flex flex-col md:flex-row md:gap-60">
         {/* Sidebar */}
         <div className="md:w-1/4 space-y-6 flex-shrink-0">
           <div className="bg-white p-4">

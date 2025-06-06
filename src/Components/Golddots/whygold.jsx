@@ -23,7 +23,7 @@ const WhyGoldDots = () => {
   ];
 
   return (
-    <section className=" py-18 px-6 text-black">
+    <section className=" py-16 px-4 md:px-12 text-black">
       <div className="max-w-[1280px] mx-auto w-full">
         {/* Header Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

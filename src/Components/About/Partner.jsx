@@ -4,7 +4,7 @@ import lbmaMemberLogo from './../../assets/About/lbma-member.png'; // Assuming y
 
 const OurPartnershipSection = () => {
   return (
-    <div className="bg-[#f6f6f6] text-black py-14 px-6  flex justify-center">
+    <div className="bg-[#f6f6f6] text-black py-16 px-4 md:px-12  flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto">
 
         {/* Top Section: "Our Partnership" label and Main Quote */}

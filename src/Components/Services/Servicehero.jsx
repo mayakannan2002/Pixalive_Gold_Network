@@ -2,7 +2,7 @@ import React from "react";
 
 const Service = () => {
   return (
-    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+    <section className="bg-[#f6f6f6] py-16 px-4 md:px-12 flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto">
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           

@@ -5,7 +5,7 @@ const AboutPageHero = () => {
     // Outer container for background and min-height, no padding here
     <div className="min-h-screen bg-[#f6f6f6] text-black">
       {/* Main content wrapper: applies max-width, centers, and provides overall padding */}
-      <div className="max-w-[1280px] w-full mx-auto px-4 py-16"> {/* Consistent padding */}
+      <div className="max-w-[1280px] w-full mx-auto px-4 md:px-12 py-16"> {/* Consistent padding */}
         {/* Top Section */}
         <div className="flex flex-col md:flex-row md:gap-24 mb-16 md:mb-24">
           {/* Left Vertical Label */}

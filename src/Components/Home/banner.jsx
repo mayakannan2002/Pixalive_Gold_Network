@@ -4,7 +4,7 @@ import appStoreIcon from "../../assets/Headermain/applestore.png";   // Replace 
 
 const GetStartedSection = () => {
   return (
-    <section className="bg-[#f6f6f6] text-black py-14 px-6 flex justify-center">
+    <section className="bg-[#f6f6f6] text-black py-16 px-4 md:px-12 flex justify-center">
       <div className="max-w-[1280px] mx-auto w-full bg-[#eeeeee] p-10 text-center ">
         {/* Red dot + subtitle */}
         <div className="flex justify-center items-center gap-2 mb-3">

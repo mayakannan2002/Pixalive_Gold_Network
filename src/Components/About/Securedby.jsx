@@ -24,7 +24,7 @@ const companies = [
 export default function SecurityAndStats() {
   return (
     // The main section container, centered and with padding
-    <section className="w-full max-w-[1380px] mx-auto px-4 py-12 md:py-20 font-[Lufga]">
+    <section className="w-full max-w-[1380px] mx-auto px-4 md:px-12 py-16 md:py-20 font-[Lufga]">
       {/* Title for the section */}
       <h2 className="text-center text-black text-lg sm:text-2xl font-lufga mb-8 sm:mb-10">
         Secured By

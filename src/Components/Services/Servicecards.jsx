@@ -87,7 +87,7 @@ const cardData = [
 
 const ServiceCardSlider = () => {
   return (
-    <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
+    <section className="bg-[#f6f6f6] py-16 px-4 md:px-12 flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto">
         <h2 className="text-lg font-medium text-gray-700 mb-6">Our Services</h2>
         

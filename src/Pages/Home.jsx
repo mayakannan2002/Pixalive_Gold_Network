@@ -23,7 +23,7 @@ const Home = () => {
       <MainHome  />
        {/* <Headermain /> */}
        <SecuredBy/>
-       
+        
        <Network/>
        <GoldDotsSection/>
        <GoldNetwork/>

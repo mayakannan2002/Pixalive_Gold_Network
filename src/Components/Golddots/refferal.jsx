@@ -2,7 +2,7 @@ import React from "react";
 
 const ReferralSection = () => {
   return (
-    <section className="bg-[#f6f6f6] py-18 px-6 text-black">
+    <section className="bg-[#f6f6f6] py-16 px-4 md:px-12 text-black">
       <div className="max-w-[1280px] mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Left Label */}

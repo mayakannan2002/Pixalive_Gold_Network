@@ -41,7 +41,7 @@ const KeyFeatures = () => {
   };
 
   return (
-    <section className="py-18 px-6 flex justify-center text-black">
+    <section className="py-16 px-4 md:px-12 flex justify-center text-black">
       <div className="max-w-[1280px] w-full mx-auto">
         <div className="flex flex-col md:flex-row gap-12">
           {/* Left label */}

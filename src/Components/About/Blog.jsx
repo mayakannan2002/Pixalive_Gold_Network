@@ -39,8 +39,8 @@ const blogs = [
 
 export default function BlogSection() {
   return (
-    <section className="bg-[#f6f6f6]  py-14 px-6  flex justify-center">
-      <div className="max-w-[1280px] w-full mx-auto">
+    <section className="bg-[#f6f6f6]  flex justify-center">
+      <div className="max-w-[1280px] py-16 px-4 md:px-12 w-full mx-auto">
         {/* Heading Section */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-12">
           {/* Blog Section title on the left */}
@@ -92,7 +92,7 @@ export default function BlogSection() {
                 </div>
 
                 {/* Footer Section */}
-                <div className="px-4 pb-4 flex items-center justify-between text-xs text-gray-500 mt-auto"> {/* Removed pt-0, consistent px-4 pb-4 */}
+                <div className=" pb-4 flex items-center justify-between text-xs text-gray-500 mt-auto"> {/* Removed pt-0, consistent px-4 pb-4 */}
                   <span>
                     👤 {blog.author} · {blog.date}
                   </span>

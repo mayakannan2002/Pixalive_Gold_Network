@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
@@ -7,6 +10,7 @@ import logo from "../../assets/Headermain/logo copy.png";
 const Hero = () => {
   const navigate = useNavigate();
   const [navOpen, setNavOpen] = React.useState(false);
+
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
@@ -19,50 +23,54 @@ const Hero = () => {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center relative "
+      className="min-h-screen bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/55 bg-opacity-50 z-0"></div>
 
       {/* Main content */}
-      <div className="relative z-10 pt-[15px] ">
+      <div className="relative z-10 pt-[15px]">
         {/* Header */}
-        <header className="flex items-center max-w-[1260px] mx-auto justify-between p-4 bg-opacity-70">
-          <Link to="/">
-            <img src={logo} className="w-[42px] h-[42px] cursor-pointer" alt="Pixalive Logo" />
-          </Link>
-
-          <nav className="hidden md:flex gap-6">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => navigate(item.path)}
-                className="text-white text-[16px]  border-b-[1px] cursor-pointer    border-transparent hover:border-white transition-all duration-200"
-              >
-                {item.name}
-              </button>
-            ))}
-          </nav>
-
-
-          <div className="hidden md:block">
-            <Link to="/signup">
-            <button className="group bg-white text-black px-4 py-2 cursor-pointer">
-              Sign up &nbsp;
-              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                ↗
-              </span>
-            </button>
+        <header className="py-4  px-4 md:px-12 flex justify-center">
+          <div className="max-w-[1280px] w-full flex items-center justify-between">
+            <Link to="/">
+              <img
+                src={logo}
+                className="w-[42px] h-[42px] cursor-pointer"
+                alt="Pixalive Logo"
+              />
             </Link>
-          </div>
 
+            <nav className="hidden md:flex gap-6">
+              {navItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => navigate(item.path)}
+                  className="text-white text-[16px] border-b-[1px] border-transparent hover:border-white transition-all duration-200"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button onClick={() => setNavOpen(!navOpen)}>
-              <FaBars className="text-xl text-white" />
-            </button>
+            <div className="hidden md:block">
+              <Link to="/signup">
+                <button className="group bg-white text-black px-4 py-2 cursor-pointer">
+                  Sign up &nbsp;
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                    ↗
+                  </span>
+                </button>
+              </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button onClick={() => setNavOpen(!navOpen)}>
+                <FaBars className="text-xl text-white" />
+              </button>
+            </div>
           </div>
         </header>
 
@@ -83,16 +91,20 @@ const Hero = () => {
             ))}
             <div className="p-4">
               <Link to="/signup">
-              <button className="bg-black text-white px-4 py-2 w-full rounded">Sign up</button>
+                <button className="bg-black text-white px-4 py-2 w-full rounded">
+                  Sign up
+                </button>
               </Link>
             </div>
           </div>
         )}
 
-        <div className="py-20 max-w-[1260px] px-4 mx-auto  flex flex-col md:flex-row items-center justify-between">
-          {/* Left Text div */}
-          <div className="max-w-3xl space-y-6 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+        {/* Hero Section */}
+        <section className="py-16 px-4 md:px-12 flex justify-center text-white">
+          <div className="max-w-[1280px] w-full mx-auto flex flex-col md:flex-row items-center justify-between">
+            {/* Left Text div */}
+            <div className="max-w-3xl space-y-6 text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
               Become a Franchise Partner with    <br />
               <span className="text-white"> Pixalive Gold Network</span>
             </h1>
@@ -119,11 +131,13 @@ const Hero = () => {
   </button>
 </div>
 
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );
 };
 
 export default Hero;
+

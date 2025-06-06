@@ -49,7 +49,7 @@ const BlogPostPage = () => {
     <>
       <HeaderAlone />
       {/* This outer div primarily sets background and min-height for the whole page content below header */}
-      <div className="min-h-screen bg-[#f6f6f6] text-black">
+      <div className="min-h-screen  text-black">
         <style>{`
           html {
             scroll-behavior: smooth;
@@ -65,7 +65,7 @@ const BlogPostPage = () => {
         `}</style>
 
         {/* This div applies the max-width, centers the content, and provides overall padding */}
-        <div className="max-w-[1280px] mx-auto mt-8 px-4 py-8 grid grid-cols-1 lg:grid-cols-8 gap-10">
+        <div className="max-w-[1280px]  mx-auto mt-8 px-4 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-8 gap-10">
           {/* Left Column: Blog Content */}
           <div className="lg:col-span-5">
             <h2 className="text-3xl font-bold mb-2">{featuredBlog.title}</h2>
@@ -250,7 +250,7 @@ const BlogPostPage = () => {
           {/* Right Column: Sidebar */}
           <div className="space-y-6 lg:col-span-3">
             {/* Promo Card */}
-            <div className="bg-[#E7E7E7] text-black p-4">
+            <div className=" text-black p-4">
               <div className="flex flex-col md:flex-row items-center gap-4">
                 {/* Text Content */}
                 <div className="md:w-1/2">

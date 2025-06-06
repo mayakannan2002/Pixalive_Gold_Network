@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const GetStartedSection = () => {
   return (
-    <section className=" py-20 px-6 flex justify-center">
+    <section className=" py-16 px-4 md:px-12 flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto bg-[#eeeeee] p-10 text-center shadow-sm ">
         {/* Red dot + subtitle */}
         <div className="flex justify-center items-center gap-2 mb-2">

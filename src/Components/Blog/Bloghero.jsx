@@ -80,9 +80,9 @@ export default function BlogPage() {
   return (
     <>
       <HeaderAlone /> {/* HeaderAlone usually doesn't need to be in a div wrapper here */}
-      <div className="min-h-screen bg-[#f6f6f6] text-black pb-8"> {/* Removed px-4 py-8 from here */}
+      <div className="min-h-screen bg-[#f6f6f6] text-black pb-8 px-4 md:px-12 py-16"> {/* Removed px-4 py-8 from here */}
         {/* Hero Section */}
-        <div className="max-w-[1280px] mx-auto px-4 py-8"> {/* Added max-w, mx-auto, and px-4 */}
+        <div className="max-w-[1280px] mx-auto "> {/* Added max-w, mx-auto, and px-4 */}
           <div className="w-full flex flex-col md:flex-row items-start md:gap-24">
             {/* Left: Vertical Label - Specific width for alignment */}
             <div className="w-full md:w-[150px] flex-shrink-0 mb-4 md:mb-0">
@@ -99,7 +99,7 @@ export default function BlogPage() {
         </div>
 
         {/* Search bar (already correctly aligned) */}
-        <div className="max-w-[1280px] mx-auto px-4">
+        <div className="max-w-[1280px] mx-auto ">
           <div className="relative md:w-1/4 p-2 mb-4">
             <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
@@ -114,11 +114,11 @@ export default function BlogPage() {
         </div>
 
         {/* Main content (Sidebar + Blog Cards - already correctly aligned) */}
-        <div className="max-w-[1280px] mx-auto px-4 flex flex-col md:flex-row gap-6">
+        <div className="max-w-[1280px] mx-auto  flex flex-col md:flex-row gap-6">
           {/* Sidebar */}
           <div className="md:w-1/4 space-y-6">
             {/* Filter */}
-            <div className="bg-white p-4">
+            <div className="bg-[#f6f6f6] p-4">
               <div className="flex justify-between items-center mb-2">
                 <h2 className="font-semibold text-gray-700">Filter</h2>
                 <button
@@ -138,7 +138,7 @@ export default function BlogPage() {
                     className={`px-3 py-1 text-sm border ${
                       selectedTopic === topic
                         ? 'bg-black text-white'
-                        : 'bg-white text-black border-gray-300'
+                        : 'bg-[#f6f6f6] text-black border-gray-300'
                     }`}
                   >
                     {topic}
@@ -148,7 +148,7 @@ export default function BlogPage() {
             </div>
 
             {/* Sort */}
-            <div className="bg-white p-4">
+            <div className="bg-[#f6f6f6] p-4">
               <h3 className="text-sm text-gray-600 mb-2">Sort by</h3>
               <div className="space-y-2 text-sm text-gray-700">
                 <label className="flex items-center gap-2">
@@ -191,7 +191,7 @@ export default function BlogPage() {
                     alt={card.title}
                     className="w-full h-48 object-cover"
                   />
-                  <span className="absolute top-2 right-2 text-xs font-semibold text-black bg-white px-2 py-0.5">
+                  <span className="absolute top-2 right-2 text-xs font-semibold text-black bg-[#f6f6f6] px-2 py-0.5">
                     {card.tag}
                   </span>
                   <div className="p-4 space-y-1">

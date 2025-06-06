@@ -11,9 +11,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white relative overflow-hidden">
+    <footer className= " py-16 px-4 md:px-12 bg-black text-white relative overflow-hidden">
       {/* Container for center alignment */}
-      <div className="max-w-[1280px] w-full mx-auto px-6">
+      <div className="max-w-[1280px] w-full mx-auto ">
         {/* Top Grid - Logo, Description, Links */}
         <div className="grid grid-cols-1 py-10 md:grid-cols-12 gap-10 z-10 relative">
           {/* Left Column */}
