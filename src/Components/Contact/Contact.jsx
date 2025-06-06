@@ -72,7 +72,7 @@ export default function ContactForm() {
     <>
       <Headeralone />
       <section className="bg-[#f6f6f6] py-14 px-6 flex justify-center">
-        <div className="max-w-[1200px] w-full mx-auto">
+        <div className="max-w-[1220px] w-full mx-auto">
           <div className="space-y-16">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
               <div className="md:w-1/3 text-sm text-gray-700 leading-relaxed">

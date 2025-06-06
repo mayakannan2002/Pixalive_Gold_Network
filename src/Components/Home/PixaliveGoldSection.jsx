@@ -5,7 +5,12 @@ import coin2 from "./../../assets/coin-2g.png";
 import coin3 from "./../../assets/coin-3g.png";
 import coin4 from "./../../assets/coin-4g.png";
 
-const coins = [coin1, coin2, coin3, coin4];
+const coins = [
+  { image: coin1, title: "1 Gram PixaliveGold Coin", price: "₹10,630.4" },
+  { image: coin2, title: "2 Gram PixaliveGold Coin", price: "₹21,045.8" },
+  { image: coin3, title: "3 Gram PixaliveGold Coin", price: "₹31,199.6" },
+  { image: coin4, title: "4 Gram PixaliveGold Coin", price: "₹41,400.2" },
+];
 
 const PixaliveGoldSection = () => {
   const navigate = useNavigate();
@@ -18,29 +23,26 @@ const PixaliveGoldSection = () => {
   return (
     <section className="  w-full px-4 md:px-8 lg:px-6 py-16 max-w-[1280px] mx-auto font-[Lufga]">
       {/* Heading Section */}
-        <div className="w-full bg-[#f8f8f8] ">
+      <div className="w-full bg-[#f8f8f8] ">
         <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6  ">
-            
-            {/* Small Left Heading */}
-            <div className="text-[#6d6d6d] mb-3 sm:mb-0 md:mb-6 lg:mb-39 text-base lg:text-sm  font-medium leading-snug min-w-[220px]">
+          {/* Small Left Heading */}
+          <div className="text-[#6d6d6d] mb-3 sm:mb-0 md:mb-6 lg:mb-39 text-base lg:text-sm  font-medium leading-snug min-w-[220px]">
             Assorted Collection in <br className="hidden md:block" />
             Pixalive Gold
-            </div>
+          </div>
 
-            {/* Main Right Heading + CTA */}
-            <div className="text-black  font-medium text-[24px] leading-[1.4] md:text-[32px] md:leading-[1.5] lg:text-[35px] lg:leading-[1.5] max-w-4xl text-left">
+          {/* Main Right Heading + CTA */}
+          <div className="text-black  font-medium text-[24px] leading-[1.4] md:text-[32px] md:leading-[1.5] lg:text-[35px] lg:leading-[1.5] max-w-4xl text-left">
             Assorted Collection in Pixalive Gold offers a variety of curated digital gold products for diverse customer preferences
 
             {/* CTA */}
             <div className="mt-6 text-[#6d6d6d] hover:text-black transition-all duration-300 flex items-center gap-2 text-base md:text-md sm:text-md lg:text-md cursor-pointer">
-                <span>View More</span>
-                <span className="text-xl">→</span>
+              <span>View More</span>
+              <span className="text-xl">→</span>
             </div>
-            </div>
-
+          </div>
         </div>
-        </div>
-
+      </div>
 
       {/* Cards Section */}
       <div className="max-w-[1280px] mx-auto mt-10 sm:mt-11 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -56,7 +58,7 @@ const PixaliveGoldSection = () => {
               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             >
               <img
-                src={coin}
+                src={coin.image}
                 alt="Gold Coin"
                 className="w-full h-full object-contain"
               />
@@ -72,12 +74,12 @@ const PixaliveGoldSection = () => {
 
             {/* Product Title */}
             <p className="text-[16px] text-[#7A7A7A] font-medium mt-2 mb-2">
-              1 Gram PixaliveGold Coin
+              {coin.title}
             </p>
 
             {/* Price */}
             <p className=" text-[23px] font-lufga text-black mb-4">
-              ₹10,630.4
+              {coin.price}
             </p>
 
             {/* Know More Button */}
